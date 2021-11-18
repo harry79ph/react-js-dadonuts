@@ -1,10 +1,14 @@
-import { Nav, NavLink } from './styles/Navbar.styled'
+import { Nav, NavLink, Bars, NavIcon } from './styles/Navbar.styled';
 
 const Navbar = () => {
     return (
         <>
             <Nav>
-                <NavLink to='/'>Doughnut</NavLink>
+                <NavLink to='/'>Dadonuts</NavLink>
+                <NavIcon>
+                    <p>Menu</p>
+                    <Bars />
+                </NavIcon>
             </Nav>
         </>
     );
