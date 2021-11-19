@@ -24,19 +24,18 @@ export const NavLink = styled(Link)`
     }
 `;
 
-export const NavIcon = styled.div`
+export const MenuWrapper = styled.div`
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1.2rem;
+  right: 1.5rem;
     color: #fff;
     p {
-        transform: translate(-175%, 100%);
         font-weight: bold;
     }
 `;
 
-export const Bars = styled(CgMenuCake)`
-    font-size: 2rem;
-    transform: translate(-50%, -15%);
+export const MenuIcon = styled(CgMenuCake)`
+    font-size: 3rem;
+    cursor: pointer;
 `;

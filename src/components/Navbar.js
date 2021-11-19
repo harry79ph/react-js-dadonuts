@@ -1,14 +1,14 @@
-import { Nav, NavLink, Bars, NavIcon } from './styles/Navbar.styled';
+import { Nav, NavLink, MenuIcon, MenuWrapper } from './styles/Navbar.styled';
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
     return (
         <>
             <Nav>
                 <NavLink to='/'>Dadonuts</NavLink>
-                <NavIcon>
+                <MenuWrapper onClick={toggle}>
+                    <MenuIcon />
                     <p>Menu</p>
-                    <Bars />
-                </NavIcon>
+                </MenuWrapper>
             </Nav>
         </>
     );
