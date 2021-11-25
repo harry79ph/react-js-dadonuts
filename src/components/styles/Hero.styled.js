@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BgImg from '../../images/doughnut-bg.jpg';
 
 export const HeroContainer = styled.div`
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05)),
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)),
     url(${BgImg});
     background-color: #cf6e9e;//If the images cannot be loaded—for instance, when the network is down—the background color will be used as a fallback.
     height: 100vh;
