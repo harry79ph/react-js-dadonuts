@@ -11,8 +11,10 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-    color: #fff;
-    font-size: 2rem;
+    background: -webkit-linear-gradient(#ff00f2, #f0d478);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -28,7 +30,7 @@ export const MenuWrapper = styled.div`
     display: block;
     position: absolute;
     top: 1.2rem;
-  right: 1.5rem;
+    right: 1.5rem;
     color: #fff;
     p {
         font-weight: bold;

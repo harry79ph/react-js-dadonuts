@@ -8,6 +8,9 @@ export const HeroContainer = styled.div`
     height: 100vh;
     background-position: center;
     background-size: cover;
+    @media screen and (max-width: 1080px) {
+      background-position: 90% 50%;
+    }
 `;
 
 export const HeroContent = styled.div`
@@ -36,7 +39,7 @@ export const HeroItems = styled.div`
 export const HeroH1 = styled.h1`
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
-  box-shadow: 3px 5px #e9ba23;
+  box-shadow: 3px 5px  1px 1px rgba(240, 212, 120, 0.7);
   letter-spacing: 3px;
   text-transform: uppercase;
 `;
