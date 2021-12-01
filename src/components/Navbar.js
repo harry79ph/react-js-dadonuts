@@ -1,13 +1,16 @@
-import { Nav, NavLink, MenuIcon, MenuWrapper } from './styles/Navbar.styled';
+import NavItems from './NavItems';
+import { Nav, NavLink, MenuIcon, MenuWrapper, ShoppingCart} from './styles/Navbar.styled';
 
-const Navbar = ({toggle}) => {
+const Navbar = ({toggle, text}) => {
     return (
         <>
             <Nav>
                 <NavLink to='/'>Dadonuts</NavLink>
-                <MenuWrapper onClick={toggle}>
+                <NavItems />
+                <MenuWrapper onClick={toggle} text={text}>
+                    <ShoppingCart />
                     <MenuIcon />
-                    <p>Menu</p>
+                    <p>{text}</p>
                 </MenuWrapper>
             </Nav>
         </>
