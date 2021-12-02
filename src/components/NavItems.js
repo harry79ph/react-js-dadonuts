@@ -1,12 +1,9 @@
-import { ItemWrapper, ListItem } from "./styles/NavItems.styled";
-
+import { ItemWrapper, LinkItem } from "./styles/NavItems.styled";
 
 const NavItems = () => {
     return (
         <ItemWrapper>
-            <ListItem>Donuts</ListItem>
-            <ListItem>Ice Cream</ListItem>
-            <ListItem>Cookies</ListItem>
+            {['Donuts', 'Ice Cream', 'Cookies'].map(item => <LinkItem to='/'>{item}</LinkItem>)}
         </ItemWrapper>
     );
 }

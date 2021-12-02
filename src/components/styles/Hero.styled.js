@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BgImg from '../../images/doughnut-bg.jpg';
 
 export const HeroContainer = styled.div`
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)),
+    background: linear-gradient(to right, rgba(255, 0, 178, 0.1), rgba(255, 0, 178, 0.01)),
     url(${BgImg});
     background-color: #cf6e9e;//If the images cannot be loaded—for instance, when the network is down—the background color will be used as a fallback.
     height: 100vh;
@@ -14,7 +14,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroContent = styled.div`
-  height: min(calc(100vh - 80px), 100%);
+  height: min(calc(100vh - 100px), 100%);
   padding: 0 calc((100vw - 1300px) / 2);
 `;
 
@@ -39,7 +39,7 @@ export const HeroItems = styled.div`
 export const HeroH1 = styled.h1`
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
-  box-shadow: 3px 5px  1px 1px rgba(240, 212, 120, 0.7);
+  box-shadow: 3px 5px  1px 1px rgba(255, 210, 168, 0.7);
   letter-spacing: 3px;
   text-transform: uppercase;
 `;
@@ -54,7 +54,7 @@ export const HeroBtn = styled.button`
   padding: 1rem 4rem;
   border: none;
   border-radius: 3px;
-  background: #9e2edb;
+  background: #ff00b2;
   color: #fff;
   transition: 0.2s ease-out;
 

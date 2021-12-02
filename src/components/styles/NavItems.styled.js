@@ -1,17 +1,26 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
-export const ItemWrapper = styled.ul`
+export const ItemWrapper = styled.div`
     display: flex;
     align-items: center;
-    padding-right: 3em;
+    justify-content: center;
+    width: 100%;
+    padding-right: 10em;
 
     @media screen and (max-width: 768px) {
         display: none;
     }
 `;
 
-export const ListItem = styled.li`
-    list-style: none;
+export const LinkItem = styled(Link)`
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
     font-size: 1.6rem;
-    margin: 0 0.6em;
+    margin: 0 0.8em;
+    font-weight: 500;
+    transition: 0.2s ease-out;
+    &:hover{
+        color: #fff;
+    }
 `;
