@@ -7,7 +7,7 @@ export const SidebarContainer = styled.aside`
   z-index: 100;
   width: 300px;
   height: 100%;
-  background: rgba(240, 212, 120, 0.95);
+  background: rgba(255, 210, 168, 0.95);
   display: grid;
   align-items: center;
   top: 0;
@@ -72,6 +72,7 @@ export const SidebarRoute = styled(Link)`
   padding: 16px 64px;
   color: #fff;
   font-size: 16px;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;

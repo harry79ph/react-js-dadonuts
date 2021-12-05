@@ -12,7 +12,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-    background: -webkit-linear-gradient(#cc0a14, #e3e395);
+    background: -webkit-linear-gradient(#cc0a14, #ffd2a8);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
