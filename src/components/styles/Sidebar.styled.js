@@ -31,6 +31,10 @@ export const IconWrapper = styled.div`
 
 export const CloseIcon = styled(FaTimes)`
   color: #000;
+  margin-right: 1.5em;
+  @media screen and (max-width: 768px) {
+      margin-right: 0.5em;
+    }
 `;
 
 export const SidebarMenu = styled.div`

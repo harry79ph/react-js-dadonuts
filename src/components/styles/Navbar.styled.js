@@ -35,20 +35,39 @@ export const NavLink = styled(Link)`
 
 export const MenuWrapper = styled.div`
     display: block;
-    position: absolute;
+    position: relative;
     top: 1.2rem;
     right: 2rem;
     color: #fff;
-    p {
+    span {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: rgba(255, 0, 178, 0.7);
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        top: 20px;
+        left: 36px;
         font-weight: bold;
-        padding-left: 0.5em;
+        p {
+            display: block;
+            padding-left: 2px;
+        }
+        @media screen and (max-width: 768px) {
+        display: none;
+        }
     }
 `;
 
 export const ShoppingCart = styled(CgShoppingCart)`
     display: none;
     font-size: 3rem;
-        cursor: pointer;
+    margin-right: 0.8em;
+    cursor: pointer;
+    
     @media screen and (min-width: 768px) {
         display: inline;
     }

@@ -2,16 +2,18 @@ import NavItems from './NavItems';
 import { Nav, NavLink, MenuIcon, MenuWrapper, ShoppingCart} from './styles/Navbar.styled';
 import logo from '../images/logo.svg';
 
-const Navbar = ({toggle, text}) => {
+const Navbar = ({toggle, number}) => {
     return (
         <>
             <Nav>
-                <NavLink to='/'><img src={logo} alt="funnel" />Dadonuts</NavLink>
+                <NavLink to='/'><img src={logo} alt="Dadonuts" />Dadonuts</NavLink>
                 <NavItems />
-                <MenuWrapper onClick={toggle} text={text}>
+                <MenuWrapper onClick={toggle}>
                     <ShoppingCart />
                     <MenuIcon />
-                    <p>{text}</p>
+                    <span>
+                        <p>{number}</p>
+                    </span>
                 </MenuWrapper>
             </Nav>
         </>
