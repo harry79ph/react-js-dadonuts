@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
-export const SidebarContainer = styled.aside`
+export const SideMenuContainer = styled.aside`
   position: fixed;
   z-index: 100;
   width: 300px;
@@ -48,7 +48,7 @@ export const SidebarMenu = styled.div`
   }
 `;
 
-export const SidebarLink = styled(Link)`
+export const SideMenuLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

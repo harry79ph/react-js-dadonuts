@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import SideBar from "./SideBar";
+import SideMenu from "./SideMenu";
 import { HeroBtn, HeroContainer, HeroContent, HeroH1, HeroItems, HeroP } from "./styles/Hero.styled";
 
 const Hero = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
     return (
         <HeroContainer>
             <Navbar toggle={toggle} number={order}/>
-            <SideBar isOpen={isOpen} toggle={toggle}/>
+            <SideMenu isOpen={isOpen} toggle={toggle}/>
             <HeroContent>
                 <HeroItems>
                     <HeroH1>Tastiest doughnuts ever</HeroH1>
