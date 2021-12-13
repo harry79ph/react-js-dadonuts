@@ -5,6 +5,7 @@ export const HeroContainer = styled.div`
     background: linear-gradient(to right, rgba(255, 0, 178, 0.1), rgba(255, 0, 178, 0.01)),
     url(${BgImg});
     background-color: #cf6e9e;//If the images cannot be loaded—for instance, when the network is down—the background color will be used as a fallback.
+    /* background-color: #fec3c7; */
     height: 100vh;
     background-position: center;
     background-size: cover;
