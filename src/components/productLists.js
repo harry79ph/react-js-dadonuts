@@ -11,6 +11,8 @@ import dessert3 from '../images/desserts/dessert3.png';
 import dessert4 from '../images/desserts/dessert4.png';
 import dessert5 from '../images/desserts/dessert5.png';
 import dessert6 from '../images/desserts/dessert6.png';
+import cookie1 from '../images/cookies/cookie1.png';
+import cookie2 from '../images/cookies/cookie2.png';
 
 export const donutList = [
     {
@@ -26,7 +28,7 @@ export const donutList = [
     {
         img: donut3,
         name: 'Nutella Filled Donut',
-        price: '£2.99'
+        price: '£3.49'
     },
     {
         img: donut4,
@@ -36,17 +38,17 @@ export const donutList = [
     {
         img: donut5,
         name: 'Blueberry Donut',
-        price: '£3.49'
+        price: '£2.99'
     },
     {
         img: donut6,
         name: 'Pistachio Donut',
-        price: '£3.49'
+        price: '£2.99'
     },
     {
         img: donut7,
         name: 'Coconut Donut',
-        price: '£3.49'
+        price: '£2.99'
     }
 ];
 
@@ -80,5 +82,18 @@ export const desertList = [
         img: dessert6,
         name: 'Banoffee Pie',
         price: '£3.99'
+    }
+];
+
+export const cookieList = [
+    {
+        img: cookie1,
+        name: 'Vanilla Cookie',
+        price: '£1.49'
+    },
+    {
+        img: cookie2,
+        name: 'Chocolate Cookie',
+        price: '£1.49'
     }
 ];

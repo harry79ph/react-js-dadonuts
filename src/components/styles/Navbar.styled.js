@@ -12,7 +12,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-    background: -webkit-linear-gradient(#cc0a14, #ffd2a8);
+    background: -webkit-linear-gradient(#de00a2, #ffd2a8);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -23,8 +23,9 @@ export const NavLink = styled(Link)`
     text-decoration: none;
     cursor: pointer;
     img{
-        width: 38px;
+        width: 36px;
         margin-right: 5px;
+        transform: rotate(-20deg);
     }
 
     @media screen and (max-width: 400px) {

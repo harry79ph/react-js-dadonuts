@@ -16,9 +16,9 @@ const Hero = () => {
             <SideMenu isOpen={isOpen} toggle={toggle}/>
             <HeroContent>
                 <HeroItems>
-                    <HeroH1>Tastiest doughnuts ever</HeroH1>
+                    <HeroH1>Tastiest hand made doughnuts</HeroH1>
                     <HeroP>Irresistibly delicious!!</HeroP>
-                    <HeroBtn onClick= {() => setOrder(12)}>Order Now</HeroBtn>
+                    <HeroBtn onClick= {() => setOrder(12)}>Shop Now</HeroBtn>
                 </HeroItems>
             </HeroContent>
         </HeroContainer>

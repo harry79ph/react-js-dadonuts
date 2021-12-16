@@ -11,7 +11,7 @@ import {
     ProductPrice,
     ProductButton
 } from './styles/Products.styled';
-import { donutList, desertList } from './productLists';
+import { donutList, desertList, cookieList } from './productLists';
 
 const Products = () => {
     return (
@@ -37,6 +37,23 @@ const Products = () => {
                 <ProductsHeading>Desserts</ProductsHeading>
                 <ProductWrapper>
                     {desertList.map((product, index) => {
+                        return (
+                            <ProductCard key={index}>
+                                <ProductImg src={product.img} alt={product.name} />
+                                <ProductInfo>
+                                    <ProductTitle>{product.name}</ProductTitle>
+                                    <ProductPrice>{product.price}</ProductPrice>
+                                    <ProductButton>Add to Cart</ProductButton>
+                                </ProductInfo>
+                            </ProductCard>
+                        );
+                    })}
+                </ProductWrapper>
+            </ProductSection>
+            <ProductSection>
+                <ProductsHeading>Cookies</ProductsHeading>
+                <ProductWrapper>
+                    {cookieList.map((product, index) => {
                         return (
                             <ProductCard key={index}>
                                 <ProductImg src={product.img} alt={product.name} />
