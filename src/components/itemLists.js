@@ -13,6 +13,11 @@ import dessert5 from '../images/desserts/dessert5.png';
 import dessert6 from '../images/desserts/dessert6.png';
 import cookie1 from '../images/cookies/cookie1.png';
 import cookie2 from '../images/cookies/cookie2.png';
+import { MdOutlineDeliveryDining } from 'react-icons/md';
+import { GoPackage } from 'react-icons/go';
+import { GiDoughRoller } from 'react-icons/gi';
+
+export const navItems = ['Donuts', 'Desserts', 'Cookies'];
 
 export const donutList = [
     {
@@ -95,5 +100,26 @@ export const cookieList = [
         img: cookie2,
         name: 'Chocolate Cookie',
         price: '£1.49'
+    }
+];
+
+export const features = [
+    {
+        icon: <MdOutlineDeliveryDining />,
+        title: 'Nationwide Delivery',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        button: 'Shop Now'
+    },
+    {
+        icon: <GoPackage />,
+        title: 'Carefully Packaged',
+        desc: 'Quisque luctus dui turpis, quis semper lacus aliquam eu.',
+        button: 'More Info'
+    },
+    {
+        icon: <GiDoughRoller />,
+        title: 'Made by Hand',
+        desc: 'Quisque iaculis lacus at elit elementum ullamcorper.',
+        button: 'Learn More'
     }
 ];

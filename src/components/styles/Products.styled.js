@@ -36,6 +36,7 @@ export const ProductsHeading = styled.h1`
   font-size: clamp(2rem, 2.5vw, 3rem);
   text-align: center;
   margin: 3rem 0;
+  text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
 `;
 
 export const ProductTitle = styled.h2`
@@ -57,17 +58,17 @@ export const ProductPrice = styled.p`
 `;
 
 export const ProductButton = styled.button`
-  font-size: 1rem;
-  padding: 1rem 1.6rem;
+  font-size: 1.2rem;
+  padding: 0.7rem 1.4rem;
   border: none;
-  border-radius: 1px;
+  border-radius: 2px;
   background: #ff00b2;
   color: #fff;
   cursor: pointer;
   transition: 0.2s ease-out;
 
   &:hover {
-    background: #ffc500;
+    background: #ffd2a8;
     color: #000;
   }
 `;

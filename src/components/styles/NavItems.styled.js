@@ -15,6 +15,7 @@ export const ItemWrapper = styled.div`
 
 export const LinkItem = styled(Link)`
     color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
     text-decoration: none;
     font-size: 2rem;
     margin: 0 0.8em;
@@ -22,5 +23,6 @@ export const LinkItem = styled(Link)`
     transition: 0.2s ease-out;
     &:hover{
         color: #fff;
+        text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.3);
     }
 `;

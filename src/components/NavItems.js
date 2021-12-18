@@ -1,9 +1,10 @@
+import { navItems } from "./itemLists";
 import { ItemWrapper, LinkItem } from "./styles/NavItems.styled";
 
 const NavItems = () => {
     return (
         <ItemWrapper>
-            {['Donuts', 'Desserts', 'Cookies'].map(item => <LinkItem to='/'>{item}</LinkItem>)}
+            {navItems.map(item => <LinkItem to='/'>{item}</LinkItem>)}
         </ItemWrapper>
     );
 }

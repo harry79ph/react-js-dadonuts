@@ -11,7 +11,7 @@ import {
     ProductPrice,
     ProductButton
 } from './styles/Products.styled';
-import { donutList, desertList, cookieList } from './productLists';
+import { donutList, desertList, cookieList } from './itemLists';
 
 const Products = () => {
     return (
