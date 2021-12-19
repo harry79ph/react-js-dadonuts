@@ -1,4 +1,5 @@
 import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper } from "./styles/SideMenu.styled";
+import { products } from "./itemLists";
 
 const SideNav = ({isOpen, toggle}) => {
     return (
@@ -7,12 +8,10 @@ const SideNav = ({isOpen, toggle}) => {
                 <CloseIcon onClick={toggle}/>
             </IconWrapper>
             <SidebarMenu>
-                <SideMenuLink to='/'>Donuts</SideMenuLink>
-                <SideMenuLink to='/'>Desserts</SideMenuLink>
-                <SideMenuLink to='/'>Cookies</SideMenuLink>
+                {products.map(product => <SideMenuLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000}>{product}</SideMenuLink>)}
             </SidebarMenu>
             <SideBtnWrapper>
-                <SidebarRoute to='/'>Go to Cart</SidebarRoute>
+                <SidebarRoute to="home">Go to Cart</SidebarRoute>
             </SideBtnWrapper>
         </SideMenuContainer>
     );

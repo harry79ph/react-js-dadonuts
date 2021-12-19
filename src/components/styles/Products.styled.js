@@ -33,7 +33,8 @@ export const ProductImg = styled.img`
 `;
 
 export const ProductsHeading = styled.h1`
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: clamp(2rem, 2.2vw, 3rem);
+  text-transform: capitalize;
   text-align: center;
   margin: 3rem 0;
 `;
@@ -65,7 +66,6 @@ export const ProductButton = styled.button`
   color: #fff;
   cursor: pointer;
   transition: 0.2s ease-out;
-
   &:hover {
     background: #ffd2a8;
     color: #000;

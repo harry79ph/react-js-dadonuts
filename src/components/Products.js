@@ -11,13 +11,13 @@ import {
     ProductPrice,
     ProductButton
 } from './styles/Products.styled';
-import { donutList, desertList, cookieList } from './itemLists';
+import { products, donutList, desertList, cookieList } from './itemLists';
 
 const Products = () => {
     return (
         <ProductsContainer>
-            <ProductSection>
-                <ProductsHeading>Donuts</ProductsHeading>
+            <ProductSection id={products[0]}>
+                <ProductsHeading>{products[0]}</ProductsHeading>
                 <ProductWrapper>
                     {donutList.map((product, index) => {
                         return (
@@ -33,8 +33,8 @@ const Products = () => {
                     })}
                 </ProductWrapper>
             </ProductSection>
-            <ProductSection>
-                <ProductsHeading>Desserts</ProductsHeading>
+            <ProductSection id={products[1]}>
+                <ProductsHeading>{products[1]}</ProductsHeading>
                 <ProductWrapper>
                     {desertList.map((product, index) => {
                         return (
@@ -50,8 +50,8 @@ const Products = () => {
                     })}
                 </ProductWrapper>
             </ProductSection>
-            <ProductSection>
-                <ProductsHeading>Cookies</ProductsHeading>
+            <ProductSection id={products[2]}>
+                <ProductsHeading>{products[2]}</ProductsHeading>
                 <ProductWrapper>
                     {cookieList.map((product, index) => {
                         return (

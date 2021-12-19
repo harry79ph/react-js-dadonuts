@@ -33,7 +33,6 @@ export const HomeItems = styled.div`
   color: #fff;
   line-height: 1;
   font-weight: bold;
-
   @media screen and (max-width: 650px) {
     width: 100%;
   }

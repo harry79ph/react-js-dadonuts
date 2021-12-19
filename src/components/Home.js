@@ -5,12 +5,12 @@ const Home = () => {
     
 
     return (
-        <HomeContainer>
+        <HomeContainer id="home">
             <HomeContent>
                 <HomeItems>
                     <HomeH1>Tastiest hand made doughnuts</HomeH1>
                     <HomeP>Irresistibly delicious!!</HomeP>
-                    <HomeBtn>Shop Now</HomeBtn>
+                    <HomeBtn to="donuts">Shop Now</HomeBtn>
                 </HomeItems>
             </HomeContent>
         </HomeContainer>

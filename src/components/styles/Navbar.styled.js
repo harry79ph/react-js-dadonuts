@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { CgMenuCake } from 'react-icons/cg';
 import { CgShoppingCart } from 'react-icons/cg';
 
@@ -23,16 +23,40 @@ export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     text-decoration: none;
-    cursor: pointer;
     img{
         width: 36px;
         margin-right: 5px;
         transform: rotate(-20deg);
     }
-
     @media screen and (max-width: 400px) {
         top: 10px;
         left: 25px;
+    }
+`;
+
+export const ItemWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-right: 10em;
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+`;
+
+export const LinkItem = styled(Link)`
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: clamp(1.6rem, 2.2vw, 2rem);
+    margin: 0 0.8em;
+    font-weight: 500;
+    transition: 0.2s ease-out;
+    &:hover, &.active{
+        color: #fff;
+        text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.5);
     }
 `;
 
@@ -67,7 +91,6 @@ export const ShoppingCart = styled(CgShoppingCart)`
     font-size: 3rem;
     margin-right: 0.8em;
     cursor: pointer;
-    
     @media screen and (min-width: 992px) {
         display: inline;
     }
@@ -76,7 +99,6 @@ export const ShoppingCart = styled(CgShoppingCart)`
 export const MenuIcon = styled(CgMenuCake)`
     font-size: 3rem;
     cursor: pointer;
-
     @media screen and (min-width: 992px) {
         display: none;
     }

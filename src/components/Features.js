@@ -3,7 +3,7 @@ import { features } from './itemLists';
 import { FeatureInfo, FeatureCard, FeatureDesc, FeatureButton } from "./styles/Features.styled";
 
 
-const Lower = () => {
+const Features = () => {
     return (
         <ProductsContainer>
             <ProductSection>
@@ -27,4 +27,4 @@ const Lower = () => {
     );
 }
  
-export default Lower;
+export default Features;

@@ -1,4 +1,3 @@
-import { BrowserRouter as Router } from 'react-router-dom';
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import SideMenu from "./components/SideMenu";
@@ -16,7 +15,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <>
       <GlobalStyle />
       <Navbar toggle={toggle} />
       <SideMenu isOpen={isOpen} toggle={toggle} />
@@ -24,7 +23,7 @@ function App() {
       <Products />
       <Features />
       <Footer />
-    </Router>
+    </>
   );
 }
 
