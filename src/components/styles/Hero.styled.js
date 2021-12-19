@@ -14,7 +14,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroContent = styled.div`
-  height: min(calc(100vh - 100px), 100%);
+  height: 100vh;
   padding: 0 calc((100vw - 1300px) / 2);
 `;
 

@@ -4,15 +4,17 @@ import { CgMenuCake } from 'react-icons/cg';
 import { CgShoppingCart } from 'react-icons/cg';
 
 export const Nav = styled.nav`
-    background: transparent;
-    height: 100px;
+    background: rgba(254, 175, 196, 0.95);
+    height: 80px;
     display: flex;
     justify-content: space-between;
     font-weight: 700;
+    position: fixed;
+    width: 100%;
 `;
 
 export const NavLink = styled(Link)`
-    background: -webkit-linear-gradient(#de00a2, #ffd2a8);
+    background: -webkit-linear-gradient(#ffd2a8, #de00a2);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -57,9 +59,6 @@ export const MenuWrapper = styled.div`
             display: block;
             padding-left: 2px;
         }
-        @media screen and (max-width: 768px) {
-        display: none;
-        }
     }
 `;
 
@@ -69,7 +68,7 @@ export const ShoppingCart = styled(CgShoppingCart)`
     margin-right: 0.8em;
     cursor: pointer;
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         display: inline;
     }
 `;
@@ -78,7 +77,7 @@ export const MenuIcon = styled(CgMenuCake)`
     font-size: 3rem;
     cursor: pointer;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         display: none;
     }
 `;

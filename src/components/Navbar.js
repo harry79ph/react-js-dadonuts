@@ -12,7 +12,7 @@ const Navbar = ({toggle, number}) => {
                     <ShoppingCart />
                     <MenuIcon />
                     <span>
-                        <p>{number}</p>
+                        <p>0</p>
                     </span>
                 </MenuWrapper>
             </Nav>

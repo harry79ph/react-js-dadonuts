@@ -1,6 +1,6 @@
 import { ProductsContainer, ProductSection, ProductsHeading, ProductWrapper } from "./styles/Products.styled";
 import { features } from './itemLists';
-import { FeatureInfo, FeatureCard, FeatureTitle, FeatureDesc, FeatureButton } from "./styles/Lower.styled";
+import { FeatureInfo, FeatureCard, FeatureTitle, FeatureDesc, FeatureButton } from "./styles/Features.styled";
 
 
 const Lower = () => {

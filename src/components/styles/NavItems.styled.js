@@ -8,7 +8,7 @@ export const ItemWrapper = styled.div`
     width: 100%;
     padding-right: 10em;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         display: none;
     }
 `;
