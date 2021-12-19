@@ -10,8 +10,11 @@ const GlobalStyle = createGlobalStyle`
     button {
         font-weight: 700;
     }
-    p, h2{
+    p{
         text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.1);
+    }
+    h1, h2{
+        text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
     }
 `;
 

@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const FeatureCard = styled.div`
     margin: 2rem;
     width: 24%;
-    box-shadow: 3px 5px  1px 1px rgba(255, 210, 168, 0.7);
-    @media screen and (max-width: 1080px) {
+    box-shadow: 3px 5px 1px 1px rgba(255, 210, 168, 0.7);
+    @media screen and (max-width: 992px) {
       width: 100%;
     }
 `;
@@ -26,9 +26,6 @@ export const FeatureInfo = styled.div`
       font-size: 6rem;
       margin: 3rem;
     }
-`;
-export const FeatureTitle = styled.h2`
-  color: #ff00b2;
 `;
 
 export const FeatureDesc = styled.p`

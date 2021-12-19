@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import SideMenu from "./components/SideMenu";
 import GlobalStyle from "./theme/GlobalStyle";
-import Hero from "./components/Hero";
+import Home from "./components/Home";
 import Products from './components/Products';
 import Features from './components/Features';
 import Footer from './components/Footer';
@@ -20,7 +20,7 @@ function App() {
       <GlobalStyle />
       <Navbar toggle={toggle} />
       <SideMenu isOpen={isOpen} toggle={toggle} />
-      <Hero />
+      <Home />
       <Products />
       <Features />
       <Footer />

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
+import { BsArrowBarRight } from 'react-icons/bs';
 
 export const SideMenuContainer = styled.aside`
   position: fixed;
@@ -29,8 +29,9 @@ export const IconWrapper = styled.div`
   cursor: pointer;
 `;
 
-export const CloseIcon = styled(FaTimes)`
+export const CloseIcon = styled(BsArrowBarRight)`
   color: #000;
+  font-size: 2.4rem;
   margin-right: 1.5em;
   @media screen and (max-width: 768px) {
       margin-right: 0.5em;

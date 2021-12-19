@@ -12,7 +12,7 @@ const SideNav = ({isOpen, toggle}) => {
                 <SideMenuLink to='/'>Cookies</SideMenuLink>
             </SidebarMenu>
             <SideBtnWrapper>
-                <SidebarRoute to='/'>Order Now</SidebarRoute>
+                <SidebarRoute to='/'>Go to Cart</SidebarRoute>
             </SideBtnWrapper>
         </SideMenuContainer>
     );

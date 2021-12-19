@@ -48,7 +48,7 @@ export const MenuWrapper = styled.div`
         justify-content: center;
         align-items: center;
         color: #fff;
-        background-color: rgba(255, 0, 178, 0.7);
+        background-color: #ff00b2;
         border-radius: 50%;
         width: 22px;
         height: 22px;
@@ -68,7 +68,7 @@ export const ShoppingCart = styled(CgShoppingCart)`
     margin-right: 0.8em;
     cursor: pointer;
     
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 992px) {
         display: inline;
     }
 `;
@@ -77,7 +77,7 @@ export const MenuIcon = styled(CgMenuCake)`
     font-size: 3rem;
     cursor: pointer;
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 992px) {
         display: none;
     }
 `;

@@ -1,6 +1,6 @@
 import { ProductsContainer, ProductSection, ProductsHeading, ProductWrapper } from "./styles/Products.styled";
 import { features } from './itemLists';
-import { FeatureInfo, FeatureCard, FeatureTitle, FeatureDesc, FeatureButton } from "./styles/Features.styled";
+import { FeatureInfo, FeatureCard, FeatureDesc, FeatureButton } from "./styles/Features.styled";
 
 
 const Lower = () => {
@@ -14,7 +14,7 @@ const Lower = () => {
                             <FeatureCard key={index}>
                                 <FeatureInfo>
                                     {feature.icon}
-                                    <FeatureTitle>{feature.title}</FeatureTitle>
+                                    <h2>{feature.title}</h2>
                                     <FeatureDesc>{feature.desc}</FeatureDesc>
                                     <FeatureButton>{feature.button}</FeatureButton>
                                 </FeatureInfo>   
