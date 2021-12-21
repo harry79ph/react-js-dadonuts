@@ -9,13 +9,13 @@ const Navbar = ({ toggle }) => {
             <Nav>
                 <NavLink onClick={() => scroll.scrollToTop()}><img src={logo} alt="Dadonuts" />Dadonuts</NavLink>
                 <ItemWrapper>
-                    {products.map(product => <LinkItem activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000}>{product}</LinkItem>)}
+                    {products.map(product => <LinkItem activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700}>{product}</LinkItem>)}
                 </ItemWrapper>
                 <MenuWrapper onClick={toggle}>
                     <ShoppingCart />
                     <MenuIcon />
                     <span>
-                        <p>0</p>
+                        <p>3</p>
                     </span>
                 </MenuWrapper>
             </Nav>

@@ -10,7 +10,7 @@ const Home = () => {
                 <HomeItems>
                     <HomeH1>Tastiest hand made doughnuts</HomeH1>
                     <HomeP>Irresistibly delicious!!</HomeP>
-                    <HomeBtn to="donuts">Shop Now</HomeBtn>
+                    <HomeBtn activeClass="active" to="donuts" spy={true} smooth={true} offset={-120} duration={1000}>Shop Now</HomeBtn>
                 </HomeItems>
             </HomeContent>
         </HomeContainer>

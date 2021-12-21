@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from "react-scroll";
+import { Link } from 'react-scroll';
 import { BsArrowBarRight } from 'react-icons/bs';
 
 export const SideMenuContainer = styled.aside`
@@ -15,6 +15,7 @@ export const SideMenuContainer = styled.aside`
   right: ${({ isOpen }) => (isOpen ? '0' : '-400px')};
   @media screen and (max-width: 400px) {
     width: 100%;
+    background: rgba(255, 210, 168, 0.7);
   }
 `;
 
@@ -48,7 +49,7 @@ export const SideMenuLink = styled(Link)`
   align-items: center;
   justify-content: center;
   color: #000;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-decoration: none;
   text-transform: capitalize;
   list-style: none;
@@ -67,9 +68,10 @@ export const SideBtnWrapper = styled.div`
 export const SidebarRoute = styled(Link)`
   background: #ff00b2;
   white-space: nowrap;
-  padding: 16px 64px;
+  padding: 10px 24px;
   color: #fff;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 700;
   border-radius: 3px;
   border: none;
   transition: 0.2s ease-in-out;

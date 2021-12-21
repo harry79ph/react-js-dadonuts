@@ -19,7 +19,7 @@ import { GiDoughRoller } from 'react-icons/gi';
 
 export const products = ['donuts', 'desserts', 'cookies'];
 
-export const donutList = [
+const donutList = [
     {
         img: donut1,
         name: 'Glazed Donut',
@@ -57,7 +57,7 @@ export const donutList = [
     }
 ];
 
-export const desertList = [
+const desertList = [
     {
         img: dessert1,
         name: 'Raspberry Cheesecake',
@@ -90,7 +90,7 @@ export const desertList = [
     }
 ];
 
-export const cookieList = [
+const cookieList = [
     {
         img: cookie1,
         name: 'Vanilla Cookie',
@@ -102,6 +102,8 @@ export const cookieList = [
         price: '£1.49'
     }
 ];
+
+export const sections = [donutList, desertList, cookieList];
 
 export const features = [
     {

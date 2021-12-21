@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Link } from 'react-scroll';
 import BgImg from '../../images/doughnut-bg.jpg';
 
 export const HomeContainer = styled.div`
@@ -51,16 +52,14 @@ export const HomeP = styled.p`
   margin-bottom: 2rem;
 `;
 
-export const HomeBtn = styled.button`
+export const HomeBtn = styled(Link)`
   font-size: 1.6rem;
-  padding: 0.8rem 3rem;
+  padding: 1rem 3rem;
   border: none;
   border-radius: 3px;
   background: #ff00b2;
   color: #fff;
-  cursor: pointer;
   transition: 0.2s ease-out;
-
   &:hover {
     background: #ffd2a8;
     color: #000;

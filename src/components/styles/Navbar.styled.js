@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from "react-scroll";
+import { Link } from 'react-scroll';
 import { CgMenuCake } from 'react-icons/cg';
 import { CgShoppingCart } from 'react-icons/cg';
 
@@ -23,14 +23,18 @@ export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     text-decoration: none;
-    img{
+    img {
         width: 36px;
         margin-right: 5px;
         transform: rotate(-20deg);
     }
-    @media screen and (max-width: 400px) {
-        top: 10px;
-        left: 25px;
+    @media screen and (max-width: 992px) {
+        margin-left: 1em;
+        font-size: 1.5rem;
+        img {
+            width: 27px;
+            margin-right: 4px;
+        }
     }
 `;
 
@@ -63,7 +67,7 @@ export const LinkItem = styled(Link)`
 export const MenuWrapper = styled.div`
     display: block;
     position: relative;
-    top: 1.2rem;
+    top: 0.8rem;
     right: 2rem;
     color: #fff;
     span {
