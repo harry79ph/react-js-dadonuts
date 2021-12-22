@@ -11,6 +11,9 @@ export const Nav = styled.nav`
     font-weight: 700;
     position: fixed;
     width: 100%;
+    @media screen and (max-width: 992px) {
+        height: 50px;
+    }
 `;
 
 export const NavLink = styled(Link)`
@@ -87,6 +90,9 @@ export const MenuWrapper = styled.div`
             display: block;
             padding-left: 2px;
         }
+    }
+    @media screen and (max-width: 768px) {
+        top: 0;
     }
 `;
 

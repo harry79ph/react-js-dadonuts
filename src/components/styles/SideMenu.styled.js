@@ -8,12 +8,18 @@ export const SideMenuContainer = styled.aside`
   width: 300px;
   height: 100%;
   background: rgba(255, 210, 168, 0.95);
-  display: grid;
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 2.5fr 0.5fr 5fr 1fr;
+  justify-items: stretch;
   align-items: center;
   top: 0;
   transition: 0.3s ease-in-out;
   right: ${({ isOpen }) => (isOpen ? '0' : '-400px')};
-  @media screen and (max-width: 400px) {
+  @media screen and (min-width: 992px) {
+    grid-template-rows: 1.6fr 8fr 1.6fr;
+  }
+  @media screen and (max-width: 350px) {
     width: 100%;
     background: rgba(255, 210, 168, 0.7);
   }
@@ -22,11 +28,14 @@ export const SideMenuContainer = styled.aside`
 export const IconWrapper = styled.div`
   position: absolute;
   top: 1.6rem;
-  left: 2.6rem;
+  left: 1.6rem;
   background: transparent;
   border: transparent;
-  font-size: 2rem;
   cursor: pointer;
+  @media screen and (max-width: 768px) {
+    top: 0.4rem;
+    left: 1.4rem;
+  }
 `;
 
 export const CloseIcon = styled(BsArrowBarRight)`
@@ -35,12 +44,35 @@ export const CloseIcon = styled(BsArrowBarRight)`
 `;
 
 export const SidebarMenu = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 80px);
+  display: flex;
+  flex-direction: column;
+  h2 {
+    padding-top: 1rem;
+    text-align: center;
+  }
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+`;
+
+export const CartHeader = styled.h2`
   text-align: center;
-  @media screen and (max-width: 480px) {
-    grid-template-rows: repeat(3, 60px);
+  @media screen and (min-width: 992px) {
+    padding-top: 60px;
+  }
+`;
+
+export const CartContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  overflow-y: auto;
+  ul {
+    li {
+      font-size: 1.4rem;
+    }
   }
 `;
 
