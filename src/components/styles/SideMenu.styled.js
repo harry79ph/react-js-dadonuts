@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as RouteLink } from "react-router-dom";
 import { Link } from 'react-scroll';
 import { BsArrowBarRight } from 'react-icons/bs';
 
@@ -8,6 +9,7 @@ export const SideMenuContainer = styled.aside`
   width: 300px;
   height: 100%;
   background: rgba(255, 210, 168, 0.95);
+  text-shadow: 0px 0px 3px rgba(255, 210, 168);
   display: grid; 
   grid-template-columns: 1fr; 
   grid-template-rows: 2.5fr 0.5fr 5fr 1fr;
@@ -16,6 +18,9 @@ export const SideMenuContainer = styled.aside`
   top: 0;
   transition: 0.3s ease-in-out;
   right: ${({ isOpen }) => (isOpen ? '0' : '-400px')};
+  h2 {
+    text-shadow: 0px 0px 3px rgba(255, 210, 168);
+  }
   @media screen and (min-width: 992px) {
     grid-template-rows: 1.6fr 8fr 1.6fr;
   }
@@ -33,7 +38,7 @@ export const IconWrapper = styled.div`
   border: transparent;
   cursor: pointer;
   @media screen and (max-width: 768px) {
-    top: 0.4rem;
+    top: 0.8rem;
     left: 1.4rem;
   }
 `;
@@ -41,14 +46,17 @@ export const IconWrapper = styled.div`
 export const CloseIcon = styled(BsArrowBarRight)`
   color: #000;
   font-size: 2.4rem;
+  filter: drop-shadow(0px 0px 3px rgba(255, 210, 168));
 `;
 
 export const SidebarMenu = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
   h2 {
-    padding-top: 1rem;
     text-align: center;
+    /* text-shadow: 0px 0px 3px rgba(255, 210, 168); */
   }
   @media screen and (min-width: 992px) {
     display: none;
@@ -57,6 +65,7 @@ export const SidebarMenu = styled.div`
 
 export const CartHeader = styled.h2`
   text-align: center;
+  text-shadow: 0px 0px 3px rgba(255, 210, 168);
   @media screen and (min-width: 992px) {
     padding-top: 60px;
   }
@@ -85,7 +94,7 @@ export const SideMenuLink = styled(Link)`
   text-decoration: none;
   text-transform: capitalize;
   list-style: none;
-  text-shadow: 0px 0px 3px rgba(255, 210, 168);
+  /* text-shadow: 0px 0px 3px rgba(255, 210, 168); */
   transition: 0.2s ease-in-out;
   &:hover, &.active{
     color: #fff;
@@ -97,7 +106,7 @@ export const SideBtnWrapper = styled.div`
   justify-content: center;
 `;
 
-export const SidebarRoute = styled(Link)`
+export const SidebarRoute = styled(RouteLink)`
   background: #ff00b2;
   white-space: nowrap;
   padding: 10px 24px;

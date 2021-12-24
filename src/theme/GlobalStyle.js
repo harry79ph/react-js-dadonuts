@@ -22,6 +22,9 @@ const GlobalStyle = createGlobalStyle`
     li {
         list-style: none;
     }
+    svg {
+        filter: drop-shadow(0px 0px 3px rgba(255, 0, 178, 0.1));
+    }
 `;
 
 export default GlobalStyle;

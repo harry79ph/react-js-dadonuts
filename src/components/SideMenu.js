@@ -1,7 +1,7 @@
 import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader } from "./styles/SideMenu.styled";
 import { products } from "./itemLists";
 
-const SideNav = ({isOpen, toggle}) => {
+const SideMenu = ({isOpen, toggle}) => {
     return (
         <SideMenuContainer isOpen={isOpen} onClick={toggle}>
             <IconWrapper>
@@ -37,10 +37,10 @@ const SideNav = ({isOpen, toggle}) => {
                 </ul>
             </CartContent>
             <SideBtnWrapper>
-                <SidebarRoute to="home">Go to Cart</SidebarRoute>
+                <SidebarRoute to="cart">Go to Cart</SidebarRoute>
             </SideBtnWrapper>
         </SideMenuContainer>
     );
 }
  
-export default SideNav;
+export default SideMenu;

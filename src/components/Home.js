@@ -3,7 +3,6 @@ import { HomeBtn, HomeContainer, HomeContent, HomeH1, HomeItems, HomeP } from ".
 
 const Home = () => {
     
-
     return (
         <HomeContainer id="home">
             <HomeContent>

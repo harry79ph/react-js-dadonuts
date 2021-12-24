@@ -1,30 +1,21 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import SideMenu from "./components/SideMenu";
+import React from "react";
 import GlobalStyle from "./theme/GlobalStyle";
-import Home from "./components/Home";
-import Products from './components/Products';
-import Features from './components/Features';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Cart from "./components/Cart";
+import Main from "./Main";
 
-function App() {
-
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  }
-
-  return (
-    <>
-      <GlobalStyle />
-      <Navbar toggle={toggle} />
-      <SideMenu isOpen={isOpen} toggle={toggle} />
-      <Home />
-      <Products />
-      <Features />
-      <Footer />
-    </>
-  );
+const App = () => {
+    return (
+        <Router>
+            <GlobalStyle />
+            <Routes>
+                <Route exact path="/" element={<Main />}/>
+            </Routes>
+            <Routes>
+                <Route path="/cart" element={<Cart />}/>
+            </Routes>
+        </Router>
+    );
 }
-
+ 
 export default App;

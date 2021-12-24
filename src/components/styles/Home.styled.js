@@ -17,7 +17,7 @@ export const HomeContainer = styled.div`
 export const HomeContent = styled.div`
   height: 100vh;
   padding: 0 calc((100vw - 1300px) / 2);
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 420px) {
     padding-top: 30vh;
   }
 `;

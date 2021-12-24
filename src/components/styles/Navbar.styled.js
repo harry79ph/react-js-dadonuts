@@ -3,16 +3,17 @@ import { Link } from 'react-scroll';
 import { CgMenuCake } from 'react-icons/cg';
 import { CgShoppingCart } from 'react-icons/cg';
 
-export const Nav = styled.nav`
+export const NavContainer = styled.nav`
     background: rgba(254, 175, 196, 0.95);
     height: 80px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: 700;
-    position: fixed;
+    position: ${props => props.position || "fixed"};
     width: 100%;
-    @media screen and (max-width: 992px) {
-        height: 50px;
+    @media screen and (max-width: 650px) {
+        height: 60px;
     }
 `;
 
@@ -31,12 +32,20 @@ export const NavLink = styled(Link)`
         margin-right: 5px;
         transform: rotate(-20deg);
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 650px) {
         margin-left: 1em;
         font-size: 1.5rem;
         img {
             width: 27px;
             margin-right: 4px;
+        }
+    }
+    @media screen and (max-width: 420px) {
+        margin-left: 0.6em;
+        font-size: 1.5rem;
+        img {
+            width: 24px;
+            margin-right: 3px;
         }
     }
 `;
@@ -46,9 +55,8 @@ export const ItemWrapper = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-right: 10em;
     @media screen and (max-width: 992px) {
-        display: none;
+        display: ${props => props.display};
     }
 `;
 
@@ -70,8 +78,6 @@ export const LinkItem = styled(Link)`
 export const MenuWrapper = styled.div`
     display: block;
     position: relative;
-    top: 0.8rem;
-    right: 2rem;
     color: #fff;
     span {
         position: absolute;
@@ -91,25 +97,45 @@ export const MenuWrapper = styled.div`
             padding-left: 2px;
         }
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 650px) {
         top: 0;
+        right: ${props => props.right || "2rem"};
+        span {
+            width: 20px;
+            height: 20px;
+            top: 16px;
+            left: 30px;
+        }
     }
 `;
 
 export const ShoppingCart = styled(CgShoppingCart)`
-    display: none;
+    display: inline;
     font-size: 3rem;
-    margin-right: 0.8em;
+    margin-right: 1.6em;
     cursor: pointer;
-    @media screen and (min-width: 992px) {
-        display: inline;
+    @media screen and (max-width: 650px) {
+        display: ${props => props.display || "none"};
+        font-size: 3rem;
+        margin-right: 0.6em;
+    }
+    @media screen and (max-width: 420px) {
+        font-size: 2.4rem;
     }
 `;
 
 export const MenuIcon = styled(CgMenuCake)`
+    display: none;
     font-size: 3rem;
+    margin-right: 1.6em;
     cursor: pointer;
-    @media screen and (min-width: 992px) {
-        display: none;
+    @media screen and (max-width: 650px) {
+        display: inline;
+        font-size: 3rem;
+        margin-right: 0.1em;
+    }
+    @media screen and (max-width: 420px) {
+        font-size: 2.4rem;
+        margin-right: 0;
     }
 `;
