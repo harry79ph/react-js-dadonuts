@@ -113,7 +113,7 @@ export const ShoppingCart = styled(CgShoppingCart)`
     display: inline;
     font-size: 3rem;
     margin-right: 1.6em;
-    cursor: pointer;
+    cursor: ${props => props.cursor || "pointer"};
     @media screen and (max-width: 650px) {
         display: ${props => props.display || "none"};
         font-size: 3rem;

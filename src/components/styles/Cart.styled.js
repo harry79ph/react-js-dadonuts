@@ -3,17 +3,17 @@ import { CgTrash } from 'react-icons/cg';
 
 export const CartContainer = styled.div`
     color: #000;
+    max-width: 100vw;
     line-height: 1;
 `;
 
 export const CartContent = styled.div`
     background-color: #ffe4e6;
-    height: 1000px;
+    padding: clamp(0.6rem, 3.6vw, 4rem);;
 `;
 
 export const CartList = styled.ul`
     background-color: #fff;
-    height: 800px;
 `;
 
 export const CartItem = styled.li`
@@ -25,7 +25,7 @@ export const CartItem = styled.li`
     background-color: red;
     min-height: 100px;
     transition: all .2s cubic-bezier(0, 0, .2, 1);
-    padding: 1.25rem;
+    padding: 1rem;
 `;
 
 export const ItemImg = styled.img`
@@ -42,17 +42,21 @@ export const InnerWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - 120px);
+    width: calc(100% - 80px);
     background: yellow;
 `;
 
 export const ItemContent = styled.div`
     padding-left: 1.25rem;
+    flex-grow: 1;
 `;
 
 export const ItemInfo = styled.div`
+    flex-grow: 5;
     display: flex;
+    background-color: green;
     align-items: center;
+    justify-content: space-between;
     padding-right: 0;
     padding-left: 1.25rem;
     @media screen and (min-width: 650px) {
@@ -69,6 +73,7 @@ export const ItemQuantity = styled.select`
 
 export const ItemTotal = styled.div`
     min-width: 3rem;
+    text-align: center;
 `;
 
 export const ItemRemove = styled.div`
