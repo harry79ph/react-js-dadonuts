@@ -1,9 +1,13 @@
 import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader } from "./styles/SideMenu.styled";
 import { products } from "./itemLists";
+import { CartState } from "../context/Context";
 
 const SideMenu = ({isOpen, toggle}) => {
+    const cartContex =  CartState();
+    console.log(cartContex);
+    const { state: { cart }, dispatch } = CartState();
     return (
-        <SideMenuContainer isOpen={isOpen} onClick={toggle}>
+        <SideMenuContainer isOpen={isOpen}>
             <IconWrapper>
                 <CloseIcon onClick={toggle}/>
             </IconWrapper>
@@ -14,26 +18,22 @@ const SideMenu = ({isOpen, toggle}) => {
             <CartHeader>Shopping Cart</CartHeader>
             <CartContent>
                 <ul>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
-                    <li>Cart is Empty!</li>
+                    {cart.length > 0 ? (
+                        <>
+                            {cart.map(item => {
+                            return (
+                                <li><span>{item.name}</span><button onClick={
+                                    () => { dispatch({
+                                        type: 'REMOVE_FROM_CART',
+                                        payload: item
+                                    }) }
+                                }>X</button> </li>
+                            );
+                        })}
+                        </>
+                    ) : (
+                        <li>Cart is Empty!</li>
+                    )}
                 </ul>
             </CartContent>
             <SideBtnWrapper>

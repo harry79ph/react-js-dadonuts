@@ -2,8 +2,12 @@ import { NavContainer, NavLink, ItemWrapper, LinkItem, MenuIcon, MenuWrapper, Sh
 import logo from '../images/logo.svg';
 import { products } from "./itemLists";
 import { animateScroll as scroll } from "react-scroll";
+import { CartState } from '../context/Context';
 
 const Navbar = ({ toggle }) => {
+    const cartContex =  CartState();
+    console.log(cartContex);
+    const { state: { cart } } = CartState();
     return (
         <>
             <NavContainer>
@@ -15,7 +19,7 @@ const Navbar = ({ toggle }) => {
                     <ShoppingCart />
                     <MenuIcon />
                     <span>
-                        <p>3</p>
+                        <p>{cart.length}</p>
                     </span>
                 </MenuWrapper>
             </NavContainer>

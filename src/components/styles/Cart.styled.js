@@ -9,7 +9,7 @@ export const CartContainer = styled.div`
 
 export const CartContent = styled.div`
     background-color: #ffe4e6;
-    padding: clamp(0.6rem, 3.6vw, 4rem);;
+    padding: clamp(0.6rem, 3.6vw, 4rem);
 `;
 
 export const CartList = styled.ul`
@@ -24,8 +24,11 @@ export const CartItem = styled.li`
     overflow: hidden;
     background-color: red;
     min-height: 100px;
-    transition: all .2s cubic-bezier(0, 0, .2, 1);
+    transition: all .2s ease-out;
     padding: 1rem;
+    @media screen and (max-width: 650px) {
+        padding: 0;
+    }
 `;
 
 export const ItemImg = styled.img`
@@ -54,7 +57,7 @@ export const ItemContent = styled.div`
 export const ItemInfo = styled.div`
     flex-grow: 5;
     display: flex;
-    background-color: green;
+    background-color: lime;
     align-items: center;
     justify-content: space-between;
     padding-right: 0;
