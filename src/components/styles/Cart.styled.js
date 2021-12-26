@@ -43,7 +43,10 @@ export const NavLink = styled(Link)`
 
 export const CartContent = styled.div`
     background-color: #ffe4e6;
-    padding: clamp(0.6rem, 3.6vw, 4rem);
+    padding: 0 clamp(3rem, 5vw, 8rem);
+    @media screen and (max-width: 650px) {
+        padding: 0 clamp(0.6rem, 2.6vw, 4rem);
+    }
 `;
 
 export const CartList = styled.ul`
@@ -67,7 +70,7 @@ export const CartItem = styled.li`
 
 export const ItemImg = styled.img`
     display: block;
-    height: 90px;
+    height: 100px;
     min-width: 60px;
     max-width: 100%;
     @media screen and (max-width: 650px) {
@@ -77,29 +80,26 @@ export const ItemImg = styled.img`
 
 export const InnerWrap = styled.div`
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - 80px);
+    width: calc(100% - 100px);
     background: yellow;
+    @media screen and (max-width: 650px) {
+        width: calc(100% - 80px);
+    }
 `;
 
 export const ItemContent = styled.div`
-    padding-left: 1.25rem;
-    flex-grow: 1;
+    flex-grow: 2;
 `;
 
 export const ItemInfo = styled.div`
-    flex-grow: 5;
     display: flex;
+    flex-grow: 3;
     background-color: lime;
     align-items: center;
     justify-content: space-between;
-    padding-right: 0;
-    padding-left: 1.25rem;
-    @media screen and (min-width: 650px) {
-        display: flex;
-        align-items: center;
-    }
 `;
 
 export const ItemQuantity = styled.select`

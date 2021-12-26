@@ -92,10 +92,6 @@ export const MenuWrapper = styled.div`
         top: 20px;
         left: 36px;
         font-weight: bold;
-        p {
-            display: block;
-            padding-left: 2px;
-        }
     }
     @media screen and (max-width: 650px) {
         top: 0;
