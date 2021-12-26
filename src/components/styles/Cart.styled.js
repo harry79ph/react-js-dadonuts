@@ -1,10 +1,44 @@
 import styled from 'styled-components';
 import { CgTrash } from 'react-icons/cg';
+import { Link } from 'react-router-dom';
 
 export const CartContainer = styled.div`
     color: #000;
     max-width: 100vw;
     line-height: 1;
+`;
+
+export const NavLink = styled(Link)`
+    background: -webkit-linear-gradient(#ffd2a8, #de00a2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 1.8em;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    img {
+        width: 36px;
+        margin-right: 5px;
+        transform: rotate(-20deg);
+    }
+    @media screen and (max-width: 650px) {
+        margin-left: 1em;
+        font-size: 1.5rem;
+        img {
+            width: 27px;
+            margin-right: 4px;
+        }
+    }
+    @media screen and (max-width: 420px) {
+        margin-left: 0.6em;
+        font-size: 1.5rem;
+        img {
+            width: 24px;
+            margin-right: 3px;
+        }
+    }
 `;
 
 export const CartContent = styled.div`
@@ -14,6 +48,7 @@ export const CartContent = styled.div`
 
 export const CartList = styled.ul`
     background-color: #fff;
+    transition: all .2s ease-out;
 `;
 
 export const CartItem = styled.li`
@@ -24,7 +59,6 @@ export const CartItem = styled.li`
     overflow: hidden;
     background-color: red;
     min-height: 100px;
-    transition: all .2s ease-out;
     padding: 1rem;
     @media screen and (max-width: 650px) {
         padding: 0;
@@ -85,7 +119,7 @@ export const ItemRemove = styled.div`
 
 export const RemoveIcon = styled(CgTrash)`
     display: inline;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     cursor: pointer;
     @media screen and (max-width: 650px) {
         display: ${props => props.display || "none"};

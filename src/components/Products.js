@@ -15,8 +15,9 @@ import { products, sections } from './itemLists';
 import { CartState } from '../context/Context';
 
 const Products = () => {
+    
     const { state: { cart }, dispatch } = CartState();
-    console.log(cart);
+
     return (
         <ProductsContainer>
             {sections.map((section, i) => {
@@ -30,7 +31,7 @@ const Products = () => {
                                         <ProductImg src={product.img} alt={product.name} />
                                         <ProductInfo>
                                             <ProductTitle>{product.name}</ProductTitle>
-                                            <ProductPrice>{product.price}</ProductPrice>
+                                            <ProductPrice>£{product.price}</ProductPrice>
                                             {cart.some((p) => p.id === product.id) ? (
                                                 <ProductButton onClick={() => dispatch({
                                                     type: 'REMOVE_FROM_CART',

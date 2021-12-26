@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import BgImg from '../../images/doughnut-bg.jpg';
 
 export const HomeContainer = styled.div`
-    background: linear-gradient(to right, rgba(255, 0, 178, 0.15), rgba(255, 0, 178, 0.01)),
+    background-image: linear-gradient(to right, rgba(255, 0, 178, 0.15), rgba(255, 0, 178, 0.01)),
     url(${BgImg});
     background-color: #fec3c7;//If the images cannot be loaded—for instance, when the network is down—the background color will be used as a fallback.
     height: 100vh;
@@ -34,6 +34,7 @@ export const HomeItems = styled.div`
   color: #fff;
   line-height: 1;
   font-weight: bold;
+  transition: all .2s ease-out;
   @media screen and (max-width: 650px) {
     width: 100%;
   }

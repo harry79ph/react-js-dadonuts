@@ -6,6 +6,7 @@ const SideMenu = ({isOpen, toggle}) => {
     const cartContex =  CartState();
     console.log(cartContex);
     const { state: { cart }, dispatch } = CartState();
+    console.log(cart);
     return (
         <SideMenuContainer isOpen={isOpen}>
             <IconWrapper>
@@ -26,8 +27,8 @@ const SideMenu = ({isOpen, toggle}) => {
                                     () => { dispatch({
                                         type: 'REMOVE_FROM_CART',
                                         payload: item
-                                    }) }
-                                }>X</button> </li>
+                                    });}
+                                }>X</button></li>
                             );
                         })}
                         </>

@@ -5,9 +5,9 @@ import { animateScroll as scroll } from "react-scroll";
 import { CartState } from '../context/Context';
 
 const Navbar = ({ toggle }) => {
-    const cartContex =  CartState();
-    console.log(cartContex);
+    
     const { state: { cart } } = CartState();
+    
     return (
         <>
             <NavContainer>

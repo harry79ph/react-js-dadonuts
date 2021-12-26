@@ -23,43 +23,43 @@ const donutList = [
     {
         img: donut1,
         name: 'Glazed Donut',
-        price: '£2.49',
+        price: '2.49',
         id: 1
     },
     {
         img: donut2,
         name: 'Chocolate Donut',
-        price: '£2.99',
+        price: '2.99',
         id: 2
     },
     {
         img: donut3,
         name: 'Nutella Filled Donut',
-        price: '£3.49',
+        price: '3.49',
         id: 3
     },
     {
         img: donut4,
         name: 'Tiramisu Filled Donut',
-        price: '£3.49',
+        price: '3.49',
         id: 4
     },
     {
         img: donut5,
         name: 'Blueberry Donut',
-        price: '£2.99',
+        price: '2.99',
         id: 5
     },
     {
         img: donut6,
         name: 'Pistachio Donut',
-        price: '£2.99',
+        price: '2.99',
         id: 6
     },
     {
         img: donut7,
         name: 'Coconut Donut',
-        price: '£2.99',
+        price: '2.99',
         id: 7
     }
 ];
@@ -68,37 +68,37 @@ const desertList = [
     {
         img: dessert1,
         name: 'Raspberry Cheesecake',
-        price: '£3.99',
+        price: '3.99',
         id: 8
     },
     {
         img: dessert2,
         name: 'Lemon Cheesecake',
-        price: '£3.99',
+        price: '3.99',
         id: 9
     },
     {
         img: dessert3,
         name: 'Caramel Cheesecake',
-        price: '£3.99',
+        price: '3.99',
         id: 10
     },
     {
         img: dessert4,
         name: 'Oreo Cheesecake',
-        price: '£3.99',
+        price: '3.99',
         id: 11
     },
     {
         img: dessert5,
         name: 'Tiramisu',
-        price: '£3.99',
+        price: '3.99',
         id: 12
     },
     {
         img: dessert6,
         name: 'Banoffee Pie',
-        price: '£3.99',
+        price: '3.99',
         id: 13
     }
 ];
@@ -107,13 +107,13 @@ const cookieList = [
     {
         img: cookie1,
         name: 'Vanilla Cookie',
-        price: '£1.49',
+        price: '1.49',
         id: 14
     },
     {
         img: cookie2,
         name: 'Chocolate Cookie',
-        price: '£1.49',
+        price: '1.49',
         id: 15
     }
 ];
