@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { ProductButton } from './Products.styled';
 
 export const CartContainer = styled.div`
-    color: #000;
-    max-width: 100vw;
+    color: #26001b;
+    background-color: #fff9fd;
+    min-height: 100vh;
     line-height: 1;
 `;
 
@@ -42,12 +43,13 @@ export const NavLink = styled(Link)`
 `;
 
 export const CartContent = styled.div`
-    background-color: #ffe4e6;
     padding: 0 clamp(3rem, 5vw, 8rem);
     h1 {
+        font-size: clamp(1.8rem, 2.2vw, 2.4rem);
         margin: 1em 0;
     }
     h3 {
+        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
         display: inline-block;
     }
     @media screen and (max-width: 650px) {
@@ -56,7 +58,6 @@ export const CartContent = styled.div`
 `;
 
 export const CartList = styled.ul`
-    background-color: #fff;
     transition: all .2s ease-out;
 `;
 
@@ -66,9 +67,9 @@ export const CartItem = styled.li`
     align-content: stretch;
     margin-bottom: 1.25rem;
     overflow: hidden;
-    background-color: red;
     min-height: 100px;
     padding: 1rem;
+    box-shadow: 1px 2px 1px 1px rgba(255, 210, 168, 0.7);
     @media screen and (max-width: 650px) {
         padding: 0;
     }
@@ -90,7 +91,10 @@ export const InnerWrap = styled.div`
     align-items: center;
     justify-content: space-between;
     width: calc(100% - 100px);
-    background: yellow;
+    span {
+        margin: 0 min(0.6vw, 10px);
+        font-size: clamp(1rem, 1.6vw, 1.4rem);
+    }
     @media screen and (max-width: 650px) {
         width: calc(100% - 80px);
     }
@@ -100,27 +104,37 @@ export const ItemContent = styled.div`
     flex-grow: 2;
     max-width: 40%;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
+    h3 {
+        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    }
 `;
 
 export const ItemInfo = styled.div`
     display: flex;
     flex-grow: 3;
-    background-color: lime;
     align-items: center;
     justify-content: space-between;
+    span {
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+    }
 `;
 
 export const QuantityWrap = styled.div`
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     flex-grow: 3;
 `;
 
 export const ItemQuantity = styled.select`
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: inherit;
+    border-radius: 3px;
     option {
-        background-color: #fff;
         text-align: center;
     }
 `;
@@ -132,19 +146,16 @@ export const ItemTotal = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     padding-left: 2px;
-    span {
-        font-size: 1.2em;
-    }
 `;
 
 export const ItemRemove = styled.div`
     padding-left: 0;
-    flex-grow: 1;
 `;
 
 export const RemoveIcon = styled(CgTrash)`
     display: inline;
     font-size: 2.2rem;
+    color: inherit;
     cursor: pointer;
     @media screen and (max-width: 650px) {
         display: ${props => props.display || "none"};
@@ -155,10 +166,12 @@ export const RemoveIcon = styled(CgTrash)`
 export const SubtotalWrap = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     margin: 1em 0;
-    h3 {
-        font-size: 1.4rem;
+    h2 {
+        font-size: clamp(1.4rem, 2vw, 1.7rem);
+        margin: 1em 5px;
     }
     button {
         margin: 5px;
@@ -168,5 +181,9 @@ export const SubtotalWrap = styled.div`
 export const CartButton = styled(ProductButton)`
     a {
         color: inherit;
+    }
+    @media screen and (max-width: 650px) {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
     }
 `;

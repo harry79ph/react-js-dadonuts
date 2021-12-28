@@ -33,7 +33,7 @@ const Products = () => {
                                             <ProductTitle>{product.name}</ProductTitle>
                                             <ProductPrice>£{product.price}</ProductPrice>
                                             {cart.some((p) => p.id === product.id) ? (
-                                                <ProductButton onClick={() => dispatch({
+                                                <ProductButton className='active' onClick={() => dispatch({
                                                     type: 'REMOVE_FROM_CART',
                                                     payload: product
                                                 })}>Remove from Cart</ProductButton>

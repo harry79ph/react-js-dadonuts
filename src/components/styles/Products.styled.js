@@ -21,7 +21,7 @@ export const ProductWrapper = styled.div`
 export const ProductCard = styled.div`
   margin: 2rem;
   width: 250px;
-  box-shadow: 3px 5px  1px 1px rgba(255, 210, 168, 0.7);
+  box-shadow: 1px 2px 1px 1px rgba(255, 210, 168, 0.7);
 `;
 
 export const ProductImg = styled.img`
@@ -66,7 +66,7 @@ export const ProductButton = styled.button`
   color: #fff;
   cursor: pointer;
   transition: 0.2s ease-out;
-  &:hover {
+  &:hover, &.active {
     background: #ffd2a8;
     color: #000;
   }

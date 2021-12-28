@@ -12,9 +12,15 @@ const GlobalStyle = createGlobalStyle`
     }
     p {
         text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.1);
+        @media screen and (max-width: 650px) {
+            text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.05);
+        }
     }
     h1, h2 {
         text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
+        @media screen and (max-width: 650px) {
+            text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.1);
+        }
     }
     a {
         text-decoration: none;
@@ -25,6 +31,9 @@ const GlobalStyle = createGlobalStyle`
     }
     svg {
         filter: drop-shadow(0px 0px 3px rgba(255, 0, 178, 0.1));
+        @media screen and (max-width: 650px) {
+            filter: drop-shadow(0px 0px 3px rgba(255, 0, 178, 0.05));
+        }
     }
 `;
 

@@ -39,7 +39,7 @@ const Cart = () => {
                                                 }
                                             </ItemQuantity>
                                         </QuantityWrap>
-                                        <ItemTotal><span>Total</span><p>£{Number(item.price) * Number(item.qty)}</p></ItemTotal>
+                                        <ItemTotal><span>Total</span><h3>£{Number(item.price) * Number(item.qty)}</h3></ItemTotal>
                                         <ItemRemove>
                                             <RemoveIcon display="inline" onClick={() => {
                                                 dispatch({
@@ -55,7 +55,7 @@ const Cart = () => {
                     })}
                 </CartList>
                 <SubtotalWrap>
-                    <h3>Subtotal: £{totals[1].price}</h3>
+                    <h2>Subtotal: £{totals[1].price}</h2>
                     <div>
                         <CartButton disabled={Number(totals[1].price) === 0}>Proceed to Checkout</CartButton>
                         <CartButton><Link to="/">Continue Shopping</Link></CartButton>

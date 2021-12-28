@@ -55,7 +55,7 @@ export const ItemWrapper = styled.div`
     justify-content: center;
     width: 100%;
     @media screen and (max-width: 992px) {
-        display: ${props => props.display};
+        display: ${props => props.display || "none"};
     }
 `;
 
@@ -92,10 +92,9 @@ export const MenuWrapper = styled.div`
         left: 36px;
         font-weight: bold;
         opacity: ${props => props.opacity ? '0' : '1'};
-    @media screen and (max-width: 650px) {
-        top: 0;
-        right: ${props => props.right || "2rem"};
-        span {
+        @media screen and (max-width: 650px) {
+            top: 0;
+            right: ${props => props.right || "2rem"};
             width: 20px;
             height: 20px;
             top: 16px;
@@ -127,10 +126,9 @@ export const MenuIcon = styled(CgMenuCake)`
     @media screen and (max-width: 650px) {
         display: inline;
         font-size: 3rem;
-        margin-right: 0.1em;
+        margin-right: 0.6em;
     }
     @media screen and (max-width: 420px) {
         font-size: 2.4rem;
-        margin-right: 0;
     }
 `;
