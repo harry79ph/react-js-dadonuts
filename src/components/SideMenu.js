@@ -3,10 +3,9 @@ import { products } from "./itemLists";
 import { CartState } from "../context/Context";
 
 const SideMenu = ({isOpen, toggle}) => {
-    const cartContex =  CartState();
-    console.log(cartContex);
+    
     const { state: { cart }, dispatch } = CartState();
-    console.log(cart);
+    
     return (
         <SideMenuContainer isOpen={isOpen}>
             <IconWrapper>

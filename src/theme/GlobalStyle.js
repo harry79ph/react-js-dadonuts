@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
         text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
     }
     a {
+        text-decoration: none;
         cursor: pointer;
     }
     li {

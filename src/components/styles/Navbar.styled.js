@@ -26,7 +26,6 @@ export const NavLink = styled(Link)`
     font-size: 2rem;
     display: flex;
     align-items: center;
-    text-decoration: none;
     img {
         width: 36px;
         margin-right: 5px;
@@ -92,7 +91,7 @@ export const MenuWrapper = styled.div`
         top: 20px;
         left: 36px;
         font-weight: bold;
-    }
+        opacity: ${props => props.opacity ? '0' : '1'};
     @media screen and (max-width: 650px) {
         top: 0;
         right: ${props => props.right || "2rem"};

@@ -91,10 +91,8 @@ export const SideMenuLink = styled(Link)`
   justify-content: center;
   color: #000;
   font-size: 1.6rem;
-  text-decoration: none;
   text-transform: capitalize;
   list-style: none;
-  /* text-shadow: 0px 0px 3px rgba(255, 210, 168); */
   transition: 0.2s ease-in-out;
   &:hover, &.active{
     color: #fff;
@@ -116,7 +114,6 @@ export const SidebarRoute = styled(RouteLink)`
   border-radius: 3px;
   border: none;
   transition: 0.2s ease-in-out;
-  text-decoration: none;
   &:hover {
     transition: 0.2s ease-in-out;
     background: #fff;

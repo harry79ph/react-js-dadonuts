@@ -1,24 +1,17 @@
 import CartNav from "./CartNav";
-import { CartContainer, CartContent, CartItem, CartList, InnerWrap, ItemContent, ItemImg, ItemInfo, ItemQuantity, ItemRemove, ItemTotal, RemoveIcon } from "./styles/Cart.styled";
+import { CartButton, CartContainer, CartContent, CartItem, CartList, InnerWrap, ItemContent, ItemImg, ItemInfo, ItemQuantity, ItemRemove, ItemTotal, QuantityWrap, RemoveIcon, SubtotalWrap } from "./styles/Cart.styled";
 import { CartState } from "../context/Context";
-import { ProductButton } from "./styles/Products.styled";
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-    const { state: { cart }, dispatch } = CartState();
-    const [total, setTotal] = useState(0);
-
-    useEffect(() => {
-        setTotal(
-            cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
-        );
-    }, [cart]);
+    const { state: { cart }, totals, dispatch } = CartState();
 
     return (
         <CartContainer>
             <CartNav />
             <CartContent>
+                <h1>Your Cart</h1>
                 <CartList>
                     {cart.map((item, i) => {
                         return (
@@ -30,20 +23,23 @@ const Cart = () => {
                                         <span>Price £{item.price}</span>
                                     </ItemContent>
                                     <ItemInfo>
-                                        <ItemQuantity value={item.qty} onChange={(e) => {
-                                            dispatch({
-                                                type: "CHANGE_CART_QTY",
-                                                payload: {
-                                                    id: item.id,
-                                                    qty: e.target.value,
+                                        <QuantityWrap>
+                                            <span>Quantity</span>
+                                            <ItemQuantity value={item.qty} onChange={(e) => {
+                                                dispatch({
+                                                    type: "CHANGE_ITEM_QTY",
+                                                    payload: {
+                                                        id: item.id,
+                                                        qty: e.target.value,
+                                                    }
+                                                });
+                                            }}>
+                                                {
+                                                    [...new Array(5)].map((_, i) => <option value={i + 1}>{i + 1}</option>)
                                                 }
-                                            });
-                                        }}>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                        </ItemQuantity>
-                                        <ItemTotal>£{Number(item.price) * Number(item.qty)}</ItemTotal>
+                                            </ItemQuantity>
+                                        </QuantityWrap>
+                                        <ItemTotal><span>Total</span><p>£{Number(item.price) * Number(item.qty)}</p></ItemTotal>
                                         <ItemRemove>
                                             <RemoveIcon display="inline" onClick={() => {
                                                 dispatch({
@@ -58,10 +54,14 @@ const Cart = () => {
                         );
                     })}
                 </CartList>
+                <SubtotalWrap>
+                    <h3>Subtotal: £{totals[1].price}</h3>
+                    <div>
+                        <CartButton disabled={Number(totals[1].price) === 0}>Proceed to Checkout</CartButton>
+                        <CartButton><Link to="/">Continue Shopping</Link></CartButton>
+                    </div>
+                </SubtotalWrap>
             </CartContent>
-            <h3>Cart Total: £{total.toFixed(2)}</h3>
-            <ProductButton disabled={cart.length === 0}>Proceed to Checkout</ProductButton>
-            <ProductButton>Continue Shopping</ProductButton>
         </CartContainer>
     );
 }

@@ -5,6 +5,7 @@ import Cart from "./components/Cart";
 import Main from "./Main";
 
 const App = () => {
+
     return (
         <Router>
             <GlobalStyle />

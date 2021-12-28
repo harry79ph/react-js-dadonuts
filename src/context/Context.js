@@ -10,13 +10,13 @@ const cartReducer = (state, action) => {
         case "REMOVE_FROM_CART":
             return {
                 ...state,
-                cart: state.cart.filter((c) => c.id !== action.payload.id)
+                cart: state.cart.filter((item) => item.id !== action.payload.id)
             };
-        case "CHANGE_CART_QTY":
+        case "CHANGE_ITEM_QTY":
             return {
                 ...state,
-                cart: state.cart.filter((c) =>
-                    c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
+                cart: state.cart.filter((item) =>
+                    item.id === action.payload.id ? (item.qty = action.payload.qty) : item.qty
                 )
             };
         default:
@@ -27,17 +27,20 @@ const cartReducer = (state, action) => {
 const Context = ({ children }) => {// children is the components that receive the context
 
     const [state, dispatch] = useReducer(cartReducer, {
-        products: allProducts,//Muhtemelen buna ihtiyacin olmayacak
+        products: allProducts,
         cart: []
     });
 
+    const totals = [{ quantity: state.cart.reduce((acc, curr) => acc + Number(curr.qty), 0) },
+    { price: (state.cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)).toFixed(2) }];
+
     return (
-        <Cart.Provider value={{state, dispatch}}>{children}</Cart.Provider>
+        <Cart.Provider value={{ state, dispatch, totals }}>{children}</Cart.Provider>
     );
 }
 
 export const CartState = () => {
     return useContext(Cart);
 }
- 
+
 export default Context;

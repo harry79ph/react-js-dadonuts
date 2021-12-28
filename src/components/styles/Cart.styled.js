@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { CgTrash } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
+import { ProductButton } from './Products.styled';
 
 export const CartContainer = styled.div`
     color: #000;
@@ -17,7 +18,6 @@ export const NavLink = styled(Link)`
     font-size: 2rem;
     display: flex;
     align-items: center;
-    text-decoration: none;
     img {
         width: 36px;
         margin-right: 5px;
@@ -44,6 +44,12 @@ export const NavLink = styled(Link)`
 export const CartContent = styled.div`
     background-color: #ffe4e6;
     padding: 0 clamp(3rem, 5vw, 8rem);
+    h1 {
+        margin: 1em 0;
+    }
+    h3 {
+        display: inline-block;
+    }
     @media screen and (max-width: 650px) {
         padding: 0 clamp(0.6rem, 2.6vw, 4rem);
     }
@@ -92,6 +98,9 @@ export const InnerWrap = styled.div`
 
 export const ItemContent = styled.div`
     flex-grow: 2;
+    max-width: 40%;
+    display: flex;
+    flex-wrap: wrap;
 `;
 
 export const ItemInfo = styled.div`
@@ -102,19 +111,35 @@ export const ItemInfo = styled.div`
     justify-content: space-between;
 `;
 
+export const QuantityWrap = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 3;
+`;
+
 export const ItemQuantity = styled.select`
     option {
         background-color: #fff;
+        text-align: center;
     }
 `;
 
 export const ItemTotal = styled.div`
     min-width: 3rem;
-    text-align: center;
+    flex-grow: 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 2px;
+    span {
+        font-size: 1.2em;
+    }
 `;
 
 export const ItemRemove = styled.div`
     padding-left: 0;
+    flex-grow: 1;
 `;
 
 export const RemoveIcon = styled(CgTrash)`
@@ -124,5 +149,24 @@ export const RemoveIcon = styled(CgTrash)`
     @media screen and (max-width: 650px) {
         display: ${props => props.display || "none"};
         font-size: 2rem;
+    }
+`;
+
+export const SubtotalWrap = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+    h3 {
+        font-size: 1.4rem;
+    }
+    button {
+        margin: 5px;
+    }
+`;
+
+export const CartButton = styled(ProductButton)`
+    a {
+        color: inherit;
     }
 `;
