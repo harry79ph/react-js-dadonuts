@@ -8,7 +8,7 @@ const ProductItem = ({ cart, dispatch, product, key }) => {
             <ProductInfo>
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductPrice>£{product.price}</ProductPrice>
-                {cart.some((p) => p.id === product.id) ? (
+                {cart.some((item) => item.id === product.id) ? (
                     <ProductButton className='active' onClick={() => dispatch({
                         type: 'REMOVE_FROM_CART',
                         payload: product

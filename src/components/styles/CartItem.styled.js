@@ -21,7 +21,7 @@ height: 100px;
 min-width: 60px;
 max-width: 100%;
 @media screen and (max-width: 650px) {
-    height: 80px;
+    height: 70px;
 }
 `;
 
@@ -57,7 +57,7 @@ flex-grow: 3;
 align-items: center;
 justify-content: space-between;
 span {
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 `;
 

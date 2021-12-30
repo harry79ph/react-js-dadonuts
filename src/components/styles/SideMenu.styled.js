@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link as RouteLink } from "react-router-dom";
 import { Link } from 'react-scroll';
 import { BsArrowBarRight } from 'react-icons/bs';
+import { CartItemWrap, QuantityWrap, ItemImg } from "./CartItem.styled";
 
 export const SideMenuContainer = styled.aside`
   position: fixed;
@@ -10,19 +11,15 @@ export const SideMenuContainer = styled.aside`
   height: 100%;
   background: rgba(255, 210, 168, 0.95);
   text-shadow: 0px 0px 3px rgba(255, 210, 168);
-  display: grid; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 2.5fr 0.5fr 5fr 1fr;
-  justify-items: stretch;
-  align-items: center;
-  top: 0;
+  display: flex;
+  flex-direction: column;
   transition: 0.3s ease-in-out;
   right: ${({ isOpen }) => (isOpen ? '0' : '-400px')};
   h2 {
     text-shadow: 0px 0px 3px rgba(255, 210, 168);
   }
   @media screen and (min-width: 992px) {
-    grid-template-rows: 1.6fr 8fr 1.6fr;
+    color: inherit;
   }
   @media screen and (max-width: 350px) {
     width: 100%;
@@ -31,9 +28,6 @@ export const SideMenuContainer = styled.aside`
 `;
 
 export const IconWrapper = styled.div`
-  position: absolute;
-  top: 1.6rem;
-  left: 1.6rem;
   background: transparent;
   border: transparent;
   cursor: pointer;
@@ -45,6 +39,7 @@ export const IconWrapper = styled.div`
 
 export const CloseIcon = styled(BsArrowBarRight)`
   color: #000;
+  margin: 1.6rem 0 0 1.6rem;
   font-size: 2.4rem;
   filter: drop-shadow(0px 0px 3px rgba(255, 210, 168));
 `;
@@ -67,23 +62,43 @@ export const CartHeader = styled.h2`
   text-align: center;
   text-shadow: 0px 0px 3px rgba(255, 210, 168);
   @media screen and (min-width: 992px) {
-    padding-top: 60px;
+    padding-top: 10px;
   }
 `;
 
-export const CartContent = styled.div`
+export const CartContent = styled.ul`
   display: flex;
+  flex-grow: 1;
+  width: 100%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   height: 100%;
   overflow-y: auto;
-  ul {
-    li {
-      font-size: 1.4rem;
-    }
-  }
 `;
+
+export const SideItemWrapper = styled(CartItemWrap)`
+  display: flex;
+  align-content: stretch;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 1em;
+  box-shadow: none;
+`;
+
+export const SideItemContent = styled(QuantityWrap)`
+  flex: 1;
+  font-size: 1.2rem;
+  justify-content: space-around;
+  padding: 1em;
+  .times {
+    font-weight: 700;
+  }
+`
+
 
 export const SideMenuLink = styled(Link)`
   display: flex;
@@ -99,6 +114,10 @@ export const SideMenuLink = styled(Link)`
   }
 `;
 
+export const SideImg = styled(ItemImg)`
+  height: 50px;
+`
+
 export const SideBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -108,6 +127,7 @@ export const SidebarRoute = styled(RouteLink)`
   background: #ff00b2;
   white-space: nowrap;
   padding: 10px 24px;
+  margin: 10px;
   color: #fff;
   font-size: 20px;
   font-weight: 700;

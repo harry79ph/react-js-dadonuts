@@ -7,6 +7,8 @@ import CartItem from "./CartItem";
 const Cart = () => {
 
     const { state: { cart }, totals, dispatch } = CartState();
+    const obj = CartState();
+    console.log(obj);
 
     return (
         <CartContainer>
@@ -14,6 +16,7 @@ const Cart = () => {
             <CartContent>
                 <h1>Your Cart</h1>
                 <CartList>
+                    {cart.length === 0 && <h3 style={{margin: "50px 0"}}>Cart is Empty!</h3>}
                     {cart.map((item, i) => {
                         return (
                             <CartItem key={'cart' + i} item={item} dispatch={dispatch} />

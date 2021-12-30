@@ -5,7 +5,7 @@ import BgImg from '../../images/doughnut-bg.jpg';
 export const HomeContainer = styled.div`
     background-image: linear-gradient(to right, rgba(255, 0, 178, 0.15), rgba(255, 0, 178, 0.01)),
     url(${BgImg});
-    background-color: #fec3c7;//If the images cannot be loaded—for instance, when the network is down—the background color will be used as a fallback.
+    background-color: #fec3c7;// If the images cannot be loaded, the background color will be used as a fallback.
     height: 100vh;
     background-position: center;
     background-size: cover;

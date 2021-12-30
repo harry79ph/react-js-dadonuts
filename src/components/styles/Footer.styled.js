@@ -30,4 +30,8 @@ export const SocialIconLink = styled.a`
   color: #fff;
   font-size: 24px;
   padding-left: 10px;
+  transition: 0.2s ease-out;
+  &:hover {
+    color: #ffd2a8;
+  }
 `;
