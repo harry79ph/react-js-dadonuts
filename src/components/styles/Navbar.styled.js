@@ -22,6 +22,7 @@ export const NavLink = styled(Link)`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: #fff;
     margin-left: 1.8em;
     font-size: 2rem;
     display: flex;

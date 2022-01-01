@@ -13,13 +13,16 @@ export const SideMenuContainer = styled.aside`
   text-shadow: 0px 0px 3px rgba(255, 210, 168);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-content: stretch;
   transition: 0.3s ease-in-out;
+  li {
+    font-size: 1.2rem;
+    text-align: center;
+  }
   right: ${({ isOpen }) => (isOpen ? '0' : '-400px')};
   h2 {
     text-shadow: 0px 0px 3px rgba(255, 210, 168);
-  }
-  @media screen and (min-width: 992px) {
-    color: inherit;
   }
   @media screen and (max-width: 350px) {
     width: 100%;
@@ -47,8 +50,7 @@ export const CloseIcon = styled(BsArrowBarRight)`
 export const SidebarMenu = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
+  justify-content: flex-start;
   h2 {
     text-align: center;
     /* text-shadow: 0px 0px 3px rgba(255, 210, 168); */
@@ -127,7 +129,7 @@ export const SidebarRoute = styled(RouteLink)`
   background: #ff00b2;
   white-space: nowrap;
   padding: 10px 24px;
-  margin: 10px;
+  margin: 20px;
   color: #fff;
   font-size: 20px;
   font-weight: 700;

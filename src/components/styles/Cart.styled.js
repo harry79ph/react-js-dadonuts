@@ -8,6 +8,7 @@ export const CartContainer = styled.div`
     text-shadow: none;
     min-height: 100vh;
     line-height: 1;
+    padding-bottom: 2em;
 `;
 
 export const NavLink = styled(Link)`

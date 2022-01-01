@@ -6,8 +6,6 @@ import { ItemRemove, RemoveIcon } from "./styles/CartItem.styled";
 const SideMenu = ({ isOpen, toggle }) => {
 
     const { state: { cart }, dispatch, totals } = CartState();
-    const context = CartState();
-    console.log(context);
 
     return (
         <SideMenuContainer isOpen={isOpen}>
@@ -19,8 +17,9 @@ const SideMenu = ({ isOpen, toggle }) => {
                 {products.map(product => <SideMenuLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000}>{product}</SideMenuLink>)}
             </SidebarMenu>
             <CartHeader>Shopping Cart</CartHeader>
+            <CartContent>
                 {totals[0].quantity > 0 ? (
-                    <CartContent>
+                    <>
                         {cart.map(item => {
                             return (
                                 <SideItemWrapper>
@@ -44,10 +43,11 @@ const SideMenu = ({ isOpen, toggle }) => {
                             );
                         })}
                         <h3>Total: {totals[1].price}</h3>
-                    </CartContent>
+                    </>
                 ) : (
-                    <li>Cart is Empty!</li>
+                    <li style={{margin: "30px 0"}}>Cart is Empty!</li>
                 )}
+            </CartContent>
             <SideBtnWrapper>
                 <SidebarRoute to="cart">Go to Cart</SidebarRoute>
             </SideBtnWrapper>
