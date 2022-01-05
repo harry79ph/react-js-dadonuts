@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css"
 import GlobalStyle from "./theme/GlobalStyle";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Cart from "./components/Cart";

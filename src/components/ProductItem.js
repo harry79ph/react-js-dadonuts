@@ -1,9 +1,9 @@
 import { ProductButton, ProductCard, ProductImg, ProductInfo, ProductPrice, ProductTitle } from "./styles/Products.styled";
 
-const ProductItem = ({ cart, dispatch, product, key }) => {
+const ProductItem = ({ cart, dispatch, product }) => {
     
     return (
-        <ProductCard key={key}>
+        <ProductCard>
             <ProductImg src={product.img} alt={product.name} />
             <ProductInfo>
                 <ProductTitle>{product.name}</ProductTitle>

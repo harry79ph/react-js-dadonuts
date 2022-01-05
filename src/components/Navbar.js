@@ -13,9 +13,9 @@ const Navbar = ({ toggle }) => {
             <NavContainer>
                 <NavLink onClick={() => scroll.scrollToTop()}><img src={logo} alt="Dadonuts" />Dadonuts</NavLink>
                 <ItemWrapper>
-                    {products.map(product => <LinkItem activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700}>{product}</LinkItem>)}
+                    {products.map((product, i) => <LinkItem activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} >{product}</LinkItem>)}
                 </ItemWrapper>
-                <MenuWrapper onClick={toggle} opacity={totals[0].quantity === 0}>
+                <MenuWrapper onClick={toggle} isPresent={totals[0].quantity === 0}>
                     <ShoppingCart />
                     <MenuIcon />
                     <span>

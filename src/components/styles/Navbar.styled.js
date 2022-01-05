@@ -18,11 +18,11 @@ export const NavContainer = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-    background: -webkit-linear-gradient(#ffd2a8, #de00a2);
+    display: block;
+	background: -webkit-linear-gradient(#ffd2a8, #de00a2);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #fff;
     margin-left: 1.8em;
     font-size: 2rem;
     display: flex;
@@ -63,7 +63,6 @@ export const ItemWrapper = styled.div`
 export const LinkItem = styled(Link)`
     color: rgba(255, 255, 255, 0.7);
     text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
-    text-decoration: none;
     text-transform: capitalize;
     font-size: clamp(1.6rem, 2.2vw, 2rem);
     margin: 0 0.8em;
@@ -92,7 +91,7 @@ export const MenuWrapper = styled.div`
         top: 20px;
         left: 36px;
         font-weight: bold;
-        opacity: ${props => props.opacity ? '0' : '1'};
+        opacity: ${props => props.isPresent ? '0' : '1'};
         @media screen and (max-width: 650px) {
             top: 0;
             right: ${props => props.right || "2rem"};

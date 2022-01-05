@@ -1,9 +1,9 @@
 import { CartItemWrap, InnerWrap, ItemContent, ItemImg, ItemInfo, ItemQuantity, ItemRemove, ItemTotal, QuantityWrap, RemoveIcon } from "./styles/CartItem.styled";
 
-const CartItem = ({ item, dispatch, key }) => {
+const CartItem = ({ item, dispatch }) => {
     
     return (
-        <CartItemWrap key={key}>
+        <CartItemWrap>
             <ItemImg src={item.img} alt={item.name} />
             <InnerWrap>
                 <ItemContent>

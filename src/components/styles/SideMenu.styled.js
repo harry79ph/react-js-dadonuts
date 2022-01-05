@@ -109,7 +109,6 @@ export const SideMenuLink = styled(Link)`
   color: #000;
   font-size: 1.6rem;
   text-transform: capitalize;
-  list-style: none;
   transition: 0.2s ease-in-out;
   &:hover, &.active{
     color: #fff;
@@ -123,6 +122,7 @@ export const SideImg = styled(ItemImg)`
 export const SideBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 export const SidebarRoute = styled(RouteLink)`
