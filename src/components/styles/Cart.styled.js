@@ -12,18 +12,27 @@ export const CartContainer = styled.div`
 `;
 
 export const NavLink = styled(Link)`
-    background: -webkit-linear-gradient(#ffd2a8, #de00a2);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-left: 1.8em;
-    font-size: 2rem;
     display: flex;
     align-items: center;
+    margin-left: 1.8em;
+    font-size: 2rem;
     img {
         width: 36px;
         margin-right: 5px;
         transform: rotate(-20deg);
+    }
+    p {
+        display: block;
+        background: -webkit-linear-gradient(#ffd065, #de00a2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        &:hover {
+            background: -webkit-linear-gradient(#ffd2a8, #e83d71);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
     @media screen and (max-width: 650px) {
         margin-left: 1em;

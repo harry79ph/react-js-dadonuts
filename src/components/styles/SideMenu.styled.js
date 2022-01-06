@@ -53,7 +53,6 @@ export const SidebarMenu = styled.div`
   justify-content: flex-start;
   h2 {
     text-align: center;
-    /* text-shadow: 0px 0px 3px rgba(255, 210, 168); */
   }
   @media screen and (min-width: 992px) {
     display: none;

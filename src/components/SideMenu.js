@@ -20,9 +20,9 @@ const SideMenu = ({ isOpen, toggle }) => {
             <CartContent>
                 {totals[0].quantity > 0 ? (
                     <>
-                        {cart.map(item => {
+                        {cart.map((item, i) => {
                             return (
-                                <SideItemWrapper>
+                                <SideItemWrapper key={'side' + i}>
                                     <SideImg src={item.img} alt={item.name} />
                                     <SideItemContent>
                                         <span>{item.price}</span>

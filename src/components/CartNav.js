@@ -9,7 +9,7 @@ const CartNav = () => {
     
     return (
         <NavContainer position="static">
-            <NavLink to="/"><img src={logo} alt="Dadonuts" />Dadonuts</NavLink>
+            <NavLink to="/"><img src={logo} alt="Dadonuts" /><p>Dadonuts</p></NavLink>
             <MenuWrapper right="0">
                 <ShoppingCart display="inline" cursor="auto"/>
                 <span>

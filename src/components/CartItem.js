@@ -23,7 +23,7 @@ const CartItem = ({ item, dispatch }) => {
                             });
                         }}>
                             {
-                                [...new Array(5)].map((_, i) => <option value={i + 1}>{i + 1}</option>)
+                                [...new Array(5)].map((_, i) => <option value={i + 1} key={'option' + i}>{i + 1}</option>)
                             }
                         </ItemQuantity>
                     </QuantityWrap>

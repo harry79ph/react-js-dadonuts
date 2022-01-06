@@ -4,6 +4,7 @@ import GlobalStyle from "./theme/GlobalStyle";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Cart from "./components/Cart";
 import Main from "./Main";
+import NotFound from "./components/NotFound";
 
 const App = () => {
 
@@ -12,9 +13,8 @@ const App = () => {
             <GlobalStyle />
             <Routes>
                 <Route exact path="/" element={<Main />}/>
-            </Routes>
-            <Routes>
                 <Route path="/cart" element={<Cart />}/>
+                <Route path="*" element={<NotFound />}/>
             </Routes>
         </Router>
     );
