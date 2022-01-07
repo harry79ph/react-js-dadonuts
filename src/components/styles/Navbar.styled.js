@@ -21,7 +21,7 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   margin-left: 1.8em;
-  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-size: clamp(1.6rem, 1.8vw, 2rem);
   img {
     width: 36px;
     margin-right: 5px;
@@ -65,23 +65,9 @@ export const ItemWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  text-transform: capitalize;
   @media screen and (max-width: 992px) {
     display: ${(props) => props.display || "none"};
-  }
-`;
-
-export const LinkItem = styled(Link)`
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
-  text-transform: capitalize;
-  font-size: clamp(1.6rem, 2.2vw, 2rem);
-  margin: 0 0.8em;
-  font-weight: 500;
-  transition: 0.2s ease-out;
-  &:hover,
-  &.active {
-    color: #fff;
-    text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.5);
   }
 `;
 

@@ -7,7 +7,7 @@ const Features = () => {
     return (
         <ProductsContainer>
             <ProductSection>
-                <ProductsHeading>Why Choose Dadonut?</ProductsHeading>
+                <ProductsHeading>Why Choose Dadonuts?</ProductsHeading>
                 <ProductWrapper>
                     {features.map((feature, index) => {
                         return (
