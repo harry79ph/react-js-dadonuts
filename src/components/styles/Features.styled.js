@@ -19,9 +19,9 @@ export const FeatureWrapper = styled.div`
 export const FeatureInfo = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
+    height: 100%;
     svg{
       font-size: 6rem;
       margin: 3rem;
@@ -29,15 +29,18 @@ export const FeatureInfo = styled.div`
 `;
 
 export const FeatureDesc = styled.p`
-  padding: 0.3rem 0.5rem;
+  margin: 0.8rem 0.5rem;
+  margin-top: 0.5rem;
   line-height: 1.2;
   font-size: 1.2rem;
 `;
 
 export const FeatureButton = styled.button`
+display: block;
   font-size: 1.1rem;
   padding: 0.8rem 1.2rem;
   margin: 1.4rem;
+  margin-top: auto;
   border: none;
   border-radius: 2px;
   background: #ff00b2;

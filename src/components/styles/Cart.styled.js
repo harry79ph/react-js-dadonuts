@@ -19,7 +19,6 @@ export const NavLink = styled(Link)`
     img {
         width: 36px;
         margin-right: 5px;
-        transform: rotate(-20deg);
     }
     p {
         display: block;
@@ -27,6 +26,7 @@ export const NavLink = styled(Link)`
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        text-shadow: initial;
         &:hover {
             background: -webkit-linear-gradient(#ffd2a8, #e83d71);
             background-clip: text;

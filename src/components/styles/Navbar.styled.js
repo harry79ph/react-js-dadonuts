@@ -21,11 +21,11 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   margin-left: 1.8em;
-  font-size: clamp(1.6rem, 1.8vw, 2rem);
+  /* font-size: clamp(1.6rem, 1.8vw, 2rem); */
+  font-size: 1.6rem;
   img {
     width: 36px;
     margin-right: 5px;
-    transform: rotate(-20deg);
   }
   p {
     display: block;
@@ -33,6 +33,7 @@ export const NavLink = styled(Link)`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: initial;
   }
   &:hover,
   &.active > p {
