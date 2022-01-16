@@ -132,7 +132,7 @@ export const features = [
     {
         icon: <GoPackage />,
         title: 'Carefully Packaged',
-        desc: 'Quisque luctus dui turpis, quis semper lacus aliquam eu.',
+        desc: 'Quisque fermentum tellus nunc, sed pretium libero efficitur in. Nulla id finibus quam.',
         button: 'More Info'
     },
     {

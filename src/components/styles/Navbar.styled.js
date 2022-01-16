@@ -20,8 +20,7 @@ export const NavContainer = styled.nav`
 export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
-  margin-left: 1.8em;
-  /* font-size: clamp(1.6rem, 1.8vw, 2rem); */
+  margin-left: 2em;
   font-size: 1.6rem;
   img {
     width: 36px;
