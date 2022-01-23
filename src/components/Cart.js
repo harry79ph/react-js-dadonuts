@@ -7,6 +7,7 @@ import CartItem from "./CartItem";
 const Cart = () => {
 
     const { state: { cart }, totals, dispatch } = CartState();
+    console.log(CartState());
 
     return (
         <CartContainer>

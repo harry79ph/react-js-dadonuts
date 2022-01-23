@@ -23,7 +23,7 @@ export const NavLink = styled(Link)`
   margin-left: 2em;
   font-size: 1.6rem;
   img {
-    width: 36px;
+    width: 32px;
     margin-right: 5px;
   }
   p {
