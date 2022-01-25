@@ -8,7 +8,7 @@ Dadonuts is an e-commerce app with shopping cart. It is built with **React** and
 - react-icons
 
 Welcome page:
-![dadonuts1](https://user-images.githubusercontent.com/73724613/151050674-a08d5893-4925-49d2-914a-1daf2536df25.jpg)
+![dadonuts1](https://user-images.githubusercontent.com/73724613/151054060-ff278195-9dcc-4f7a-b254-770c1f4eab08.jpg)
 
 Products section:
 ![dadonuts2](https://user-images.githubusercontent.com/73724613/151050949-c7a0438f-b236-460d-87d1-aff295f87455.jpg)
