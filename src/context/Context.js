@@ -24,7 +24,7 @@ const cartReducer = (state, action) => {
     }
 };
 
-const Context = ({ children }) => {// children is the components that receive the context
+const Context = ({ children }) => {
 
     const [state, dispatch] = useReducer(cartReducer, {
         products: allProducts,

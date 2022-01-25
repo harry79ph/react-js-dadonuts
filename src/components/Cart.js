@@ -7,7 +7,18 @@ import CartItem from "./CartItem";
 const Cart = () => {
 
     const { state: { cart }, totals, dispatch } = CartState();
-    console.log(CartState());
+
+    let cartContent;
+
+    if (!cart.length) {
+        cartContent = <h3 style={{margin: "50px 0"}}>Cart is Empty!</h3>;
+    } else {
+        cartContent = cart.map(item => {
+            return (
+                <CartItem key={'cart' + item.id} item={item} dispatch={dispatch} />
+            );
+        });
+    }
 
     return (
         <CartContainer>
@@ -15,12 +26,7 @@ const Cart = () => {
             <CartContent>
                 <h1>Your Cart</h1>
                 <CartList>
-                    {cart.length === 0 && <h3 style={{margin: "50px 0"}}>Cart is Empty!</h3>}
-                    {cart.map((item, i) => {
-                        return (
-                            <CartItem key={'cart' + i} item={item} dispatch={dispatch} />
-                        );
-                    })}
+                    {cartContent}
                 </CartList>
                 <SubtotalWrap>
                     <h2>Subtotal: £{totals[1].price}</h2>
