@@ -1,37 +1,55 @@
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
 
 export const FooterWrapper = styled.div`
-  padding: 6px 6vw;
+  padding: 1em 6vw;
+  color: #fff;
   background-color: #ff00b2;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  @media screen and (max-width: 768px) {
-    padding: 6px 18px;
-  }
 `;
 
-export const CopyRight = styled(Link)`
-  font-size: 1.4rem;
-  color: #fff;
+export const FollowWrap = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const SocialMediaWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 0.3rem;
 `;
 
 export const SocialIconLink = styled.a`
-  color: #fff;
+  color: inherit;
   font-size: 24px;
-  padding-left: 10px;
+  padding-right: 10px;
   transition: 0.2s ease-out;
   &:hover {
     color: #ffd2a8;
+  }
+`;
+
+export const HelpWrap = styled.div`
+  a {
+    color: inherit;
+  }
+`;
+
+export const ContactWrap = styled.ul`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ContactItem = styled.li`
+  display: flex;
+  align-items: center;
+  svg {
+    font-size: 20px;
+    margin-right: 5px;
   }
 `;

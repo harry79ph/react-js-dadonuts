@@ -1,5 +1,5 @@
 import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, SideItemWrapper, CartHeader, SideImg, SideItemContent } from "./styles/SideMenu.styled";
-import { products } from "./itemLists";
+import { products } from "../data/itemLists";
 import { CartState } from "../context/Context";
 import { ItemRemove, RemoveIcon } from "./styles/CartItem.styled";
 

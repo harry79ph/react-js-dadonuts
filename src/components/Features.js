@@ -1,5 +1,5 @@
 import { ProductsContainer, ProductSection, ProductsHeading, ProductWrapper } from "./styles/Products.styled";
-import { features } from './itemLists';
+import { features } from '../data/itemLists';
 import { FeatureInfo, FeatureCard, FeatureDesc, FeatureButton } from "./styles/Features.styled";
 
 

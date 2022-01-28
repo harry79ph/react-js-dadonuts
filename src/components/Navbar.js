@@ -1,6 +1,6 @@
 import { NavContainer, NavLink, ItemWrapper, MenuIcon, MenuWrapper, ShoppingCart } from './styles/Navbar.styled';
 import logo from '../images/logo.svg';
-import { products } from "./itemLists";
+import { products } from "../data/itemLists";
 import { CartState } from '../context/Context';
 
 const Navbar = ({ toggle }) => {

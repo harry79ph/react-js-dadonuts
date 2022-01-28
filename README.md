@@ -1,7 +1,7 @@
 
 # Dadonuts
 
-Dadonuts is an e-commerce app with shopping cart. It is built with **React** and **styled-components**. The app also features:
+Dadonuts is an e-commerce app with shopping cart to order pastries. It is built with **React** and **styled-components**. The app also features:
 - Context API
 - useReducer
 - Smooth scroll (react-scroll)

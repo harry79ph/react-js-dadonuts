@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductsContainer, ProductSection, ProductWrapper, ProductsHeading } from './styles/Products.styled';
-import { products, sections } from './itemLists';
+import { products, sections } from '../data/itemLists';
 import { CartState } from '../context/Context';
 import ProductItem from './ProductItem';
 
