@@ -88,6 +88,9 @@ export const SideItemWrapper = styled(CartItemWrap)`
   margin-bottom: 0;
   padding: 1em;
   box-shadow: none;
+  svg {
+    font-size: 1.8rem;
+  }
 `;
 
 export const SideItemContent = styled(QuantityWrap)`
@@ -98,7 +101,7 @@ export const SideItemContent = styled(QuantityWrap)`
   .times {
     font-weight: 700;
   }
-`
+`;
 
 
 export const SideMenuLink = styled(Link)`
@@ -116,7 +119,7 @@ export const SideMenuLink = styled(Link)`
 
 export const SideImg = styled(ItemImg)`
   height: 50px;
-`
+`;
 
 export const SideBtnWrapper = styled.div`
   display: flex;

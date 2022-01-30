@@ -13,7 +13,7 @@ const App = () => {
             <GlobalStyle />
             <Routes>
                 <Route exact path="/" element={<Main />}/>
-                <Route path="/cart" element={<Cart />}/>
+                <Route exact path="/cart" element={<Cart />}/>
                 <Route path="*" element={<NotFound />}/>
             </Routes>
         </Router>
