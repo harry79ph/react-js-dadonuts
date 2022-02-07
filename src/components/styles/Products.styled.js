@@ -41,6 +41,15 @@ export const ProductsHeading = styled.h1`
   margin: 3rem 0;
 `;
 
+export const SortWrap = styled.div`
+  text-align: center;
+`;
+
+export const SortButton = styled.button`
+  margin: 0.15rem;
+  padding: 0.2rem 0.5rem;
+`;
+
 export const ProductTitle = styled.h2`
   font-size: 1.2rem;
 `;

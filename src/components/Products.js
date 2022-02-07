@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductsContainer, ProductSection, ProductWrapper, ProductsHeading } from './styles/Products.styled';
+import { ProductsContainer, ProductSection, ProductWrapper, ProductsHeading, SortWrap, SortButton } from './styles/Products.styled';
 import { products, sections } from '../data/itemLists';
 import { CartState } from '../context/Context';
 import ProductItem from './ProductItem';
@@ -14,6 +14,11 @@ const Products = () => {
                 return (
                     <ProductSection id={products[i]} key={'section' + i}>
                         <ProductsHeading>{products[i]}</ProductsHeading>
+                        <SortWrap>
+                            <span>Sort By:</span>
+                            <SortButton>name</SortButton>
+                            <SortButton>price</SortButton>
+                        </SortWrap>
                         <ProductWrapper>
                             {section.map((product, i) => {
                                 return (

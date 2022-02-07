@@ -29,13 +29,13 @@ const donutList = [
     {
         img: donut2,
         name: 'Chocolate Donut',
-        price: '2.99',
+        price: '2.79',
         id: 2
     },
     {
         img: donut3,
         name: 'Nutella Filled Donut',
-        price: '3.49',
+        price: '3.29',
         id: 3
     },
     {
@@ -47,19 +47,19 @@ const donutList = [
     {
         img: donut5,
         name: 'Blueberry Donut',
-        price: '2.99',
+        price: '2.79',
         id: 5
     },
     {
         img: donut6,
         name: 'Pistachio Donut',
-        price: '2.99',
+        price: '2.89',
         id: 6
     },
     {
         img: donut7,
         name: 'Coconut Donut',
-        price: '2.99',
+        price: '2.69',
         id: 7
     }
 ];
@@ -68,25 +68,25 @@ const desertList = [
     {
         img: dessert1,
         name: 'Raspberry Cheesecake',
-        price: '3.99',
+        price: '3.49',
         id: 8
     },
     {
         img: dessert2,
         name: 'Lemon Cheesecake',
-        price: '3.99',
+        price: '3.79',
         id: 9
     },
     {
         img: dessert3,
         name: 'Caramel Cheesecake',
-        price: '3.99',
+        price: '3.79',
         id: 10
     },
     {
         img: dessert4,
         name: 'Oreo Cheesecake',
-        price: '3.99',
+        price: '3.89',
         id: 11
     },
     {
@@ -113,7 +113,7 @@ const cookieList = [
     {
         img: cookie2,
         name: 'Chocolate Cookie',
-        price: '1.49',
+        price: '1.79',
         id: 15
     }
 ];
