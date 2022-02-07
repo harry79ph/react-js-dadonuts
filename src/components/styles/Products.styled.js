@@ -42,12 +42,22 @@ export const ProductsHeading = styled.h1`
 `;
 
 export const SortWrap = styled.div`
-  text-align: center;
+  text-align: end;
+  margin-right: 8vw;
+  @media screen and (max-width: 650px) {
+    margin-right: 18vw;
+  }
 `;
 
 export const SortButton = styled.button`
   margin: 0.15rem;
   padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  &:focus {
+    background: rgba(255, 0, 178, 0.5);
+    color: #fff;
+  }
 `;
 
 export const ProductTitle = styled.h2`

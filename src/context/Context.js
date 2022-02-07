@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { allProducts } from "../data/itemLists";
+import { sections } from "../data/itemLists";
 
 const Cart = createContext();
 
@@ -19,6 +19,20 @@ const cartReducer = (state, action) => {
                     item.id === action.payload.id ? (item.qty = action.payload.qty) : item.qty
                 )
             };
+        case "SORT_BY_NAME":
+            return {
+                ...state,
+                sections: state.sections.filter((section, index) => 
+                    index === action.payload ? section.sort((a, b) => a.name > b.name ? 1 : -1) : section
+                )
+            }
+        case "SORT_BY_PRICE":
+            return {
+                ...state,
+                sections: state.sections.filter((section, index) => 
+                    index === action.payload ? section.sort((a, b) => a.price - b.price) : section
+                )
+            }
         default:
             return state;
     }
@@ -27,7 +41,7 @@ const cartReducer = (state, action) => {
 const Context = ({ children }) => {
 
     const [state, dispatch] = useReducer(cartReducer, {
-        products: allProducts,
+        sections,
         cart: []
     });
 

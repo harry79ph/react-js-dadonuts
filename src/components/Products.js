@@ -1,12 +1,12 @@
 import React from 'react';
 import { ProductsContainer, ProductSection, ProductWrapper, ProductsHeading, SortWrap, SortButton } from './styles/Products.styled';
-import { products, sections } from '../data/itemLists';
+import { products } from '../data/itemLists';
 import { CartState } from '../context/Context';
 import ProductItem from './ProductItem';
 
 const Products = () => {
 
-    const { state: { cart }, dispatch } = CartState();
+    const { state: { cart, sections }, dispatch } = CartState();
 
     return (
         <ProductsContainer>
@@ -16,8 +16,14 @@ const Products = () => {
                         <ProductsHeading>{products[i]}</ProductsHeading>
                         <SortWrap>
                             <span>Sort By:</span>
-                            <SortButton>name</SortButton>
-                            <SortButton>price</SortButton>
+                            <SortButton onClick={() => {dispatch({
+                                type: 'SORT_BY_NAME',
+                                payload: i
+                            })}}>name</SortButton>
+                            <SortButton onClick={() => {dispatch({
+                                type: 'SORT_BY_PRICE',
+                                payload: i
+                            })}}>price</SortButton>
                         </SortWrap>
                         <ProductWrapper>
                             {section.map((product, i) => {

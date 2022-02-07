@@ -80,7 +80,7 @@ const desertList = [
     {
         img: dessert3,
         name: 'Caramel Cheesecake',
-        price: '3.79',
+        price: '3.39',
         id: 10
     },
     {
@@ -119,8 +119,6 @@ const cookieList = [
 ];
 
 export const sections = [donutList, desertList, cookieList];
-
-export const allProducts = [...donutList, ...desertList, ...cookieList];
 
 export const features = [
     {
