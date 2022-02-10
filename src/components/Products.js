@@ -16,11 +16,11 @@ const Products = () => {
                         <ProductsHeading>{products[i]}</ProductsHeading>
                         <SortWrap>
                             <span>Sort By:</span>
-                            <SortButton onClick={() => {dispatch({
+                            <SortButton tabIndex="0" onClick={() => {dispatch({
                                 type: 'SORT_BY_NAME',
                                 payload: i
                             })}}>name</SortButton>
-                            <SortButton onClick={() => {dispatch({
+                            <SortButton tabIndex="0" onClick={() => {dispatch({
                                 type: 'SORT_BY_PRICE',
                                 payload: i
                             })}}>price</SortButton>

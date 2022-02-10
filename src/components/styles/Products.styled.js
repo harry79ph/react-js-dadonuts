@@ -52,11 +52,14 @@ export const SortWrap = styled.div`
 export const SortButton = styled.button`
   margin: 0.15rem;
   padding: 0.2rem 0.5rem;
+  border: none;
+  background: #ff00b2;
+  color: #fff;
   cursor: pointer;
-  transition: 0.2s ease-out;
-  &:focus {
-    background: rgba(255, 0, 178, 0.5);
-    color: #fff;
+  transition: all 0.2s ease-out;
+  &:focus, &:active, &:hover {
+    background: #ffd2a8;
+    color: #000;
   }
 `;
 
