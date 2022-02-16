@@ -1,11 +1,9 @@
-import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, SideItemWrapper, CartHeader, SideImg, SideItemContent } from "./styles/SideMenu.styled";
+import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader } from "./styles/SideMenu.styled";
 import { products } from "../data/itemLists";
-import { CartState } from "../context/Context";
-import { ItemRemove, RemoveIcon } from "./styles/CartItem.styled";
+import { connect } from "react-redux";
+import SideMenuItem from "./SideMenuItem";
 
-const SideMenu = ({ isOpen, toggle }) => {
-
-    const { state: { cart }, dispatch, totals } = CartState();
+const SideMenu = ({ totals, isOpen, toggle, cart }) => {
 
     return (
         <SideMenuContainer isOpen={isOpen}>
@@ -18,34 +16,17 @@ const SideMenu = ({ isOpen, toggle }) => {
             </SidebarMenu>
             <CartHeader>Shopping Cart</CartHeader>
             <CartContent>
-                {totals[0].quantity > 0 ? (
+                {totals.quantity > 0 ? (
                     <>
                         {cart.map(item => {
                             return (
-                                <SideItemWrapper key={'side' + item.id}>
-                                    <SideImg src={item.img} alt={item.name} />
-                                    <SideItemContent>
-                                        <span>{item.price}</span>
-                                        <span className="times">X</span>
-                                        <span>{item.qty}</span>
-                                    </SideItemContent>
-                                    <ItemRemove>
-                                        <RemoveIcon display="inline" onClick={
-                                            () => {
-                                                dispatch({
-                                                    type: 'REMOVE_FROM_CART',
-                                                    payload: item
-                                                });
-                                            }
-                                        } />
-                                    </ItemRemove>
-                                </SideItemWrapper>
+                                <SideMenuItem item={item} key={'side' + item.id}/>
                             );
                         })}
-                        <h3>Total: {totals[1].price}</h3>
+                        <h3>Total: {totals.price}</h3>
                     </>
                 ) : (
-                    <li style={{margin: "30px 0"}}>Cart is Empty!</li>
+                    <li style={{ margin: "30px 0" }}>Cart is Empty!</li>
                 )}
             </CartContent>
             <SideBtnWrapper>
@@ -55,4 +36,10 @@ const SideMenu = ({ isOpen, toggle }) => {
     );
 }
 
-export default SideMenu;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.shop.cart
+    };
+};
+
+export default connect(mapStateToProps)(SideMenu);

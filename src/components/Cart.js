@@ -1,37 +1,37 @@
 import CartNav from "./CartNav";
 import { CartButton, CartContainer, CartContent, CartList, SubtotalWrap } from "./styles/Cart.styled";
-import { CartState } from "../context/Context";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
+import { connect } from 'react-redux';
 
-const Cart = () => {
-
-    const { state: { cart }, totals, dispatch } = CartState();
+const Cart = ({ cart, totals }) => {
 
     let cartContent;
 
     if (!cart.length) {
-        cartContent = <h3 style={{margin: "50px 0"}}>Cart is Empty!</h3>;
+        cartContent = <h3 style={{ margin: "50px 0" }}>Cart is Empty!</h3>;
     } else {
         cartContent = cart.map(item => {
             return (
-                <CartItem key={'cart' + item.id} item={item} dispatch={dispatch} />
+                <CartItem key={'cart' + item.id} item={item} />
             );
         });
     }
 
+    console.log(totals);
+
     return (
         <CartContainer>
-            <CartNav />
+            <CartNav totals={totals}/>
             <CartContent>
                 <h1>Your Cart</h1>
                 <CartList>
                     {cartContent}
                 </CartList>
                 <SubtotalWrap>
-                    <h2>Subtotal: £{totals[1].price}</h2>
+                    <h2>Subtotal: £{totals.price}</h2>
                     <div>
-                        <CartButton disabled={Number(totals[1].price) === 0}>Proceed to Checkout</CartButton>
+                        <CartButton disabled={Number(totals.price) === 0}>Proceed to Checkout</CartButton>
                         <CartButton><Link to="/">Continue Shopping</Link></CartButton>
                     </div>
                 </SubtotalWrap>
@@ -40,4 +40,10 @@ const Cart = () => {
     );
 }
 
-export default Cart;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.shop.cart
+    };
+};
+
+export default connect(mapStateToProps)(Cart);

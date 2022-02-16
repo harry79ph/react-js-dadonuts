@@ -6,7 +6,7 @@ import Products from './components/Products';
 import Features from './components/Features';
 import Footer from './components/Footer';
 
-function Main() {
+function Main({ totals }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
@@ -15,8 +15,8 @@ function Main() {
 
   return (
     <>
-      <Navbar toggle={toggle} />
-      <SideMenu isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} totals={totals}/>
+      <SideMenu totals={totals} isOpen={isOpen} toggle={toggle} />
       <Home />
       <Products />
       <Features />

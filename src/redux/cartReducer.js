@@ -1,9 +1,11 @@
-import { createContext, useContext, useReducer } from "react";
 import { sections } from "../data/itemLists";
 
-const Cart = createContext();
+const initialState = {
+    sections,
+    cart: []
+}
 
-const cartReducer = (state, action) => {
+const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_TO_CART":
             return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] };
@@ -38,23 +40,4 @@ const cartReducer = (state, action) => {
     }
 };
 
-const Context = ({ children }) => {
-
-    const [state, dispatch] = useReducer(cartReducer, {
-        sections,
-        cart: []
-    });
-
-    const totals = [{ quantity: state.cart.reduce((acc, curr) => acc + Number(curr.qty), 0) },
-    { price: (state.cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)).toFixed(2) }];
-
-    return (
-        <Cart.Provider value={{ state, dispatch, totals }}>{children}</Cart.Provider>
-    );
-}
-
-export const CartState = () => {
-    return useContext(Cart);
-}
-
-export default Context;
+export default cartReducer;

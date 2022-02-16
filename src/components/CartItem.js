@@ -1,6 +1,11 @@
 import { CartItemWrap, InnerWrap, ItemContent, ItemImg, ItemInfo, ItemQuantity, ItemRemove, ItemTotal, QuantityWrap, RemoveIcon } from "./styles/CartItem.styled";
+import { connect } from "react-redux";
+import { changeItemQty, removeFromCart } from '../redux/actions/cart-actions';
+import { useState } from "react";
 
-const CartItem = ({ item, dispatch }) => {
+const CartItem = ({ item, changeItemQty, removeFromCart }) => {
+
+    const [input, setInput] = useState(item.qty);
     
     return (
         <CartItemWrap>
@@ -13,14 +18,10 @@ const CartItem = ({ item, dispatch }) => {
                 <ItemInfo>
                     <QuantityWrap>
                         <span>Quantity</span>
-                        <ItemQuantity value={item.qty} onChange={(e) => {
-                            dispatch({
-                                type: "CHANGE_ITEM_QTY",
-                                payload: {
-                                    id: item.id,
-                                    qty: e.target.value,
-                                }
-                            });
+                        <ItemQuantity value={input} onChange={(e) => {
+                            const qty = e.target.value;
+                            setInput(e.target.value);
+                            changeItemQty(item, qty);
                         }}>
                             {
                                 [...new Array(5)].map((_, i) => <option value={i + 1} key={'option' + i}>{i + 1}</option>)
@@ -30,10 +31,7 @@ const CartItem = ({ item, dispatch }) => {
                     <ItemTotal><span>Total</span><h3>£{(Number(item.price) * Number(item.qty)).toFixed(2)}</h3></ItemTotal>
                     <ItemRemove>
                         <RemoveIcon display="inline" onClick={() => {
-                            dispatch({
-                                type: 'REMOVE_FROM_CART',
-                                payload: item
-                            });
+                            removeFromCart(item);
                         }} />
                     </ItemRemove>
                 </ItemInfo>
@@ -42,4 +40,11 @@ const CartItem = ({ item, dispatch }) => {
     );
 }
 
-export default CartItem;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeItemQty: (item, qty) => dispatch(changeItemQty(item, qty)),
+        removeFromCart: (product) => dispatch(removeFromCart(product))
+    };
+};
+
+export default connect(null, mapDispatchToProps)(CartItem);

@@ -1,11 +1,8 @@
 import { NavContainer, MenuWrapper, ShoppingCart } from "./styles/Navbar.styled";
 import { NavLink } from "./styles/Cart.styled";
 import logo from '../images/logo.svg';
-import { CartState } from "../context/Context";
 
-const CartNav = () => {
-
-    const { totals } = CartState();
+const CartNav = ({ totals }) => {
     
     return (
         <NavContainer position="static">
@@ -13,7 +10,7 @@ const CartNav = () => {
             <MenuWrapper right="0">
                 <ShoppingCart display="inline" cursor="auto"/>
                 <span>
-                    <p>{totals[0].quantity}</p>
+                    <p>{totals.quantity}</p>
                 </span>
             </MenuWrapper>
         </NavContainer>

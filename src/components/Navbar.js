@@ -1,11 +1,12 @@
 import { NavContainer, NavLink, ItemWrapper, MenuIcon, MenuWrapper, ShoppingCart } from './styles/Navbar.styled';
 import logo from '../images/logo.svg';
 import { products } from "../data/itemLists";
-import { CartState } from '../context/Context';
+import { connect } from "react-redux";
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, totals }) => {
 
-    const { totals } = CartState();
+    console.log(totals);
+    console.log(totals.quantity);
 
     return (
         <>
@@ -14,11 +15,11 @@ const Navbar = ({ toggle }) => {
                 <ItemWrapper>
                     {products.map((product, i) => <NavLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} ><p>{product}</p></NavLink>)}
                 </ItemWrapper>
-                <MenuWrapper onClick={toggle} isPresent={totals[0].quantity === 0}>
+                <MenuWrapper onClick={toggle} isPresent={totals.quantity === 0}>
                     <ShoppingCart />
                     <MenuIcon />
                     <span>
-                        <p>{totals[0].quantity}</p>
+                        <p>{totals.quantity}</p>
                     </span>
                 </MenuWrapper>
             </NavContainer>
@@ -26,4 +27,10 @@ const Navbar = ({ toggle }) => {
     );
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.shop.cart
+    };
+};
+
+export default connect(mapStateToProps)(Navbar);
