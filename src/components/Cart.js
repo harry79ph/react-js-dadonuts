@@ -18,8 +18,6 @@ const Cart = ({ cart, totals }) => {
         });
     }
 
-    console.log(totals);
-
     return (
         <CartContainer>
             <CartNav totals={totals}/>

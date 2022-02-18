@@ -38,12 +38,12 @@ export const ProductsHeading = styled.h1`
   font-weight: 500;
   text-transform: capitalize;
   text-align: center;
-  margin: 3rem 0;
+  margin: 2rem 0;
 `;
 
 export const SortWrap = styled.div`
-  text-align: end;
-  margin-right: 8vw;
+  text-align: center;
+  margin-left: calc(30vw - 10px);
   @media screen and (max-width: 650px) {
     margin-right: 18vw;
   }
@@ -51,7 +51,7 @@ export const SortWrap = styled.div`
 
 export const SortButton = styled.button`
   margin: 0.15rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.3rem 0.7rem;
   border: none;
   background: #ff00b2;
   color: #fff;

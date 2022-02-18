@@ -5,9 +5,6 @@ import { connect } from "react-redux";
 
 const Navbar = ({ toggle, totals }) => {
 
-    console.log(totals);
-    console.log(totals.quantity);
-
     return (
         <>
             <NavContainer>

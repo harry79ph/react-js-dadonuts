@@ -7,7 +7,7 @@ const CartNav = ({ totals }) => {
     return (
         <NavContainer position="static">
             <NavLink to="/"><img src={logo} alt="Dadonuts" /><p>Dadonuts</p></NavLink>
-            <MenuWrapper right="0">
+            <MenuWrapper right="0" isPresent={totals.quantity === 0}>
                 <ShoppingCart display="inline" cursor="auto"/>
                 <span>
                     <p>{totals.quantity}</p>

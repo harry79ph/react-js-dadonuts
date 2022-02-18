@@ -89,6 +89,7 @@ export const MenuWrapper = styled.div`
     left: 36px;
     font-weight: bold;
     opacity: ${(props) => (props.isPresent ? "0" : "1")};
+    transition: all 0.3s ease-out;
     @media screen and (max-width: 650px) {
       top: 0;
       right: ${(props) => props.right || "2rem"};
