@@ -43,9 +43,9 @@ export const ProductsHeading = styled.h1`
 
 export const SortWrap = styled.div`
   text-align: center;
-  margin-left: calc(30vw - 10px);
+  margin-left: calc(50vw - 80px);
   @media screen and (max-width: 650px) {
-    margin-right: 18vw;
+    text-align: start;
   }
 `;
 
