@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";//to combine all reducers
+import { combineReducers } from "redux";
 import cartReducer from './cartReducer'
 
 const rootReducer = combineReducers({
