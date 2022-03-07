@@ -27,4 +27,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ProductItem);//we said null because we don't use state,we don't map anything from the state to props
+export default connect(null, mapDispatchToProps)(ProductItem);

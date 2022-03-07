@@ -11,7 +11,7 @@ const Features = () => {
                 <ProductWrapper>
                     {features.map((feature, index) => {
                         return (
-                            <FeatureCard key={index}>
+                            <FeatureCard key={'feature' + index}>
                                 <FeatureInfo>
                                     {feature.icon}
                                     <h2>{feature.title}</h2>
