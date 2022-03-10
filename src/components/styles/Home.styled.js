@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
 import { Link } from 'react-scroll';
 import BgImg from '../../images/doughnut-bg.jpg';
 
@@ -40,17 +40,44 @@ export const HomeItems = styled.div`
   }
 `;
 
-export const HomeH1 = styled.h1`
-  font-size: clamp(2rem, 5vw, 3rem);
+export const H1Wrapper = styled.div`
   margin-bottom: 1rem;
   box-shadow: 3px 5px 1px 1px rgba(255, 210, 168, 0.7);
+`;
+
+const h1Animation = keyframes`
+  0% { opacity: 0; transform: translateY(-10vh) skew(2deg); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0px) skew(0deg); filter: blur(0px); }
+`;
+
+const pAnimation = keyframes`
+  0% { opacity: 0; transform: translateX(-20vh) skewX(30deg); }
+  100% { opacity: 1; transform: translateX(0px) skewX(0deg); }
+`;
+
+export const HomeH1 = styled.h1`
+  font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 3px;
   text-transform: uppercase;
+  opacity: 0;
+  animation-name: ${h1Animation};
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: initial;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
 `;
 
 export const HomeP = styled.p`
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   margin-bottom: 2rem;
+  opacity: 0;
+  animation-name: ${pAnimation};
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: initial;
+  animation-delay: 3s;
+  animation-timing-function: ease-in;
 `;
 
 export const HomeBtn = styled(Link)`

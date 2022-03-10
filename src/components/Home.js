@@ -1,5 +1,4 @@
-
-import { HomeBtn, HomeContainer, HomeContent, HomeH1, HomeItems, HomeP } from "./styles/Home.styled";
+import { H1Wrapper, HomeBtn, HomeContainer, HomeContent, HomeH1, HomeItems, HomeP } from "./styles/Home.styled";
 
 const Home = () => {
     
@@ -7,7 +6,9 @@ const Home = () => {
         <HomeContainer id="home">
             <HomeContent>
                 <HomeItems>
-                    <HomeH1>Tastiest hand made doughnuts</HomeH1>
+                    <H1Wrapper>
+                        <HomeH1>Tastiest hand made doughnuts</HomeH1>
+                    </H1Wrapper>
                     <HomeP>Irresistibly delicious!!</HomeP>
                     <HomeBtn activeClass="active" to="donuts" spy={true} smooth={true} offset={-120} duration={1000}>Shop Now</HomeBtn>
                 </HomeItems>

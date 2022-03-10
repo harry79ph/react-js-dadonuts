@@ -15,7 +15,7 @@ const App = ({ cart }) => {
       quantity: cart.reduce((acc, curr) => acc + Number(curr.qty), 0),
       price: cart
         .reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
-        .toFixed(2),
+        .toFixed(2)
     });
   }, [cart]);
 
