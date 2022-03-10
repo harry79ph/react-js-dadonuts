@@ -1,17 +1,21 @@
 import styled, { keyframes } from "styled-components";
-import { Link } from 'react-scroll';
-import BgImg from '../../images/doughnut-bg.jpg';
+import { Link } from "react-scroll";
+import BgImg from "../../images/doughnut-bg.jpg";
 
 export const HomeContainer = styled.div`
-    background-image: linear-gradient(to right, rgba(255, 0, 178, 0.15), rgba(255, 0, 178, 0.01)),
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 178, 0.15),
+      rgba(255, 0, 178, 0.01)
+    ),
     url(${BgImg});
-    background-color: #fec3c7;// If the images cannot be loaded, the background color will be used as a fallback.
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-    @media screen and (max-width: 992px) {
-      background-position: 90% 50%;
-    }
+  background-color: #fec3c7; // If the images cannot be loaded, the background color will be used as a fallback.
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  @media screen and (max-width: 992px) {
+    background-position: 90% 50%;
+  }
 `;
 
 export const HomeContent = styled.div`
@@ -34,7 +38,7 @@ export const HomeItems = styled.div`
   color: #fff;
   line-height: 1;
   font-weight: bold;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   @media screen and (max-width: 650px) {
     width: 100%;
   }
@@ -59,25 +63,29 @@ export const HomeH1 = styled.h1`
   font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0;
-  animation-name: ${h1Animation};
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: initial;
-  animation-delay: 1s;
-  animation-timing-function: ease-out;
+  opacity: ${(props) => props.className && "0"};
+  &.active {
+    animation-name: ${h1Animation};
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: initial;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+  }
 `;
 
 export const HomeP = styled.p`
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   margin-bottom: 2rem;
-  opacity: 0;
-  animation-name: ${pAnimation};
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: initial;
-  animation-delay: 3s;
-  animation-timing-function: ease-in;
+  opacity: ${(props) => props.className && "0"};
+  &.active {
+    animation-name: ${pAnimation};
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: initial;
+    animation-delay: 3s;
+    animation-timing-function: cubic-bezier(0.39, 0.4, 0.87, 1.44);
+  }
 `;
 
 export const HomeBtn = styled(Link)`

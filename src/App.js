@@ -6,9 +6,17 @@ import Cart from "./components/Cart";
 import Main from "./Main";
 import NotFound from "./components/NotFound";
 import { connect } from "react-redux";
+import { disableAnimation } from './redux/actions/cart-actions';
 
-const App = ({ cart }) => {
+const App = ({ cart, disableAnimation }) => {
+
   const [totals, setTotals] = useState({ quantity: 0, price: "" });
+
+  useEffect(() => {
+    setTimeout(() => {
+      disableAnimation();
+    }, 4000);
+  }, [disableAnimation]);
 
   useEffect(() => {
     setTotals({
@@ -31,10 +39,16 @@ const App = ({ cart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    cart: state.shop.cart,
+    cart: state.shop.cart
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    disableAnimation: () => dispatch(disableAnimation())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -36,3 +36,9 @@ export const sortByPrice = (index) => {
         payload: index
     };
 };
+
+export const disableAnimation = () => {
+    return {
+        type: "DEACTIVATE"
+    }
+}

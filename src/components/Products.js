@@ -7,6 +7,9 @@ import { sortByName, sortByPrice } from '../redux/actions/cart-actions';
 
 const Products = ({ sections, cart, sortByName, sortByPrice }) => {
 
+    console.log(sections);
+    console.log(cart);
+
     return (
         <ProductsContainer>
             {sections.map((section, i) => {

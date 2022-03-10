@@ -2,7 +2,8 @@ import { sections } from "../data/itemLists";
 
 const initialState = {
     sections,
-    cart: []
+    cart: [],
+    animation: 'active'
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -34,6 +35,11 @@ const cartReducer = (state = initialState, action) => {
                 sections: state.sections.filter((section, index) => 
                     index === action.payload ? section.sort((a, b) => a.price - b.price) : section
                 )
+            }
+        case "DEACTIVATE":
+            return {
+                ...state,
+                animation: ''
             }
         default:
             return state;
