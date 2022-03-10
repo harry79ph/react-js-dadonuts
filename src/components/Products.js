@@ -7,9 +7,6 @@ import { sortByName, sortByPrice } from '../redux/actions/cart-actions';
 
 const Products = ({ sections, cart, sortByName, sortByPrice }) => {
 
-    console.log(sections);
-    console.log(cart);
-
     return (
         <ProductsContainer>
             {sections.map((section, i) => {
@@ -46,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         sortByName: (index) => dispatch(sortByName(index)),
         sortByPrice: (index) => dispatch(sortByPrice(index))
-    };
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

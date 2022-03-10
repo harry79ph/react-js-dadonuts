@@ -2,8 +2,6 @@ import { H1Wrapper, HomeBtn, HomeContainer, HomeContent, HomeH1, HomeItems, Home
 import { connect } from "react-redux";
 
 const Home = ({ animation }) => {
-
-    console.log(animation);
     
     return (
         <HomeContainer id="home">

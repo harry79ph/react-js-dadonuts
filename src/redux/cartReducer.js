@@ -14,14 +14,14 @@ const cartReducer = (state = initialState, action) => {
             return {
                 ...state,
                 cart: state.cart.filter((item) => item.id !== action.payload.id)
-            };
+            }
         case "CHANGE_ITEM_QTY":
             return {
                 ...state,
                 cart: state.cart.filter((item) =>
                     item.id === action.payload.id ? (item.qty = action.payload.qty) : item.qty
                 )
-            };
+            }
         case "SORT_BY_NAME":
             return {
                 ...state,
