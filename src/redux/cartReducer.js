@@ -3,7 +3,7 @@ import { sections } from "../data/itemLists";
 const initialState = {
     sections,
     cart: [],
-    animation: 'active'
+    totals: { quantity: 0, price: "" }
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -36,10 +36,15 @@ const cartReducer = (state = initialState, action) => {
                     index === action.payload ? section.sort((a, b) => a.price - b.price) : section
                 )
             }
-        case "DEACTIVATE":
+        case "CALC_TOTALS":
             return {
                 ...state,
-                animation: ''
+                totals: {
+                quantity: state.cart.reduce((acc, curr) => acc + Number(curr.qty), 0),
+                price: state.cart
+                    .reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+                    .toFixed(2)
+                }
             }
         default:
             return state;

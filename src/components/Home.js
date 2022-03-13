@@ -1,5 +1,4 @@
 import { H1Wrapper, HomeBtn, HomeContainer, HomeContent, HomeH1, HomeItems, HomeP } from "./styles/Home.styled";
-import { connect } from "react-redux";
 
 const Home = ({ animation }) => {
     
@@ -17,11 +16,5 @@ const Home = ({ animation }) => {
         </HomeContainer>
     );
 }
- 
-const mapStateToProps = state => {
-    return {
-        animation: state.shop.animation
-    }
-}
 
-export default connect(mapStateToProps)(Home);
+export default Home;

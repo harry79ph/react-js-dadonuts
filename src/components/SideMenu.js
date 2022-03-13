@@ -38,7 +38,8 @@ const SideMenu = ({ totals, isOpen, toggle, cart }) => {
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.shop.cart
+        cart: state.shop.cart,
+        totals: state.shop.totals
     };
 };
 

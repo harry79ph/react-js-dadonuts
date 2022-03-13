@@ -37,8 +37,8 @@ export const sortByPrice = (index) => {
     }
 };
 
-export const disableAnimation = () => {
+export const calcTotals = () => {
     return {
-        type: "DEACTIVATE"
+        type: "CALC_TOTALS"
     }
 }

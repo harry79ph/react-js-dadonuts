@@ -6,33 +6,28 @@ import Cart from "./components/Cart";
 import Main from "./Main";
 import NotFound from "./components/NotFound";
 import { connect } from "react-redux";
-import { disableAnimation } from './redux/actions/cart-actions';
+import { calcTotals } from './redux/actions/cart-actions';
 
-const App = ({ cart, disableAnimation }) => {
+const App = ({ cart, calcTotals }) => {
 
-  const [totals, setTotals] = useState({ quantity: 0, price: "" });
+  const [animation, setAnimation] = useState('active');
 
   useEffect(() => {
     setTimeout(() => {
-      disableAnimation();
+      setAnimation('');
     }, 4000);
-  }, [disableAnimation]);
+  }, []);
 
   useEffect(() => {
-    setTotals({
-      quantity: cart.reduce((acc, curr) => acc + Number(curr.qty), 0),
-      price: cart
-        .reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
-        .toFixed(2)
-    });
-  }, [cart]);
+    calcTotals();
+  }, [cart, calcTotals]);
 
   return (
     <Router>
       <GlobalStyle />
       <Routes>
-        <Route exact path="/" element={<Main totals={totals} />} />
-        <Route exact path="/cart" element={<Cart totals={totals} />} />
+        <Route exact path="/" element={<Main animation={animation} />} />
+        <Route exact path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
@@ -47,7 +42,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    disableAnimation: () => dispatch(disableAnimation())
+    calcTotals: () => dispatch(calcTotals())
   };
 };
 

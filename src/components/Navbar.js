@@ -26,7 +26,8 @@ const Navbar = ({ toggle, totals }) => {
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.shop.cart
+        cart: state.shop.cart,
+        totals: state.shop.totals
     };
 };
 
