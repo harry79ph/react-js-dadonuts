@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link as RouteLink } from "react-router-dom";
 import { Link } from 'react-scroll';
-import { BsArrowBarRight } from 'react-icons/bs';
 import { CartItemWrap, QuantityWrap, ItemImg } from "./CartItem.styled";
 
 export const SideMenuContainer = styled.aside`
@@ -35,16 +34,20 @@ export const IconWrapper = styled.div`
   border: transparent;
   cursor: pointer;
   @media screen and (max-width: 768px) {
-    top: 0.8rem;
+    top: 1.4rem;
     left: 1.4rem;
   }
 `;
 
-export const CloseIcon = styled(BsArrowBarRight)`
-  color: #000;
-  margin: 1.6rem 0 0 1.6rem;
-  font-size: 2.4rem;
+export const CloseIcon = styled.p`
+  margin: 1.2rem 0 0 1.6rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   filter: drop-shadow(0px 0px 3px rgba(255, 210, 168));
+  transition: 0.4s ease-in-out;
+  &:hover {
+    color: #fff;
+  }
 `;
 
 export const SidebarMenu = styled.div`

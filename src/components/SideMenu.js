@@ -1,14 +1,20 @@
 import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader } from "./styles/SideMenu.styled";
 import { products } from "../data/itemLists";
-import { connect } from "react-redux";
 import SideMenuItem from "./SideMenuItem";
+import { connect } from "react-redux";
 
-const SideMenu = ({ totals, isOpen, toggle, cart }) => {
+const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
+
+    const handleClick = (e) => {
+        if (e.target.tagName !== 'svg') {
+            handleToggle();
+        }
+    }
 
     return (
-        <SideMenuContainer isOpen={isOpen}>
+        <SideMenuContainer isOpen={isOpen} onClick={handleClick}>
             <IconWrapper>
-                <CloseIcon onClick={toggle} />
+                <CloseIcon>X</CloseIcon>
             </IconWrapper>
             <SidebarMenu>
                 <h2>Choose Product</h2>

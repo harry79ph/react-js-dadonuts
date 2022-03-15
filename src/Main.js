@@ -9,14 +9,14 @@ import Footer from './components/Footer';
 function Main({ animation }) {
 
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
+  const handleToggle = () => {
+    setIsOpen(prev => !prev);
   }
 
   return (
     <>
-      <Navbar toggle={toggle} />
-      <SideMenu isOpen={isOpen} toggle={toggle} />
+      <Navbar handleToggle={handleToggle} />
+      <SideMenu isOpen={isOpen} handleToggle={handleToggle} />
       <Home animation={animation} />
       <Products />
       <Features />

@@ -3,7 +3,7 @@ import logo from '../images/logo.svg';
 import { products } from "../data/itemLists";
 import { connect } from "react-redux";
 
-const Navbar = ({ toggle, totals }) => {
+const Navbar = ({ handleToggle, totals }) => {
 
     return (
         <>
@@ -12,7 +12,7 @@ const Navbar = ({ toggle, totals }) => {
                 <ItemWrapper>
                     {products.map((product, i) => <NavLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} ><p>{product}</p></NavLink>)}
                 </ItemWrapper>
-                <MenuWrapper onClick={toggle} isPresent={totals.quantity === 0}>
+                <MenuWrapper onClick={handleToggle} isPresent={totals.quantity === 0}>
                     <ShoppingCart />
                     <MenuIcon />
                     <span>

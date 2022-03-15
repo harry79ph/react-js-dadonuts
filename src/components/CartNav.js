@@ -9,7 +9,7 @@ const CartNav = ({ totals }) => {
             <NavLink to="/"><img src={logo} alt="Dadonuts" /><p>Dadonuts</p></NavLink>
             <MenuWrapper right="0" isPresent={totals.quantity === 0}>
                 <ShoppingCart display="inline" cursor="auto"/>
-                <span>
+                <span style={{cursor: 'auto'}}>
                     <p>{totals.quantity}</p>
                 </span>
             </MenuWrapper>

@@ -88,6 +88,7 @@ export const MenuWrapper = styled.div`
     top: 20px;
     left: 36px;
     font-weight: bold;
+    cursor: pointer;
     opacity: ${(props) => (props.isPresent ? "0" : "1")};
     transition: all 0.3s ease-out;
     @media screen and (max-width: 650px) {
