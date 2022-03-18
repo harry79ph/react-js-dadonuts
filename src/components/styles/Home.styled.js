@@ -9,7 +9,7 @@ export const HomeContainer = styled.div`
       rgba(255, 0, 178, 0.01)
     ),
     url(${BgImg});
-  background-color: #fec3c7; // If the images cannot be loaded, the background color will be used as a fallback.
+  background-color: #fec3c7; // If the images cannot be loaded, the background color will be used as fallback.
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -21,8 +21,8 @@ export const HomeContainer = styled.div`
 export const HomeContent = styled.div`
   height: 100vh;
   padding: 0 calc((100vw - 1300px) / 2);
-  @media screen and (max-width: 420px) {
-    padding-top: 30vh;
+  @media screen and (max-width: 650px) {
+    padding: 20vh 0;
   }
 `;
 
@@ -41,6 +41,7 @@ export const HomeItems = styled.div`
   transition: all 0.2s ease-out;
   @media screen and (max-width: 650px) {
     width: 100%;
+    justify-content: flex-start;
   }
 `;
 
@@ -84,13 +85,14 @@ export const HomeP = styled.p`
     animation-fill-mode: forwards;
     animation-iteration-count: initial;
     animation-delay: 3s;
-    animation-timing-function: cubic-bezier(0.39, 0.4, 0.87, 1.44);
+    animation-timing-function: cubic-bezier(0.4, 0.4, 0.8, 1.4);
   }
 `;
 
 export const HomeBtn = styled(Link)`
   font-size: 1.6rem;
   padding: 1rem 3rem;
+  justify-self: flex-end;
   border: none;
   border-radius: 3px;
   background: #ff00b2;
@@ -99,5 +101,8 @@ export const HomeBtn = styled(Link)`
   &:hover {
     background: #ffd2a8;
     color: #000;
+  }
+  @media screen and (max-width: 650px) {
+    margin-top: auto;
   }
 `;
