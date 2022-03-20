@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProductsContainer, ProductSection, ProductWrapper, ProductsHeading, SortWrap, SortButton } from './styles/Products.styled';
 import { products } from '../data/itemLists';
 import ProductItem from './ProductItem';
