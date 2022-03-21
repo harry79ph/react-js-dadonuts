@@ -1,4 +1,5 @@
-import { ProductsContainer, ProductSection, ProductWrapper, ProductsHeading, SortWrap, SortButton } from './styles/Products.styled';
+import { useState } from 'react';
+import { ProductsContainer, ProductSection, ProductWrapper, ProductsHeading, SortWrap, SortButton, SortButtonsWrap } from './styles/Products.styled';
 import { products } from '../data/itemLists';
 import ProductItem from './ProductItem';
 import { connect } from 'react-redux';
@@ -6,18 +7,30 @@ import { sortByName, sortByPrice } from '../redux/actions/cart-actions';
 
 const Products = ({ sections, cart, sortByName, sortByPrice }) => {
 
+    const [isList, setIsList] = useState([true, true, true]);
+
+    const handleList = (i) => {
+        setIsList((prev) => prev.map((bool, idx) => idx === i ? !bool : bool));
+    }
+
     return (
         <ProductsContainer>
             {sections.map((section, i) => {
                 return (
-                    <ProductSection id={products[i]} key={'section' + i}>
+                    <ProductSection id={products[i]} key={"section" + i}>
                         <ProductsHeading>{products[i]}</ProductsHeading>
                         <SortWrap>
-                            <span>Sort By:</span>
-                            <SortButton tabIndex="1" onClick={() => sortByName(i)}>name</SortButton>
-                            <SortButton tabIndex="2" onClick={() => sortByPrice(i)}>price</SortButton>
+                            <SortButtonsWrap className="list-btn">
+                                <span>List View:</span>
+                                <SortButton tabIndex="1" onClick={() => handleList(i)}>{isList[i] ? "on" : "off"}</SortButton>
+                            </SortButtonsWrap>
+                            <SortButtonsWrap>
+                                <span>Sort By:</span>
+                                <SortButton tabIndex="1" onClick={() => sortByName(i)}>name</SortButton>
+                                <SortButton tabIndex="2" onClick={() => sortByPrice(i)}>price</SortButton>
+                            </SortButtonsWrap>
                         </SortWrap>
-                        <ProductWrapper>
+                        <ProductWrapper className={isList[i] ? "list" : ""}>
                             {section.map((product, i) => {
                                 return (
                                     <ProductItem key={'product' + i} product={product} cart={cart} />
