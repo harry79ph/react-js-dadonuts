@@ -41,20 +41,20 @@ export const InnerWrap = styled.div`
 `;
 
 export const ItemContent = styled.div`
-  flex-grow: 2;
-  max-width: 40%;
+  flex-grow: 1.8;
+  max-width: 36%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   margin-left: 1vw;
   h3 {
-    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
   }
 `;
 
 export const ItemInfo = styled.div`
   display: flex;
-  flex-grow: 3;
+  flex-grow: 3.2;
   align-items: center;
   justify-content: space-between;
   margin-right: 1vw;

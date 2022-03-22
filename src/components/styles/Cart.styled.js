@@ -4,7 +4,7 @@ import { ProductButton } from "./Products.styled";
 
 export const CartContainer = styled.div`
   color: #26001b;
-  background-color: #fff9fd;
+  background-color: #fff;
   text-shadow: none;
   min-height: 100vh;
   line-height: 1;
