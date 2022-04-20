@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-scroll";
 import { CgMenuCake } from "react-icons/cg";
 import { CgShoppingCart } from "react-icons/cg";
+import { RiAccountCircleLine } from "react-icons/ri";
 
 export const NavContainer = styled.nav`
   background: rgba(254, 175, 196, 0.95);
@@ -72,7 +73,7 @@ export const ItemWrapper = styled.div`
 `;
 
 export const MenuWrapper = styled.div`
-  display: block;
+  display: flex;
   position: relative;
   color: #fff;
   span {
@@ -83,37 +84,53 @@ export const MenuWrapper = styled.div`
     color: #fff;
     background-color: #ff00b2;
     border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    top: 20px;
-    left: 36px;
+    width: 17px;
+    height: 17px;
+    top: ${(props) => props.right ? "26px" : "16px"};
+    left: ${(props) => props.right ? "36px" : "26px"};
     font-weight: bold;
     cursor: pointer;
     opacity: ${(props) => (props.isPresent ? "0" : "1")};
     transition: all 0.3s ease-out;
     @media screen and (max-width: 650px) {
-      top: 0;
-      right: ${(props) => props.right || "2rem"};
       width: 20px;
       height: 20px;
-      top: 16px;
+      top: 20px;
       left: 30px;
     }
   }
 `;
 
+export const AccountWrapper = styled(Link)`
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin-left: auto;
+  margin-right: 0.3em;
+  cursor: ${(props) => props.cursor || "pointer"};
+`;
+
+export const Account = styled(RiAccountCircleLine)`
+  display: inline;
+  position: relative;
+  font-size: 2.2rem;
+  @media screen and (max-width: 650px) {
+    font-size: 3rem;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 2.4rem;
+  }
+`;
+
 export const ShoppingCart = styled(CgShoppingCart)`
   display: inline;
-  font-size: 3rem;
+  font-size: ${(props) => props.fontSize || "2.2rem"};
   margin-right: 1.6em;
   cursor: ${(props) => props.cursor || "pointer"};
   @media screen and (max-width: 650px) {
     display: ${(props) => props.display || "none"};
     font-size: 3rem;
     margin-right: 0.6em;
-  }
-  @media screen and (max-width: 420px) {
-    font-size: 2.4rem;
   }
 `;
 

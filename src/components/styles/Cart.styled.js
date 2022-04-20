@@ -1,6 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductButton } from "./Products.styled";
+
+const page = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`;
 
 export const CartContainer = styled.div`
   color: #26001b;
@@ -9,6 +14,9 @@ export const CartContainer = styled.div`
   min-height: 100vh;
   line-height: 1;
   padding-bottom: 2em;
+  animation-name: ${page};
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
 `;
 
 export const NavLink = styled(Link)`
