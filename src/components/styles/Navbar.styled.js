@@ -72,35 +72,6 @@ export const ItemWrapper = styled.div`
   }
 `;
 
-export const MenuWrapper = styled.div`
-  display: flex;
-  position: relative;
-  color: #fff;
-  span {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    background-color: #ff00b2;
-    border-radius: 50%;
-    width: 17px;
-    height: 17px;
-    top: ${(props) => props.right ? "26px" : "16px"};
-    left: ${(props) => props.right ? "36px" : "26px"};
-    font-weight: bold;
-    cursor: pointer;
-    opacity: ${(props) => (props.isPresent ? "0" : "1")};
-    transition: all 0.3s ease-out;
-    @media screen and (max-width: 650px) {
-      width: 20px;
-      height: 20px;
-      top: 20px;
-      left: 30px;
-    }
-  }
-`;
-
 export const AccountWrapper = styled(Link)`
   display: flex;
   align-items: center;
@@ -108,6 +79,9 @@ export const AccountWrapper = styled(Link)`
   margin-left: auto;
   margin-right: 0.3em;
   cursor: ${(props) => props.cursor || "pointer"};
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const Account = styled(RiAccountCircleLine)`
@@ -122,10 +96,44 @@ export const Account = styled(RiAccountCircleLine)`
   }
 `;
 
+export const MenuWrapper = styled.div`
+  display: flex;
+  position: relative;
+  color: #fff;
+  a {
+    display: block;
+    color: inherit;
+  }
+  span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #ff00b2;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    top: ${(props) => props.right ? "24px" : "16px"};
+    left: ${(props) => props.right ? "36px" : "26px"};
+    font-weight: bold;
+    cursor: pointer;
+    opacity: ${(props) => (props.isPresent ? "0" : "1")};
+    transition: all 0.3s ease-out;
+    @media screen and (max-width: 650px) {
+      width: 20px;
+      height: 20px;
+      top: 24px;
+      left: 34px;
+    }
+  }
+`;
+
 export const ShoppingCart = styled(CgShoppingCart)`
   display: inline;
   font-size: ${(props) => props.fontSize || "2.2rem"};
   margin-right: 1.6em;
+  height: 100%;
   cursor: ${(props) => props.cursor || "pointer"};
   @media screen and (max-width: 650px) {
     display: ${(props) => props.display || "none"};
@@ -136,7 +144,6 @@ export const ShoppingCart = styled(CgShoppingCart)`
 
 export const MenuIcon = styled(CgMenuCake)`
   display: none;
-  font-size: 3rem;
   margin-right: 1.6em;
   cursor: pointer;
   @media screen and (max-width: 650px) {
@@ -145,6 +152,6 @@ export const MenuIcon = styled(CgMenuCake)`
     margin-right: 0.6em;
   }
   @media screen and (max-width: 420px) {
-    font-size: 2.4rem;
+    font-size: 2.7rem;
   }
 `;

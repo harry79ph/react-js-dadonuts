@@ -50,6 +50,12 @@ export const CloseIcon = styled.p`
   }
 `;
 
+export const LoginWrapper = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+`;
+
 export const SidebarMenu = styled.div`
   display: flex;
   flex-direction: column;

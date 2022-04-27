@@ -1,7 +1,8 @@
-import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader } from "./styles/SideMenu.styled";
+import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader, LoginWrapper } from "./styles/SideMenu.styled";
 import { products } from "../data/itemLists";
 import SideMenuItem from "./SideMenuItem";
 import { connect } from "react-redux";
+import { SortButton } from "./styles/Products.styled";
 
 const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
 
@@ -16,11 +17,15 @@ const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
             <IconWrapper>
                 <CloseIcon>X</CloseIcon>
             </IconWrapper>
+            <LoginWrapper>Please
+                <SortButton>Login</SortButton>or
+                <SortButton>Register</SortButton>
+            </LoginWrapper>
             <SidebarMenu>
                 <h2>Choose Product</h2>
                 {products.map((product, i) => <SideMenuLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000} key={'menu' + i}>{product}</SideMenuLink>)}
             </SidebarMenu>
-            <CartHeader>Shopping Cart</CartHeader>
+            <CartHeader>Your Items</CartHeader>
             <CartContent>
                 {totals.quantity > 0 ? (
                     <>
