@@ -2,8 +2,6 @@ import CartNav from "./CartNav";
 import { CartButton, CartContainer, CartContent, SubtotalWrap } from "./styles/Cart.styled";
 import { Link } from "react-router-dom";
 
-
-
 const NotFound = () => {
     return (
         <CartContainer>

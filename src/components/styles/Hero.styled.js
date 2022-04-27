@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "react-scroll";
 import BgImg from "../../images/doughnut-bg.jpg";
 
-export const HomeContainer = styled.div`
+export const HeroContainer = styled.div`
   background-image: linear-gradient(
       to right,
       rgba(255, 0, 178, 0.15),
@@ -18,7 +18,7 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const HomeContent = styled.div`
+export const HeroContent = styled.div`
   height: 100vh;
   padding: 0 calc((100vw - 1300px) / 2);
   @media screen and (max-width: 650px) {
@@ -26,7 +26,7 @@ export const HomeContent = styled.div`
   }
 `;
 
-export const HomeItems = styled.div`
+export const HeroItems = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,7 @@ const pAnimation = keyframes`
   100% { opacity: 1; transform: translateX(0px) skewX(0deg); }
 `;
 
-export const HomeH1 = styled.h1`
+export const HeroH1 = styled.h1`
   font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ export const HomeH1 = styled.h1`
   }
 `;
 
-export const HomeP = styled.p`
+export const HeroP = styled.p`
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   margin-bottom: 2rem;
   opacity: ${(props) => props.className && "0"};
@@ -89,7 +89,7 @@ export const HomeP = styled.p`
   }
 `;
 
-export const HomeBtn = styled(Link)`
+export const HeroBtn = styled(Link)`
   font-size: 1.6rem;
   padding: 1rem 3rem;
   justify-self: flex-end;
@@ -98,7 +98,7 @@ export const HomeBtn = styled(Link)`
   background: #ff00b2;
   color: #fff;
   transition: 0.2s ease-out;
-  &:hover {
+  &:hover, &:focus {
     background: #ffd2a8;
     color: #000;
   }

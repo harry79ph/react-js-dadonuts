@@ -22,12 +22,12 @@ const Products = ({ sections, cart, sortByName, sortByPrice }) => {
                         <SortWrap>
                             <SortButtonsWrap className="list-btn">
                                 <span>List View:</span>
-                                <SortButton tabIndex="1" onClick={() => handleList(i)}>{isList[i] ? "on" : "off"}</SortButton>
+                                <SortButton onClick={() => handleList(i)}>{isList[i] ? "on" : "off"}</SortButton>
                             </SortButtonsWrap>
                             <SortButtonsWrap>
                                 <span>Sort By:</span>
-                                <SortButton tabIndex="1" onClick={() => sortByName(i)}>name</SortButton>
-                                <SortButton tabIndex="2" onClick={() => sortByPrice(i)}>price</SortButton>
+                                <SortButton onClick={() => sortByName(i)}>name</SortButton>
+                                <SortButton onClick={() => sortByPrice(i)}>price</SortButton>
                             </SortButtonsWrap>
                         </SortWrap>
                         <ProductWrapper className={isList[i] ? "list" : ""}>

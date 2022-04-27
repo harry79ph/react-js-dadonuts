@@ -8,16 +8,16 @@ const Navbar = ({ handleToggle, totals }) => {
     return (
         <>
             <NavContainer>
-                <NavLink activeClass="active" to="home" spy={true} smooth={true} offset={-120} duration={700}><img src={logo} alt="Dadonuts" /><p>Dadonuts</p></NavLink>
+                <NavLink activeClass="active" to="home" spy={true} smooth={true} offset={-120} duration={700}><img src={logo} alt="Dadonuts" role="button"/><p tabIndex="1">Dadonuts</p></NavLink>
                 <ItemWrapper>
-                    {products.map((product, i) => <NavLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} ><p>{product}</p></NavLink>)}
+                    {products.map((product, i) => <NavLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} role="button" tabIndex={i + 1}><p>{product}</p></NavLink>)}
                 </ItemWrapper>
-                <AccountWrapper to="home">
+                <AccountWrapper to="home" role="button" tabIndex="4">
                     <Account />
                     <p>LOGIN</p>
                 </AccountWrapper>
                 <MenuWrapper onClick={handleToggle} isPresent={totals.quantity === 0}>
-                    <ShoppingCart />
+                    <ShoppingCart role="button" tabIndex="5"/>
                     <MenuIcon />
                     <span>
                         <p>{totals.quantity}</p>
