@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Products from './components/Products';
 import Features from './components/Features';
 import Footer from './components/Footer';
+import CopyRight from "./components/CopyRight";
 
 function Main({ animation }) {
 
@@ -21,6 +22,7 @@ function Main({ animation }) {
       <Products />
       <Features />
       <Footer />
+      <CopyRight />
     </>
   );
 }

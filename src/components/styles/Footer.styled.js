@@ -53,3 +53,11 @@ export const ContactItem = styled.li`
     margin-right: 5px;
   }
 `;
+
+export const CRWrap = styled.p`
+  background-color: #ff00b2;
+  color: #fff;
+  width: 100vw;
+  padding: 5px 0 8px;
+  text-align: center;
+`;

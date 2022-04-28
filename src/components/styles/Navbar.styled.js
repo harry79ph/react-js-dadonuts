@@ -72,7 +72,7 @@ export const ItemWrapper = styled.div`
   }
 `;
 
-export const AccountWrapper = styled(Link)`
+export const AccountWrapper = styled.div`
   display: flex;
   align-items: center;
   color: #fff;

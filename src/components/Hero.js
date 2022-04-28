@@ -3,7 +3,7 @@ import { H1Wrapper, HeroBtn, HeroContainer, HeroContent, HeroH1, HeroItems, Hero
 const Hero = ({ animation }) => {
     
     return (
-        <HeroContainer id="Hero">
+        <HeroContainer id="home">
             <HeroContent>
                 <HeroItems>
                     <H1Wrapper>

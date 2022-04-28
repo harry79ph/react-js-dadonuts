@@ -13,11 +13,7 @@ const SideMenuItem = ({ item, removeFromCart }) => {
                 <span>{item.qty}</span>
             </SideItemContent>
             <ItemRemove>
-                <RemoveIcon display="inline" onClick={
-                    () => {
-                        removeFromCart(item);
-                    }
-                } />
+                <RemoveIcon display="inline" onClick={() => removeFromCart(item)} />
             </ItemRemove>
         </SideItemWrapper>
     );

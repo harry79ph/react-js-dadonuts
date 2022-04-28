@@ -3,6 +3,7 @@ import { CartButton, CartContainer, CartContent, CartList, SubtotalWrap } from "
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { connect } from 'react-redux';
+import CopyRight from "./CopyRight";
 
 const Cart = ({ cart, totals }) => {
 
@@ -19,22 +20,25 @@ const Cart = ({ cart, totals }) => {
     }
 
     return (
-        <CartContainer>
-            <CartNav totals={totals}/>
-            <CartContent>
-                <h1>Your Cart</h1>
-                <CartList>
-                    {cartContent}
-                </CartList>
-                <SubtotalWrap>
-                    <h2>Subtotal: £{totals.price}</h2>
-                    <div>
-                        <CartButton disabled={Number(totals.price) === 0}>Proceed to Checkout</CartButton>
-                        <CartButton><Link to="/">Continue Shopping</Link></CartButton>
-                    </div>
-                </SubtotalWrap>
-            </CartContent>
-        </CartContainer>
+        <>
+            <CartContainer>
+                <CartNav totals={totals}/>
+                <CartContent>
+                    <h1>Your Cart</h1>
+                    <CartList>
+                        {cartContent}
+                    </CartList>
+                    <SubtotalWrap>
+                        <h2>Subtotal: £{totals.price}</h2>
+                        <div>
+                            <CartButton disabled={Number(totals.price) === 0}>Proceed to Checkout</CartButton>
+                            <CartButton><Link to="/">Continue Shopping</Link></CartButton>
+                        </div>
+                    </SubtotalWrap>
+                </CartContent>
+            </CartContainer>
+            <CopyRight />
+        </>
     );
 }
 
