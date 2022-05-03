@@ -60,4 +60,7 @@ export const CRWrap = styled.p`
   width: 100vw;
   padding: 5px 0 8px;
   text-align: center;
+  a {
+    color: #ffd2a8;
+  }
 `;

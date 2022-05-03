@@ -13,6 +13,7 @@ export const NavContainer = styled.nav`
   font-weight: 700;
   position: ${(props) => props.position || "fixed"};
   width: 100%;
+  z-index: 1;
   @media screen and (max-width: 650px) {
     height: 60px;
   }
