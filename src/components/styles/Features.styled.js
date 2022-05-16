@@ -3,7 +3,12 @@ import styled from 'styled-components';
 export const FeatureCard = styled.div`
     margin: 2rem;
     width: 24%;
-    box-shadow: 3px 5px 1px 1px rgba(255, 210, 168, 0.7);
+    box-shadow: 3px 5px 1px 0px rgba(255, 210, 168, 0.7);
+    transition: all 0.2s ease-out;
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 2px 2px 2px 3px rgba(255, 210, 168, 0.95);
+    }
     @media screen and (max-width: 992px) {
       width: 100%;
     }

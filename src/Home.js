@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import Navbar from "./components/Navbar";
 import SideMenu from "./components/SideMenu";
 import Hero from "./components/Hero";
-import Products from './components/Products';
 import Features from './components/Features';
 import Footer from './components/Footer';
 import CopyRight from "./components/CopyRight";
+import { ProductLoader } from "./components/styles/Products.styled";
+
+const Products = lazy(() => import("./components/Products"));
 
 function Main({ animation }) {
 
@@ -19,7 +21,9 @@ function Main({ animation }) {
       <Navbar handleToggle={handleToggle} />
       <SideMenu isOpen={isOpen} handleToggle={handleToggle} />
       <Hero animation={animation} />
-      <Products />
+      <Suspense fallback={<ProductLoader>Please wait. Loading...</ProductLoader>}>
+        <Products />
+      </Suspense>
       <Features />
       <Footer />
       <CopyRight />

@@ -2,7 +2,7 @@ import { ProductButton, ProductCard, ProductImg, ProductInfo, ProductPrice, Prod
 import { connect } from 'react-redux';
 import { addToCart, removeFromCart } from '../redux/actions/cart-actions'
 
-const ProductItem = ({ cart, product, addToCart, removeFromCart, isList }) => {
+const ProductItem = ({ cart, product, addToCart, removeFromCart }) => {
     
     return (
         <ProductCard>

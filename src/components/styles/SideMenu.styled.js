@@ -44,7 +44,7 @@ export const CloseIcon = styled.p`
   font-size: 1.4rem;
   font-weight: bold;
   filter: drop-shadow(0px 0px 3px rgba(255, 210, 168));
-  transition: 0.4s ease-in-out;
+  transition: 0.2s ease-in-out;
   &:hover {
     color: #fff;
   }

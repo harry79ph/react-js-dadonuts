@@ -1,10 +1,27 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const ProductsContainer = styled.div`
   min-height: 100vh;
   padding: 2rem calc((100vw - 1300px) / 2);
   background: #feafc4;
   color: #fff;
+`;
+
+const loader = keyframes`
+  0% { color: #fff }
+  100% { color: #ff00b2; }
+`;
+
+export const ProductLoader = styled.p`
+  padding: 2vw;
+  font-size: 1.4rem;
+  background: #feafc4;
+  text-align: center;
+  color: #fff;
+  animation-name: ${loader};
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
 `;
 
 export const ProductSection = styled.section`
