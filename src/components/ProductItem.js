@@ -11,7 +11,7 @@ const ProductItem = ({ cart, product, addToCart, removeFromCart }) => {
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductPrice>£{product.price}</ProductPrice>
                 {cart.some((item) => item.id === product.id) ? (
-                    <ProductButton className='active' onClick={() => removeFromCart(product)}>Remove<span> from Cart</span> </ProductButton>
+                    <ProductButton className='active' onClick={() => removeFromCart(product)}>Remove<span> from Cart</span></ProductButton>
                 ) : (
                     <ProductButton onClick={() => addToCart(product)}>Add to Cart</ProductButton>
                 )}

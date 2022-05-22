@@ -9,8 +9,8 @@ export const CartItemWrap = styled.li`
   overflow: hidden;
   min-height: 100px;
   padding: 1rem;
-  box-shadow: 1px 2px 1px 1px rgba(255, 210, 168, 0.7);
-  @media screen and (max-width: 650px) {
+  box-shadow: 1px 2px 1px 1px ${({theme}) => theme.colors.shadow};
+  @media ${({theme}) => theme.mediaQueries['md']} {
     padding: 0;
   }
 `;
@@ -20,7 +20,7 @@ export const ItemImg = styled.img`
   height: 100px;
   min-width: 60px;
   max-width: 100%;
-  @media screen and (max-width: 650px) {
+  @media ${({theme}) => theme.mediaQueries['md']} {
     height: 70px;
   }
 `;
@@ -35,7 +35,7 @@ export const InnerWrap = styled.div`
     margin: 0 min(0.6vw, 10px);
     font-size: clamp(1rem, 1.6vw, 1.4rem);
   }
-  @media screen and (max-width: 650px) {
+  @media ${({theme}) => theme.mediaQueries['md']} {
     width: calc(100% - 80px);
   }
 `;
@@ -73,7 +73,7 @@ export const QuantityWrap = styled.div`
 
 export const ItemQuantity = styled.select`
   font-size: 1.2rem;
-  background-color: #fff;
+  background-color: ${props => props.theme.colors.light};
   color: inherit;
   border-radius: 3px;
   option {
@@ -99,7 +99,7 @@ export const RemoveIcon = styled(CgTrash)`
   font-size: 2.2rem;
   color: inherit;
   cursor: pointer;
-  @media screen and (max-width: 650px) {
+  @media ${({theme}) => theme.mediaQueries['md']} {
     display: ${(props) => props.display || "none"};
     font-size: 2rem;
   }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import GlobalStyle from "./theme/GlobalStyle";
+import { ThemeProvider } from 'styled-components';
+import Theme from './theme/theme';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart";
 import Home from "./Home";
@@ -24,12 +26,14 @@ const App = ({ cart, calcTotals }) => {
 
   return (
     <Router>
-      <GlobalStyle />
-      <Routes>
-        <Route exact path="/" element={<Home animation={animation} />} />
-        <Route exact path="/cart" element={<Cart />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <Routes>
+          <Route exact path="/" element={<Home animation={animation} />} />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ThemeProvider>
     </Router>
   );
 };

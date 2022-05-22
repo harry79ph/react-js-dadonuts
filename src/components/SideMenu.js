@@ -1,8 +1,7 @@
-import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader, LoginWrapper } from "./styles/SideMenu.styled";
+import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader, LoginWrapper, LoginButton } from "./styles/SideMenu.styled";
 import { products } from "../data/itemLists";
 import SideMenuItem from "./SideMenuItem";
 import { connect } from "react-redux";
-import { SortButton } from "./styles/Products.styled";
 
 const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
 
@@ -18,8 +17,8 @@ const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
                 <CloseIcon>X</CloseIcon>
             </IconWrapper>
             <LoginWrapper>Please
-                <SortButton>Login</SortButton>or
-                <SortButton>Register</SortButton>
+                <LoginButton>Login</LoginButton>or
+                <LoginButton>Register</LoginButton>
             </LoginWrapper>
             <SidebarMenu>
                 <h2>Choose Product</h2>

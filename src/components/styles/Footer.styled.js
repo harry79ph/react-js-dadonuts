@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const FooterWrapper = styled.div`
   padding: 1em 6vw;
-  color: #fff;
-  background-color: #ff00b2;
+  color: ${props => props.theme.colors.light};
+  background-color: ${props => props.theme.colors.secondary};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -30,7 +30,7 @@ export const SocialIconLink = styled.a`
   padding-right: 10px;
   transition: 0.2s ease-out;
   &:hover {
-    color: #ffd2a8;
+    color: ${props => props.theme.colors.golden};
   }
 `;
 
@@ -55,12 +55,14 @@ export const ContactItem = styled.li`
 `;
 
 export const CRWrap = styled.p`
-  background-color: #ff00b2;
-  color: #fff;
+  background-color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.light};
   width: 100vw;
   padding: 5px 0 8px;
   text-align: center;
   a {
-    color: #ffd2a8;
+    color: ${props => props.theme.colors.golden};
+    text-decoration: underline;
+    cursor: pointer;
   }
 `;

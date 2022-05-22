@@ -33,7 +33,7 @@ export const IconWrapper = styled.div`
   background: transparent;
   border: transparent;
   cursor: pointer;
-  @media screen and (max-width: 768px) {
+  @media ${({theme}) => theme.mediaQueries['md']} {
     top: 1.4rem;
     left: 1.4rem;
   }
@@ -46,7 +46,7 @@ export const CloseIcon = styled.p`
   filter: drop-shadow(0px 0px 3px rgba(255, 210, 168));
   transition: 0.2s ease-in-out;
   &:hover {
-    color: #fff;
+    color: ${props => props.theme.colors.light};
   }
 `;
 
@@ -54,6 +54,23 @@ export const LoginWrapper = styled.div`
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
+`;
+
+export const LoginButton = styled.button`
+  font-size: 0.9rem;
+  margin: 0.15rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  background: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.light};
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &:focus,
+  &:active,
+  &:hover {
+    background: ${props => props.theme.colors.light};
+    color: ${props => props.theme.colors.dark};
+  }
 `;
 
 export const SidebarMenu = styled.div`
@@ -117,12 +134,12 @@ export const SideMenuLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: ${props => props.theme.colors.dark};
   font-size: 1.6rem;
   text-transform: capitalize;
   transition: 0.2s ease-in-out;
   &:hover, &.active{
-    color: #fff;
+    color: ${props => props.theme.colors.light};
   }
 `;
 
@@ -137,19 +154,19 @@ export const SideBtnWrapper = styled.div`
 `;
 
 export const SidebarRoute = styled(RouteLink)`
-  background: #ff00b2;
+  background: ${props => props.theme.colors.secondary};
   white-space: nowrap;
   padding: 10px 24px;
   margin: 20px;
-  color: #fff;
-  font-size: 20px;
+  color: ${props => props.theme.colors.light};
+  font-size: 1rem;
   font-weight: 700;
   border-radius: 3px;
   border: none;
   transition: 0.2s ease-in-out;
   &:hover {
     transition: 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    background: ${props => props.theme.colors.light};
+    color: ${props => props.theme.colors.dark};
   }
 `;

@@ -9,7 +9,7 @@ const page = keyframes`
 
 export const CartContainer = styled.div`
   color: #26001b;
-  background-color: #fff;
+  background-color: ${props => props.theme.colors.light};
   text-shadow: none;
   min-height: 100vh;
   line-height: 1;
@@ -30,19 +30,19 @@ export const NavLink = styled(Link)`
   }
   p {
     display: block;
-    background: -webkit-linear-gradient(#ffd065, #de00a2);
+    background: -webkit-linear-gradient(#ccc1b8, #fff1a6);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: initial;
     &:hover {
-      background: -webkit-linear-gradient(#ffd2a8, #e83d71);
+      background: -webkit-linear-gradient(#ffd2a8, #fff1a6);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
-  @media screen and (max-width: 650px) {
+  @media ${({theme}) => theme.mediaQueries['md']} {
     margin-left: 1em;
     font-size: 1.5rem;
     img {
@@ -50,7 +50,7 @@ export const NavLink = styled(Link)`
       margin-right: 4px;
     }
   }
-  @media screen and (max-width: 420px) {
+  @media ${({theme}) => theme.mediaQueries['sm']} {
     margin-left: 0.6em;
     font-size: 1.5rem;
     img {
@@ -70,7 +70,7 @@ export const CartContent = styled.div`
     font-size: clamp(1.2rem, 1.8vw, 1.5rem);
     display: inline-block;
   }
-  @media screen and (max-width: 650px) {
+  @media ${({theme}) => theme.mediaQueries['md']} {
     padding: 0 clamp(0.6rem, 2.6vw, 4rem);
   }
 `;
@@ -98,7 +98,7 @@ export const CartButton = styled(ProductButton)`
   a {
     color: inherit;
   }
-  @media screen and (max-width: 650px) {
+  @media ${({theme}) => theme.mediaQueries['md']} {
     font-size: 1rem;
     padding: 0.6rem 1rem;
   }

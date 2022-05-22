@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const FeatureCard = styled.div`
     margin: 2rem;
     width: 24%;
-    box-shadow: 3px 5px 1px 0px rgba(255, 210, 168, 0.7);
+    box-shadow: 3px 5px 1px 0px ${({theme}) => theme.colors.shadow};
     transition: all 0.2s ease-out;
     &:hover {
       transform: scale(1.01);
-      box-shadow: 2px 2px 2px 3px rgba(255, 210, 168, 0.95);
+      box-shadow: 2px 2px 2px 3px rgba(242, 229, 158, 0.95);
     }
-    @media screen and (max-width: 992px) {
+    @media ${({theme}) => theme.mediaQueries['lg']} {
       width: 100%;
     }
 `;
@@ -48,12 +48,12 @@ display: block;
   margin-top: auto;
   border: none;
   border-radius: 2px;
-  background: #ff00b2;
-  color: #fff;
+  background: ${props => props.theme.colors.golden};
+  color: ${props => props.theme.colors.dark};
   cursor: pointer;
   transition: 0.2s ease-out;
   &:hover {
-    background: #ffd2a8;
-    color: #000;
+    background: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.light};
   }
 `;

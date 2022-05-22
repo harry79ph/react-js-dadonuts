@@ -5,23 +5,29 @@ import BgImg from "../../images/doughnut-bg.jpg";
 export const HeroContainer = styled.div`
   background-image: linear-gradient(
       to right,
-      rgba(255, 0, 178, 0.15),
-      rgba(255, 0, 178, 0.01)
+      rgba(255, 68, 185, 0.9),
+      rgba(255, 68, 185, 0.01)
     ),
     url(${BgImg});
   background-color: #fec3c7; // If the images cannot be loaded, the background color will be used as fallback.
   height: 100vh;
   background-position: center;
   background-size: cover;
-  @media screen and (max-width: 992px) {
+  @media ${({ theme }) => theme.mediaQueries["lg"]} {
     background-position: 90% 50%;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 68, 185, 0.05),
+      rgba(255, 68, 185, 0.01)
+    ),
+    url(${BgImg});
   }
 `;
 
 export const HeroContent = styled.div`
   height: 100vh;
   padding: 0 calc((100vw - 1300px) / 2);
-  @media screen and (max-width: 650px) {
+  @media ${({ theme }) => theme.mediaQueries["md"]} {
     padding: 20vh 0;
   }
 `;
@@ -35,11 +41,11 @@ export const HeroItems = styled.div`
   max-height: 100%;
   padding: 0 2rem;
   width: 550px;
-  color: #fff;
+  color: ${(props) => props.theme.colors.light};
   line-height: 1;
   font-weight: bold;
   transition: all 0.2s ease-out;
-  @media screen and (max-width: 650px) {
+  @media ${({ theme }) => theme.mediaQueries["md"]} {
     width: 100%;
     justify-content: flex-start;
   }
@@ -47,7 +53,7 @@ export const HeroItems = styled.div`
 
 export const H1Wrapper = styled.div`
   margin-bottom: 1rem;
-  box-shadow: 3px 5px 1px 1px rgba(255, 210, 168, 0.7);
+  box-shadow: 3px 5px 1px 1px ${({theme}) => theme.colors.shadow};
 `;
 
 const h1Animation = keyframes`
@@ -95,14 +101,15 @@ export const HeroBtn = styled(Link)`
   justify-self: flex-end;
   border: none;
   border-radius: 3px;
-  background: #ff00b2;
-  color: #fff;
+  background: ${(props) => props.theme.colors.golden};
+  color: ${(props) => props.theme.colors.dark};
   transition: 0.2s ease-out;
-  &:hover, &:focus {
-    background: #ffd2a8;
-    color: #000;
+  &:hover,
+  &:focus {
+    background: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.light};
   }
-  @media screen and (max-width: 650px) {
+  @media ${({ theme }) => theme.mediaQueries["md"]} {
     margin-top: auto;
   }
 `;
