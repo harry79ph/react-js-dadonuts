@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductButton } from "./Products.styled";
 
-const page = keyframes`
+export const fadeIn = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
 `;
@@ -14,7 +14,7 @@ export const CartContainer = styled.div`
   min-height: 100vh;
   line-height: 1;
   padding-bottom: 2em;
-  animation-name: ${page};
+  animation-name: ${fadeIn};
   animation-duration: 0.2s;
   animation-timing-function: ease-out;
 `;

@@ -1,25 +1,36 @@
-import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader, LoginWrapper, LoginButton } from "./styles/SideMenu.styled";
+import { CloseIcon, IconWrapper, SideMenuContainer, SideMenuLink, SidebarMenu, SidebarRoute, SideBtnWrapper, CartContent, CartHeader } from "./styles/SideMenu.styled";
 import { products } from "../data/itemLists";
 import SideMenuItem from "./SideMenuItem";
 import { connect } from "react-redux";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import UserAuth from "./UserAuth";
+import UserLogin from "./UserLogin";
+import UserRegister from "./UserRegister";
 
 const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
 
-    const handleClick = (e) => {
-        if (e.target.tagName !== 'svg') {
-            handleToggle();
-        }
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        handleToggle();
+        navigate("/home");
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate("/home");
     }
 
     return (
-        <SideMenuContainer isOpen={isOpen} onClick={handleClick}>
-            <IconWrapper>
-                <CloseIcon>X</CloseIcon>
+        <SideMenuContainer isOpen={isOpen} >
+            <IconWrapper onClick={handleClick}>
+                <CloseIcon>{'Close >>>>'}</CloseIcon>
             </IconWrapper>
-            <LoginWrapper>Please
-                <LoginButton>Login</LoginButton>or
-                <LoginButton>Register</LoginButton>
-            </LoginWrapper>
+            <Routes>
+                <Route path="/" element={<UserAuth />}/>
+                <Route path="login" element={<UserLogin onSubmit={handleSubmit}/>}/>
+                <Route path="register" element={<UserRegister onSubmit={handleSubmit}/>}/>
+            </Routes>
             <SidebarMenu>
                 <h2>Choose Product</h2>
                 {products.map((product, i) => <SideMenuLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000} key={'menu' + i}>{product}</SideMenuLink>)}
@@ -40,7 +51,7 @@ const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
                 )}
             </CartContent>
             <SideBtnWrapper>
-                <SidebarRoute to="cart">Go to Cart</SidebarRoute>
+                <SidebarRoute to="/cart">Go to Cart</SidebarRoute>
             </SideBtnWrapper>
         </SideMenuContainer>
     );

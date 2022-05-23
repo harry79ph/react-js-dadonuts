@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link as RouteLink } from "react-router-dom";
 import { Link } from 'react-scroll';
 import { CartItemWrap, QuantityWrap, ItemImg } from "./CartItem.styled";
+import { fadeIn } from './Cart.styled';
 
 export const SideMenuContainer = styled.aside`
   position: fixed;
@@ -56,14 +57,54 @@ export const LoginWrapper = styled.div`
   font-size: 1.2rem;
 `;
 
-export const LoginButton = styled.button`
+export const LoginButton = styled(RouteLink)`
   font-size: 0.9rem;
   margin: 0.15rem;
   padding: 0.3rem 0.7rem;
   border: none;
   background: ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.light};
+  transition: all 0.2s ease-out;
+  &:focus,
+  &:active,
+  &:hover {
+    background: ${props => props.theme.colors.light};
+    color: ${props => props.theme.colors.dark};
+  }
+`;
+
+export const FormWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 3vw;
+  animation-name: ${fadeIn};
+  animation-duration: 0.1s;
+  animation-timing-function: ease-out;
+`;
+
+export const UserForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const UserInput = styled.input`
+  margin: 0.2rem 0;
+  padding: 0.4rem;
+  font-size: 1rem;
+  border: 0;
+  line-height: 1.2;
+  border-radius: 2px;
+`;
+
+export const FormButton = styled.input`
+  margin: 0.2rem 0;
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 2px;
   cursor: pointer;
+  background: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.light};
   transition: all 0.2s ease-out;
   &:focus,
   &:active,

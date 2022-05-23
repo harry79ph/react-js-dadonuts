@@ -65,7 +65,6 @@ export const SortButton = styled.button`
   border: none;
   background: ${props => props.theme.colors.golden};
   color: ${props => props.theme.colors.dark};
-  cursor: pointer;
   transition: all 0.2s ease-out;
   &:focus,
   &:active,
@@ -152,7 +151,6 @@ export const ProductButton = styled.button`
   border-radius: 2px;
   background: ${props => props.theme.colors.golden};
   color: ${props => props.theme.colors.dark};
-  cursor: pointer;
   transition: background 0.2s ease-out;
   &:hover,
   &.active {

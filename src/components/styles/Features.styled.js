@@ -50,7 +50,6 @@ display: block;
   border-radius: 2px;
   background: ${props => props.theme.colors.golden};
   color: ${props => props.theme.colors.dark};
-  cursor: pointer;
   transition: 0.2s ease-out;
   &:hover {
     background: ${props => props.theme.colors.secondary};
