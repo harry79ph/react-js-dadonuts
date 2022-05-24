@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { buttonStyle } from './Hero.styled';
 
 export const FeatureCard = styled.div`
     margin: 2rem;
@@ -48,11 +49,5 @@ display: block;
   margin-top: auto;
   border: none;
   border-radius: 2px;
-  background: ${props => props.theme.colors.golden};
-  color: ${props => props.theme.colors.dark};
-  transition: 0.2s ease-out;
-  &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.light};
-  }
+  ${buttonStyle}
 `;

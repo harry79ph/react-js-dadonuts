@@ -1,6 +1,19 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { Link } from "react-scroll";
 import BgImg from "../../images/doughnut-bg.jpg";
+
+export const buttonStyle = css`
+  border: none;
+  transition: 0.2s ease-out;
+  background: ${(props) => props.theme.colors.golden};
+  color: ${(props) => props.theme.colors.dark};
+  &.active,
+  &:hover,
+  &:focus {
+    background: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.light};
+  }
+`;
 
 export const HeroContainer = styled.div`
   background-image: linear-gradient(
@@ -99,17 +112,9 @@ export const HeroBtn = styled(Link)`
   font-size: 1.6rem;
   padding: 1rem 3rem;
   justify-self: flex-end;
-  border: none;
   border-radius: 3px;
-  background: ${(props) => props.theme.colors.golden};
-  color: ${(props) => props.theme.colors.dark};
-  transition: 0.2s ease-out;
-  &:hover,
-  &:focus {
-    background: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.light};
-  }
-  @media ${({ theme }) => theme.mediaQueries["md"]} {
+  ${buttonStyle}
+  @media ${({theme}) => theme.mediaQueries["md"]} {
     margin-top: auto;
   }
 `;

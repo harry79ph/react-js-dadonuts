@@ -8,7 +8,7 @@ const UserLogin = ({ onSubmit }) => {
             <UserForm onSubmit={onSubmit}>
                 <UserInput type="text" id="username" placeholder="Username"/>
                 <UserInput type="password" id="password" placeholder="Password"/>
-                <FormButton type="submit" value="Login"></FormButton>
+                <FormButton type="submit" value="Login" />
             </UserForm>
             <p style={{textAlign: "center"}}><Link to="/home/register">Don't have an account?</Link></p>
         </FormWrap>

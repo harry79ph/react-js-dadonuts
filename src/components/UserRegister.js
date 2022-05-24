@@ -10,7 +10,7 @@ const UserRegister = ({ onSubmit }) => {
                 <UserInput type="text" id="username" placeholder="Username"/>
                 <UserInput type="password" id="password" placeholder="Password"/>
                 <UserInput type="password" id="confirm" placeholder="Confirm Password"/>
-                <FormButton type="submit" value="Register"></FormButton>
+                <FormButton type="submit" value="Register" />
             </UserForm>
             <p style={{textAlign: "center"}}><Link to="/home/login">Already have an account?</Link></p>
         </FormWrap>

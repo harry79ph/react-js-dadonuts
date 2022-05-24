@@ -28,20 +28,10 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
     p {
-        text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.1);
         letter-spacing: 0.05em;
-        @media screen and (max-width: 650px) {
-            text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.05);
-        }
     }
     span {
         letter-spacing: 0.01em;
-    }
-    h1, h2 {
-        text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.2);
-        @media screen and (max-width: 650px) {
-            text-shadow: 0px 0px 3px rgba(255, 0, 178, 0.1);
-        }
     }
     a {
         text-decoration: none;

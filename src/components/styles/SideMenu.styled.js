@@ -1,8 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link as RouteLink } from "react-router-dom";
 import { Link } from 'react-scroll';
 import { CartItemWrap, QuantityWrap, ItemImg } from "./CartItem.styled";
 import { fadeIn } from './Cart.styled';
+
+const sideMenuButtonStyle = css`
+  border: none;
+  background: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.light};
+  transition: all 0.2s ease-out;
+  &.active,
+  &:focus,
+  &:hover {
+    background: ${props => props.theme.colors.light};
+    color: ${props => props.theme.colors.dark};
+  }
+`;
 
 export const SideMenuContainer = styled.aside`
   position: fixed;
@@ -51,26 +64,18 @@ export const CloseIcon = styled.p`
   }
 `;
 
-export const LoginWrapper = styled.div`
+export const LoginWrapper = styled.section`
   width: 100%;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  margin: 1rem 0;
 `;
 
 export const LoginButton = styled(RouteLink)`
   font-size: 0.9rem;
   margin: 0.15rem;
   padding: 0.3rem 0.7rem;
-  border: none;
-  background: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.light};
-  transition: all 0.2s ease-out;
-  &:focus,
-  &:active,
-  &:hover {
-    background: ${props => props.theme.colors.light};
-    color: ${props => props.theme.colors.dark};
-  }
+  ${sideMenuButtonStyle}
 `;
 
 export const FormWrap = styled.div`
@@ -103,15 +108,7 @@ export const FormButton = styled.input`
   border: 0;
   border-radius: 2px;
   cursor: pointer;
-  background: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.light};
-  transition: all 0.2s ease-out;
-  &:focus,
-  &:active,
-  &:hover {
-    background: ${props => props.theme.colors.light};
-    color: ${props => props.theme.colors.dark};
-  }
+  ${sideMenuButtonStyle}
 `;
 
 export const SidebarMenu = styled.div`
@@ -128,7 +125,6 @@ export const SidebarMenu = styled.div`
 
 export const CartHeader = styled.h2`
   text-align: center;
-  text-shadow: 0px 0px 3px rgba(255, 210, 168);
   @media screen and (min-width: 992px) {
     padding-top: 10px;
   }
@@ -146,14 +142,11 @@ export const CartContent = styled.ul`
 `;
 
 export const SideItemWrapper = styled(CartItemWrap)`
-  display: flex;
-  align-content: stretch;
-  align-items: center;
   justify-content: space-between;
-  min-height: 80px;
+  min-height: 60px;
   width: 100%;
   margin-bottom: 0;
-  padding: 1em;
+  padding: 0 1em;
   box-shadow: none;
   svg {
     font-size: 1.8rem;
@@ -164,12 +157,11 @@ export const SideItemContent = styled(QuantityWrap)`
   flex: 1;
   font-size: 1.2rem;
   justify-content: space-around;
-  padding: 1em;
+  padding: 0.7em;
   .times {
     font-weight: 700;
   }
 `;
-
 
 export const SideMenuLink = styled(Link)`
   display: flex;

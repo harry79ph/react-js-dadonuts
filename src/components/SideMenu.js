@@ -32,7 +32,6 @@ const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
                 <Route path="register" element={<UserRegister onSubmit={handleSubmit}/>}/>
             </Routes>
             <SidebarMenu>
-                <h2>Choose Product</h2>
                 {products.map((product, i) => <SideMenuLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000} key={'menu' + i}>{product}</SideMenuLink>)}
             </SidebarMenu>
             <CartHeader>Your Items</CartHeader>

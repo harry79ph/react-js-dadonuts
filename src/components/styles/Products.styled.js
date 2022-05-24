@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { buttonStyle } from "./Hero.styled";
 
 export const ProductsContainer = styled.div`
   min-height: 100vh;
@@ -62,16 +63,7 @@ export const SortButtonsWrap = styled.div`
 export const SortButton = styled.button`
   margin: 0.15rem;
   padding: 0.3rem 0.7rem;
-  border: none;
-  background: ${props => props.theme.colors.golden};
-  color: ${props => props.theme.colors.dark};
-  transition: all 0.2s ease-out;
-  &:focus,
-  &:active,
-  &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.light};
-  }
+  ${buttonStyle}
 `;
 
 export const ProductWrapper = styled.div`
@@ -149,12 +141,5 @@ export const ProductButton = styled.button`
   padding: 0.7rem 1.4rem;
   border: none;
   border-radius: 2px;
-  background: ${props => props.theme.colors.golden};
-  color: ${props => props.theme.colors.dark};
-  transition: background 0.2s ease-out;
-  &:hover,
-  &.active {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.light};
-  }
+  ${buttonStyle}
 `;
