@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.div`
-  padding: 1em 6vw;
+  padding: 0.5em 6vw 0;
   color: ${props => props.theme.colors.light};
   background-color: ${props => props.theme.colors.secondary};
   display: flex;

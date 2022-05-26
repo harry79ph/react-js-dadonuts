@@ -2,8 +2,9 @@
 export default {
     colors: {
         // background
+        navbar: '#fa00aa',
         main: '#ff44b9',
-        secondary: '#fa00aa',
+        secondary: '#e10099',
         golden: '#f2e59e',
         shadow: 'rgba(242, 229, 158, 0.7)',
         // text

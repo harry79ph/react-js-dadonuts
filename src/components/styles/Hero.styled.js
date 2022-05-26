@@ -18,8 +18,8 @@ export const buttonStyle = css`
 export const HeroContainer = styled.div`
   background-image: linear-gradient(
       to right,
-      rgba(255, 68, 185, 0.9),
-      rgba(255, 68, 185, 0.01)
+      rgb(250, 0, 170, 0.7),
+      rgb(250, 0, 170, 0)
     ),
     url(${BgImg});
   background-color: #fec3c7; // If the images cannot be loaded, the background color will be used as fallback.

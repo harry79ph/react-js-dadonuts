@@ -13,7 +13,7 @@ const loader = keyframes`
   100% { color: ${props => props.theme.colors.golden}; }
 `;
 
-export const ProductLoader = styled.p`
+export const Loader = styled.p`
   padding: 2vw;
   font-size: 1.4rem;
   background: ${props => props.theme.colors.main};

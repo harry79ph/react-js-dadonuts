@@ -5,7 +5,7 @@ import { CgShoppingCart } from "react-icons/cg";
 import { RiAccountCircleLine } from "react-icons/ri";
 
 export const NavContainer = styled.nav`
-  background: ${({theme}) => theme.colors.secondary};
+  background: ${({theme}) => theme.colors.navbar};
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -74,6 +74,10 @@ export const AccountWrapper = styled.div`
   color: ${props => props.theme.colors.light};
   margin-left: auto;
   margin-right: 0.3em;
+  p {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
   cursor: ${(props) => props.cursor || "pointer"};
   @media ${({theme}) => theme.mediaQueries['md']} {
     display: none;
