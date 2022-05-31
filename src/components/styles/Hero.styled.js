@@ -22,7 +22,7 @@ export const HeroContainer = styled.div`
       rgb(250, 0, 170, 0)
     ),
     url(${BgImg});
-  background-color: #fec3c7; // If the images cannot be loaded, the background color will be used as fallback.
+  background-color: ${(props) => props.theme.colors.secondary}; // If the images cannot be loaded, the background color will be used as fallback.
   height: 100vh;
   background-position: center;
   background-size: cover;

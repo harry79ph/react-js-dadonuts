@@ -24,7 +24,7 @@ const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
     return (
         <SideMenuContainer isOpen={isOpen} >
             <IconWrapper onClick={handleClick}>
-                <CloseIcon>{'Close >>>>'}</CloseIcon>
+                <CloseIcon>Close<span>{'>>>'}</span></CloseIcon>
             </IconWrapper>
             <Routes>
                 <Route path="/" element={<UserAuth />}/>

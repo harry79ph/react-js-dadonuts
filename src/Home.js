@@ -7,9 +7,10 @@ import CopyRight from "./components/CopyRight";
 
 const HomeContent = lazy(() => import("./components/HomeContent"));
 
-function Main({ animation }) {
+function Home({ animation }) {
 
   const [isOpen, setIsOpen] = useState(false);
+  
   const handleToggle = () => {
     setIsOpen(prev => !prev);
   }
@@ -27,4 +28,4 @@ function Main({ animation }) {
   );
 }
 
-export default Main;
+export default Home;

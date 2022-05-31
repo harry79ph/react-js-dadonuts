@@ -59,6 +59,10 @@ export const CloseIcon = styled.p`
   font-weight: bold;
   filter: drop-shadow(0px 0px 3px rgba(255, 210, 168));
   transition: 0.2s ease-in-out;
+  span {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
   &:hover {
     color: ${props => props.theme.colors.light};
   }
