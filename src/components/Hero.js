@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { H1Wrapper, HeroBtn, HeroContainer, HeroContent, HeroH1, HeroItems, HeroP } from "./styles/Hero.styled";
 
 const Hero = ({ animation }) => {
@@ -17,4 +18,4 @@ const Hero = ({ animation }) => {
     );
 }
 
-export default Hero;
+export default memo(Hero);

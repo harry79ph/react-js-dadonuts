@@ -2,6 +2,7 @@ import { ProductsContainer, ProductSection, ProductsHeading, ProductWrapper } fr
 import { features } from '../data/itemLists';
 import { FeatureInfo, FeatureCard, FeatureDesc, FeatureButton } from "./styles/Features.styled";
 import Footer from "./Footer";
+import { memo } from "react";
 
 
 const Features = () => {
@@ -31,4 +32,4 @@ const Features = () => {
     );
 }
  
-export default Features;
+export default memo(Features);

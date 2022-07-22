@@ -58,7 +58,7 @@ export const HeroItems = styled.div`
   line-height: 1;
   font-weight: bold;
   transition: all 0.2s ease-out;
-  @media ${({ theme }) => theme.mediaQueries["md"]} {
+  @media ${({theme}) => theme.mediaQueries["md"]} {
     width: 100%;
     justify-content: flex-start;
   }
@@ -83,7 +83,7 @@ export const HeroH1 = styled.h1`
   font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: ${(props) => props.className && "0"};
+  opacity: ${({className}) => className && "0"};
   &.active {
     animation-name: ${h1Animation};
     animation-duration: 2s;

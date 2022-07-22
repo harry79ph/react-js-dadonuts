@@ -100,7 +100,7 @@ export const RemoveIcon = styled(CgTrash)`
   color: inherit;
   cursor: pointer;
   @media ${({theme}) => theme.mediaQueries['md']} {
-    display: ${(props) => props.display || "none"};
+    display: ${({display}) => display || "none"};
     font-size: 2rem;
   }
 `;
