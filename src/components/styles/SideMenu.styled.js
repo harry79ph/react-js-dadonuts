@@ -10,7 +10,6 @@ const sideMenuButtonStyle = css`
   color: ${props => props.theme.colors.light};
   transition: all 0.2s ease-out;
   &.active,
-  &:focus,
   &:hover {
     background: ${props => props.theme.colors.light};
     color: ${props => props.theme.colors.dark};
@@ -82,6 +81,13 @@ export const LoginButton = styled(RouteLink)`
   ${sideMenuButtonStyle}
 `;
 
+export const LogoutButton = styled.button`
+  font-size: 0.9rem;
+  margin: 0.15rem;
+  padding: 0.3rem 0.7rem;
+  ${sideMenuButtonStyle}
+`;
+
 export const FormWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -115,7 +121,7 @@ export const FormButton = styled.input`
   ${sideMenuButtonStyle}
 `;
 
-export const SidebarMenu = styled.div`
+export const SidebarMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

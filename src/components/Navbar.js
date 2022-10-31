@@ -4,21 +4,21 @@ import { products } from "../data/itemLists";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ handleToggle, totals }) => {
+const Navbar = ({ handleToggle, user, totals }) => {
 
     return (
         <>
             <NavContainer>
-                <NavLink activeClass="active" to="home" spy={true} smooth={true} offset={-120} duration={700}><img src={logo} alt="Dadonuts" role="button"/><p tabIndex="1">Dadonuts</p></NavLink>
+                <NavLink activeClass="active" to="home" spy={true} smooth={true} offset={-120} duration={700}><img src={logo} alt="Dadonuts" role="button"/><p tabIndex="0">Dadonuts</p></NavLink>
                 <ItemWrapper>
-                    {products.map((product, i) => <NavLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} role="button" tabIndex={i + 1}><p>{product}</p></NavLink>)}
+                    {products.map((product, i) => <NavLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} role="button" tabIndex="0"><p>{product}</p></NavLink>)}
                 </ItemWrapper>
-                <AccountWrapper onClick={handleToggle} role="button" tabIndex="4">
+                <AccountWrapper onClick={handleToggle} role="button" tabIndex="0">
                     <Account />
-                    <p>LOGIN</p>
+                    {user ? <p>LOGOUT</p> : <p>LOGIN</p>}
                 </AccountWrapper>
                 <MenuWrapper isPresent={totals.quantity === 0}>
-                    <Link to="/cart">
+                    <Link to="/cart" aria-label='your cart' tabIndex="0">
                         <ShoppingCart />
                     </Link>
                     <MenuIcon onClick={handleToggle} />
@@ -33,7 +33,7 @@ const Navbar = ({ handleToggle, totals }) => {
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.shop.cart,
+        user: state.auth.user,
         totals: state.shop.totals
     };
 };

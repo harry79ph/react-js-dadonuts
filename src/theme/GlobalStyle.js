@@ -19,6 +19,11 @@ const GlobalStyle = createGlobalStyle`
         -webkit-text-size-adjust: 100%;
         font: inherit;
     }
+
+    body > div {
+        overflow-x: hidden;
+    }
+    
     ol, ul, li {
         list-style: none;
     }

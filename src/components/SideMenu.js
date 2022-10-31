@@ -16,20 +16,15 @@ const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
         navigate("/home");
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        navigate("/home");
-    }
-
     return (
-        <SideMenuContainer isOpen={isOpen} >
+        <SideMenuContainer isOpen={isOpen} style={{visibility: isOpen ? "visible" : "hidden"}}>
             <IconWrapper onClick={handleClick}>
-                <CloseIcon>Close<span>{'>>>'}</span></CloseIcon>
+                <CloseIcon role="button" aria-label='close' tabIndex="0">Close<span>{'>>>'}</span></CloseIcon>
             </IconWrapper>
             <Routes>
                 <Route path="/" element={<UserAuth />}/>
-                <Route path="login" element={<UserLogin onSubmit={handleSubmit}/>}/>
-                <Route path="register" element={<UserRegister onSubmit={handleSubmit}/>}/>
+                <Route path="/login" element={<UserLogin />}/>
+                <Route path="/register" element={<UserRegister />}/>
             </Routes>
             <SidebarMenu>
                 {products.map((product, i) => <SideMenuLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000} key={'menu' + i}>{product}</SideMenuLink>)}
