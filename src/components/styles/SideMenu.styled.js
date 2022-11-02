@@ -28,6 +28,11 @@ export const SideMenuContainer = styled.aside`
   justify-content: flex-start;
   align-content: stretch;
   transition: 0.3s ease-in-out;
+  & > div:nth-of-type(2) {
+    animation-name: ${fadeIn};
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+  }
   li {
     font-size: 1.2rem;
     text-align: center;
@@ -67,6 +72,16 @@ export const CloseIcon = styled.p`
   }
 `;
 
+export const FormInfoText = styled.h3`
+  color: ${props => props.theme.colors.secondary};
+  text-align: center;
+  & a {
+    color: ${props => props.theme.colors.main};
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
 export const LoginWrapper = styled.section`
   width: 100%;
   text-align: center;
@@ -92,9 +107,6 @@ export const FormWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0.5rem 3vw;
-  animation-name: ${fadeIn};
-  animation-duration: 0.1s;
-  animation-timing-function: ease-out;
 `;
 
 export const UserForm = styled.form`

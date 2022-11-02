@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FormButton,
+  FormInfoText,
   FormWrap,
   UserForm,
   UserInput,
@@ -34,54 +35,71 @@ const UserRegister = () => {
   useEffect(() => {
     if (!user) return;
     setIsLoading(true);
-    axios.post(`${apiURL}/signup`, user)
+    axios
+      .post(`${apiURL}/signup`, user)
       .then((data) => {
         setMessage(data.data.msg);
         setUser(null);
-        formRef.current.reset();
+        formRef.current?.reset();
       })
       .catch((err) => {
         console.log(err);
-        const text = err.code === "ERR_BAD_REQUEST" ? err.response.data.errors[0].msg : "Please check your connection";
+        const text =
+          err.code === "ERR_BAD_REQUEST"
+            ? err.response.data.errors[0].msg
+            : "Please check your connection";
         setMessage(text);
       });
-      setIsLoading(false);
+    setIsLoading(false);
   }, [user]);
 
   return (
     <FormWrap>
-      {message ? (
-        <h3 style={{ color: "#e10099" }}>{message}</h3>
+      {message ? <FormInfoText>{message}</FormInfoText> : <h2>Register</h2>}
+      {message === "Registration successful!" ? (
+        <FormInfoText>
+          Please <Link to="/home/login">login</Link> to your account
+        </FormInfoText>
       ) : (
-        <h2>Register</h2>
+        <>
+          <UserForm ref={formRef} onSubmit={handleSubmit}>
+            <UserInput
+              type="text"
+              name="firstname"
+              placeholder="First Name"
+              required
+              autoFocus
+            />
+            <UserInput
+              type="text"
+              name="surname"
+              placeholder="Surname"
+              required
+            />
+            <UserInput type="email" name="email" placeholder="Email" required />
+            <UserInput
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <UserInput
+              type="password"
+              name="confirm"
+              placeholder="Confirm Password"
+              required
+            />
+            <FormButton
+              type="submit"
+              disabled={isLoading}
+              value={isLoading ? "Please wait..." : "Register"}
+            />
+          </UserForm>
+          <p style={{ textAlign: "center" }}>
+            <Link to="/home/login">Already have an account?</Link>
+          </p>
+        </>
       )}
-      <UserForm ref={formRef} onSubmit={handleSubmit}>
-        <UserInput
-          type="text"
-          name="firstname"
-          placeholder="First Name"
-          required
-          autoFocus
-        />
-        <UserInput type="text" name="surname" placeholder="Surname" required />
-        <UserInput type="email" name="email" placeholder="Email" required />
-        <UserInput
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <UserInput
-          type="password"
-          name="confirm"
-          placeholder="Confirm Password"
-          required
-        />
-        <FormButton type="submit" disabled={isLoading} value={isLoading ? "Please wait..." : "Register"} />
-      </UserForm>
-      <p style={{ textAlign: "center" }}>
-        <Link to="/home/login">Already have an account?</Link>
-      </p>
     </FormWrap>
   );
 };
