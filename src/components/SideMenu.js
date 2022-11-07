@@ -6,6 +6,8 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import UserAuth from "./UserAuth";
 import UserLogin from "./UserLogin";
 import UserRegister from "./UserRegister";
+import UserAccount from "./UserAccount";
+import PrivateRoute from "./PrivateRoute";
 
 const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
 
@@ -23,8 +25,9 @@ const SideMenu = ({ totals, isOpen, handleToggle, cart }) => {
             </IconWrapper>
             <Routes>
                 <Route path="/" element={<UserAuth />}/>
-                <Route path="/login" element={<UserLogin />}/>
-                <Route path="/register" element={<UserRegister />}/>
+                <Route path="/login" element={<PrivateRoute restricted={false}><UserLogin /></PrivateRoute>} />
+                <Route path="/register" element={<PrivateRoute restricted={false}><UserRegister /></PrivateRoute>} />
+                <Route path="/account" element={<PrivateRoute restricted={true}><UserAccount /></PrivateRoute>} />
             </Routes>
             <SidebarMenu>
                 {products.map((product, i) => <SideMenuLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={1000} key={'menu' + i}>{product}</SideMenuLink>)}

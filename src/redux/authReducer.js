@@ -1,14 +1,15 @@
 
 const initialState = {
-    user: ""
+    user: "",
+    email: ""
 }
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_USER":
-            return {  ...state, user: action.payload }
+            return {  ...state, user: action.payload.name, email: action.payload.email }
         case "REMOVE_USER":
-            return {  ...state, user: "" }
+            return {  ...state, user: "", email: "" }
         default:
             return state;
     }

@@ -6,18 +6,19 @@ import {
   SideBtnWrapper,
 } from "./styles/SideMenu.styled";
 import { useState } from "react";
-import axios from "axios";
 import { removeUser } from "../redux/actions/auth-actions";
-import { apiURL } from "../data/url";
+import { useNavigate } from "react-router-dom";
+import api from "../api/axiosConfig";
 
 const UserAuth = ({ user, removeUser }) => {
 
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     setIsLoading(true);
-    axios
-      .get(`${apiURL}/logout`)
+    api
+      .get("/logout")
       .then(() => {
         removeUser();
       })
@@ -32,10 +33,11 @@ const UserAuth = ({ user, removeUser }) => {
       {user ? (
         <>
           <span>
-            Welcome, <strong>{user}</strong>
+            Hi, <strong>{user}</strong>
           </span>
-          <SideBtnWrapper onClick={handleLogout}>
-            <LogoutButton disabled={isLoading}>{isLoading ? "Please wait..." : "Logout"}</LogoutButton>
+          <SideBtnWrapper>
+            <LogoutButton onClick={() => navigate("/home/account")}>Your Account</LogoutButton>
+            <LogoutButton onClick={handleLogout} disabled={isLoading}>{isLoading ? "Please wait..." : "Logout"}</LogoutButton>
           </SideBtnWrapper>
         </>
       ) : (

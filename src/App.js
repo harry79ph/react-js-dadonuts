@@ -10,14 +10,12 @@ import NotFound from "./components/NotFound";
 import { connect } from "react-redux";
 import { calcTotals } from "./redux/actions/cart-actions";
 import { titles } from "./data/titles";
-import axios from "axios";
 import { addUser } from "./redux/actions/auth-actions";
-import { apiURL } from "./data/url";
+import api from "./api/axiosConfig";
 
 const App = ({ cart, calcTotals, addUser }) => {
   const [animation, setAnimation] = useState("active");
   const location = useLocation();
-  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     document.title = titles[location.pathname] ?? "Dadonuts";
@@ -35,10 +33,10 @@ const App = ({ cart, calcTotals, addUser }) => {
     setTimeout(() => {
       setAnimation("");
     }, 4000);
-    axios
-      .get(`${apiURL}/check`)
+    api
+      .get("/check")
       .then((data) => {
-        addUser(data.data.fullname);
+        addUser(data.data);
       })
       .catch(function (err) {
         console.log(err);

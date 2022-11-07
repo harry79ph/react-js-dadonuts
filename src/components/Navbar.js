@@ -1,4 +1,4 @@
-import { NavContainer, NavLink, ItemWrapper, MenuIcon, MenuWrapper, ShoppingCart, Account, AccountWrapper } from './styles/Navbar.styled';
+import { NavContainer, NavLink, ItemWrapper, MenuIcon, MenuWrapper, ShoppingCart, AccountWrapper, AccountImg, AccountUser } from './styles/Navbar.styled';
 import logo from '../images/logo.svg';
 import { products } from "../data/itemLists";
 import { connect } from "react-redux";
@@ -14,8 +14,8 @@ const Navbar = ({ handleToggle, user, totals }) => {
                     {products.map((product, i) => <NavLink activeClass="active" to={product} spy={true} smooth={true} offset={-120} duration={700} key={'nav' + i} role="button" tabIndex="0"><p>{product}</p></NavLink>)}
                 </ItemWrapper>
                 <AccountWrapper onClick={handleToggle} role="button" tabIndex="0">
-                    <Account />
-                    {user ? <p>LOGOUT</p> : <p>LOGIN</p>}
+                    <AccountImg />
+                    {user ? <AccountUser>{user}</AccountUser> : <p>LOGIN</p>}
                 </AccountWrapper>
                 <MenuWrapper isPresent={totals.quantity === 0}>
                     <Link to="/cart" aria-label='your cart' tabIndex="0">

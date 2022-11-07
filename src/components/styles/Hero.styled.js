@@ -27,7 +27,7 @@ export const HeroContainer = styled.div`
   background-position: center;
   background-size: cover;
   @media ${({ theme }) => theme.mediaQueries["lg"]} {
-    background-position: 90% 50%;
+    background-position: 86% 50%;
     background-image: linear-gradient(
       to right,
       rgba(255, 68, 185, 0.05),

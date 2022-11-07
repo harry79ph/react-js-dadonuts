@@ -6,10 +6,9 @@ import {
   UserInput,
 } from "./styles/SideMenu.styled";
 import { useEffect, useRef, useState } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 import { addUser, removeUser } from "../redux/actions/auth-actions";
-import { apiURL } from "../data/url";
+import api from "../api/axiosConfig";
 
 const UserLogin = ({ user, addUser, removeUser }) => {
   const [message, setMessage] = useState("");
@@ -17,8 +16,6 @@ const UserLogin = ({ user, addUser, removeUser }) => {
   const [credentials, setCredentials] = useState(null);
   const formRef = useRef(null);
   const navigate = useNavigate();
-
-  axios.defaults.withCredentials = true;
 
   const handleSubmit = (e) => {
     e.preventDefault({ addUser });
@@ -30,10 +27,10 @@ const UserLogin = ({ user, addUser, removeUser }) => {
   useEffect(() => {
     if (!credentials) return;
     setIsLoading(true);
-    axios.post(`${apiURL}/login`, credentials)
+    api.post("/login", credentials)
       .then((data) => {
         setMessage(data.data.msg);
-        addUser(data.data.fullname);
+        addUser(data.data);
         navigate("/home");
       })
       .catch((err) => {

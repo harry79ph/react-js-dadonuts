@@ -28,6 +28,15 @@ export const SideMenuContainer = styled.aside`
   justify-content: flex-start;
   align-content: stretch;
   transition: 0.3s ease-in-out;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
   & > div:nth-of-type(2) {
     animation-name: ${fadeIn};
     animation-duration: 0.7s;
@@ -75,11 +84,6 @@ export const CloseIcon = styled.p`
 export const FormInfoText = styled.h3`
   color: ${props => props.theme.colors.secondary};
   text-align: center;
-  & a {
-    color: ${props => props.theme.colors.main};
-    text-decoration: underline;
-    cursor: pointer;
-  }
 `;
 
 export const LoginWrapper = styled.section`

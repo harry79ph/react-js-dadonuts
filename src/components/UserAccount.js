@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import api from "../api/axiosConfig";
 import {
   FormButton,
   FormInfoText,
   FormWrap,
-  LoginButton,
   UserForm,
   UserInput,
 } from "./styles/SideMenu.styled";
-import api from "../api/axiosConfig";
 
-const UserRegister = () => {
+const UserAccount = ({ email }) => {
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
@@ -20,18 +20,16 @@ const UserRegister = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formValues = Object.fromEntries(formData);
-    const { firstname, surname, email, password, confirm } = formValues;
+    const { street1, street2, city, postcode, phone } = formValues;
 
-    const check = password === confirm;
-    if (!check) return setMessage("Oops! The passwords do not match");
-    setUser({ ...user, firstname, surname, email, password });
+    setUser({ email, street1, street2, city, postcode, phone });
   };
 
   useEffect(() => {
     if (!user) return;
     setIsLoading(true);
     api
-      .post("/signup", user)
+      .put("/update", user)
       .then((data) => {
         setMessage(data.data.msg);
         setUser(null);
@@ -50,52 +48,57 @@ const UserRegister = () => {
 
   return (
     <FormWrap>
-      {message ? <FormInfoText>{message}</FormInfoText> : <h2>Register</h2>}
-      {message === "Registration successful!" ? (
-        <FormInfoText style={{color: "#000"}}>
-          Please <LoginButton to="/home/login">Login</LoginButton> to your account
+      {message ? <FormInfoText>{message}</FormInfoText> : <h2>Your Account</h2>}
+      {message === "Contact details saved successfully!" ? (
+        <FormInfoText>
+          <Link to="/home" style={{textDecoration: "underline"}}>Go back</Link>
         </FormInfoText>
       ) : (
         <>
+          <p>Please enter your details</p>
           <UserForm ref={formRef} onSubmit={handleSubmit}>
             <UserInput
               type="text"
-              name="firstname"
-              placeholder="First Name"
-              required
+              name="street1"
+              placeholder="Street Address"
               maxLength="30"
+              required
               autoFocus
             />
             <UserInput
               type="text"
-              name="surname"
-              placeholder="Surname"
+              name="street2"
+              placeholder="Street Address (Optional)"
               maxLength="30"
-              required
             />
-            <UserInput type="email" name="email" placeholder="Email" required />
             <UserInput
-              type="password"
-              name="password"
-              placeholder="Password"
+              type="text"
+              name="city"
+              placeholder="Town / City"
               maxLength="30"
               required
             />
             <UserInput
-              type="password"
-              name="confirm"
-              placeholder="Confirm Password"
+              type="text"
+              name="postcode"
+              placeholder="Postcode"
               maxLength="30"
+              required
+            />
+            <UserInput
+              type="number"
+              name="phone"
+              placeholder="Phone"
               required
             />
             <FormButton
               type="submit"
               disabled={isLoading}
-              value={isLoading ? "Please wait..." : "Register"}
+              value={isLoading ? "Please wait..." : "Save"}
             />
           </UserForm>
           <p style={{ textAlign: "center" }}>
-            <Link to="/home/login">Already have an account?</Link>
+            <Link to="/home">Go back?</Link>
           </p>
         </>
       )}
@@ -103,4 +106,10 @@ const UserRegister = () => {
   );
 };
 
-export default UserRegister;
+const mapStateToProps = state => {
+  return {
+    email: state.auth.email
+  }
+}
+
+export default connect(mapStateToProps)(UserAccount);

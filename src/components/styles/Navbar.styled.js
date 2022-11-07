@@ -84,7 +84,7 @@ export const AccountWrapper = styled.div`
   }
 `;
 
-export const Account = styled(RiAccountCircleLine)`
+export const AccountImg = styled(RiAccountCircleLine)`
   display: inline;
   position: relative;
   font-size: 2.2rem;
@@ -94,6 +94,13 @@ export const Account = styled(RiAccountCircleLine)`
   @media ${({theme}) => theme.mediaQueries['sm']} {
     font-size: 2.4rem;
   }
+`;
+
+export const AccountUser = styled.p`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 7rem;
 `;
 
 export const MenuWrapper = styled.div`
